@@ -1,8 +1,10 @@
 import xml.etree.ElementTree as ET
+import glob
 
 get_bin = lambda x: x >= 0 and str(bin(x))[2:] or "-" + str(bin(x))[3:]
 
-step_time = [(100,"0000"),(75, "0011"), (50,"0100"),(37,"0101"),(25,"0110"),(19,"0111"),(12,"1000")]
+
+
 
 
 
@@ -43,11 +45,12 @@ class Pitch(object):
 
 
 class Note(object):
-    def __init__(self, note, division):
+    def __init__(self, note, division, step_time):
         self.pitch = Pitch(note.find('pitch'))
         self.duration = note.find('duration')
         self.type_ = note.find('type')
         self.division = division
+        self.st = step_time
 
     @property
     def is_pause(self):
@@ -58,10 +61,10 @@ class Note(object):
 
     def print_duration_code(self):
         numb = int(float(self.duration.text)/self.division*100)
-        for cop in step_time
-            if cop.first == numb:
+        for cop in self.st:
+            if cop[0] == numb:
                 ##return ("%06d"%(int(get_bin(int(float(self.duration.text)/self.division*100.)))))
-                return ("%06d"%cop.second)
+                return ("%04s" % cop[1])
         return "111-1"
 
     def __str__(self):
@@ -70,21 +73,27 @@ class Note(object):
 def main():
     division = 4096. #number of pitch in every note normalized by max value
     tree = ET.parse('./test/test_2.xml')
-    notes = [Note(note, division) for note in tree.findall('//note')]
+    step_time =  [(100,"000 0"),(75, "001 1"), (50,"001 0"),(37,"010 1"),(25,"010 0"),(19,"011 1"),(12,"011 0")]
 
-    for note in notes:
-        print note
+    files = [glob.glob("/Users/Andrea/Desktop/Tesi/test/*.xml")]
+    for file in files[0]:
+        print "\nfile: "+file
+        tree = ET.parse(file)
+        notes = [Note(note, division, step_time) for note in tree.findall('.//note')]
+        for note in notes:
+           print note
 
-    print "tutto ok"
-    values = []
-    for note in notes:
-        assert isinstance(note, Note) #Note in range [65 - 71]
-        if note.pitch.is_pause:
-            values.append(-1)
-        else:
-            values.append(ord(note.pitch.step.text)-65 + 12*int(note.pitch.octave.text))
 
-    print values
+    # print "tutto ok"
+    # values = []
+    # for note in notes:
+    #     assert isinstance(note, Note) #Note in range [65 - 71]
+    #     if note.pitch.is_pause:
+    #         values.append(-1)
+    #     else:
+    #         values.append(ord(note.pitch.step.text)-65 + 12*int(note.pitch.octave.text))
+    #
+    # print values
 
 if __name__ == "__main__":
     main()
