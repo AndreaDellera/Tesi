@@ -67,12 +67,12 @@ class Note(object):
         return "111-1"
 
     def __str__(self):
-            return self.pitch.print_octave_code() + " " + self.pitch.print_step_code() + " " +  self.print_duration_code() #TODO: duration and value point to implement
+            return self.pitch.print_octave_code()+ self.pitch.print_step_code()+self.print_duration_code()
 
 def main():
     division = 4096. #number of pitch in every note normalized by max value
     tree = ET.parse('./test/test_2.xml')
-    step_time =  [("4096","000 0"),("3072", "001 1"), ("2048","001 0"),("1536","010 1"),("1024","010 0"),("768","011 1"),("512","011 0"),("384","100 1"),("256","100 0"),("192","101 1"),("128", "101 0"), ("64","110 0")]
+    step_time =  [("4096","0000"),("3072", "0011"), ("2048","0010"),("1536","0101"),("1024","0100"),("768","0111"),("512","0110"),("384","1001"),("256","1000"),("192","1011"),("128","1010"), ("64","1100")]
 
 
     files = [glob.glob("/Users/Andrea/Desktop/Tesi/test/*.xml")]
@@ -83,17 +83,6 @@ def main():
         for note in notes:
            print note
 
-
-    # print "tutto ok"
-    # values = []
-    # for note in notes:
-    #     assert isinstance(note, Note) #Note in range [65 - 71]
-    #     if note.pitch.is_pause:
-    #         values.append(-1)
-    #     else:
-    #         values.append(ord(note.pitch.step.text)-65 + 12*int(note.pitch.octave.text))
-    #
-    # print values
 
 if __name__ == "__main__":
     main()

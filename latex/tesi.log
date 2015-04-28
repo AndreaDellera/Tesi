@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.10)  27 APR 2015 14:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.10)  28 APR 2015 15:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -176,7 +176,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Missing character: There is no è in font cmr10!
 Missing character: There is no ù in font cmr10!
-Missing character: There is no à in font cmr10!
 
 Underfull \hbox (badness 10000) in paragraph at lines 36--39
 
@@ -206,7 +205,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--101
  []
 
 Missing character: There is no à in font cmr10!
-Missing character: There is no è in font cmr10!
 
 Underfull \hbox (badness 10000) in paragraph at lines 102--121
 
@@ -240,7 +238,7 @@ sfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/musixt
 ex-fonts/musix13.pfb>
-Output written on tesi.pdf (6 pages, 150632 bytes).
+Output written on tesi.pdf (6 pages, 150497 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
