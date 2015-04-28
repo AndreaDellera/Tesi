@@ -2,6 +2,10 @@ import xml.etree.ElementTree as ET
 
 get_bin = lambda x: x >= 0 and str(bin(x))[2:] or "-" + str(bin(x))[3:]
 
+step_time = [(100,"0000"),(75, "0011"), (50,"0100"),(37,"0101"),(25,"0110"),(19,"0111"),(12,"1000")]
+
+
+
 class Pitch(object):
     step = None
     alter = None
@@ -53,32 +57,19 @@ class Note(object):
         self.division = div
 
     def print_duration_code(self):
-        return ("%03d"%(int(get_bin((int(self.duration.text) / self.division) + 1))))
-
-
-
-    #def __str__(self):
-    #     if self.pitch.is_pause:
-    #         return 'e una pausa'
-    #     elif self.pitch.not_alter:
-    #         return self.pitch.octave.text+self.pitch.step.text
-    #     else:
-    #         return self.pitch.octave.text+self.pitch.step.text+self.pitch.alter.text
-
-    # def __str__(self):
-    #     if self.pitch.is_pause:
-    #         return 'e una pausa'
-    #     elif self.pitch.not_alter:
-    #         return ("%03d" % int(get_bin(ord(self.pitch.octave.text) - 48))) + " " + ("%04d" % int(get_bin((ord(self.pitch.step.text)-65))))
-    #     else:
-    #         return ("%03d" % int(get_bin(ord(self.pitch.octave.text) - 48))) + " " + ("%04d" % int(get_bin((ord(self.pitch.step.text)-65) + (ord(self.pitch.alter.text)-48))))
+        numb = int(float(self.duration.text)/self.division*100)
+        for cop in step_time
+            if cop.first == numb:
+                ##return ("%06d"%(int(get_bin(int(float(self.duration.text)/self.division*100.)))))
+                return ("%06d"%cop.second)
+        return "111-1"
 
     def __str__(self):
-            return self.pitch.print_octave_code() + " " + self.pitch.print_step_code() + " " +  self.print_duration_code() + " " +  ("%01d" % (int( get_bin( (int(self.duration.text) % self.division) + 1) )))
+            return self.pitch.print_octave_code() + " " + self.pitch.print_step_code() + " " +  self.print_duration_code() #TODO: duration and value point to implement
 
 def main():
-    division = 1024 #number of pitch in every note
-    tree = ET.parse('./test/test_1.xml')
+    division = 4096. #number of pitch in every note normalized by max value
+    tree = ET.parse('./test/test_2.xml')
     notes = [Note(note, division) for note in tree.findall('//note')]
 
     for note in notes:
