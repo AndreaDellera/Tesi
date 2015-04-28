@@ -23,12 +23,39 @@ class Pitch(object):
     def not_alter(self):
         return  self.alter is None
 
+    def print_step_code(self):
+        if self.is_pause:
+            return "1111"
+        elif self.not_alter:
+            return ("%04d" % int(get_bin((ord(self.step.text)-65))))
+        else:
+            return ("%04d" % int(get_bin((ord(self.step.text)-65) + (ord(self.alter.text)-48))))
+
+    def print_octave_code(self):
+        if self.is_pause:
+            return "111"
+        else:
+            return ("%03d" % int(get_bin(ord(self.octave.text) - 48)))
+
 
 class Note(object):
-    def __init__(self, note):
+    def __init__(self, note, division):
         self.pitch = Pitch(note.find('pitch'))
         self.duration = note.find('duration')
         self.type_ = note.find('type')
+        self.division = division
+
+    @property
+    def is_pause(self):
+        return self.pitch.is_pause
+
+    def set_division(self, div):
+        self.division = div
+
+    def print_duration_code(self):
+        return ("%03d"%(int(get_bin((int(self.duration.text) / self.division) + 1))))
+
+
 
     #def __str__(self):
     #     if self.pitch.is_pause:
@@ -47,16 +74,12 @@ class Note(object):
     #         return ("%03d" % int(get_bin(ord(self.pitch.octave.text) - 48))) + " " + ("%04d" % int(get_bin((ord(self.pitch.step.text)-65) + (ord(self.pitch.alter.text)-48))))
 
     def __str__(self):
-        if self.pitch.is_pause:
-            return 'e una pausa'
-        elif self.pitch.not_alter:
-            return ("%03d" % int(get_bin(ord(self.pitch.octave.text) - 48))) + " " + ("%04d" % int(get_bin((ord(self.pitch.step.text)-65))))
-        else:
-            return ("%03d" % int(get_bin(ord(self.pitch.octave.text) - 48))) + " " + ("%04d" % int(get_bin((ord(self.pitch.step.text)-65) + (ord(self.pitch.alter.text)-48))))
+            return self.pitch.print_octave_code() + " " + self.pitch.print_step_code() + " " +  self.print_duration_code() + " " +  ("%01d" % (int( get_bin( (int(self.duration.text) % self.division) + 1) )))
 
 def main():
-    tree = ET.parse('/Users/Andrea/Desktop/test_1.xml')
-    notes = [Note(note) for note in tree.findall('//note')]
+    division = 1024 #number of pitch in every note
+    tree = ET.parse('./test/test_1.xml')
+    notes = [Note(note, division) for note in tree.findall('//note')]
 
     for note in notes:
         print note
