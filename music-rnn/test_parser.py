@@ -66,8 +66,10 @@ class Note(object):
         return "111-1"
 
     def __str__(self):
-        return self.pitch.print_octave_code() + " " + self.pitch.print_step_code() + " " + self.print_duration_code()
+        return self.pitch.print_octave_code() + self.pitch.print_step_code() +  self.print_duration_code()
 
+    def encode(self):
+        return self.__str__()
 
 def main():
     # number of pitches in every note normalized by max value
@@ -77,18 +79,21 @@ def main():
                  ("768", "0111"), ("512", "0110"), ("384", "1001"), ("256", "1000"), ("192", "1011"), ("128", "1010"),
                  ("64", "1100")]
     # list of all test files
-    files = [glob.glob("./test/*.xml")]
-
+    files = [glob.glob("../test/*.xml")]
+    codecs = []
     # extracting all the notes
     for file in files[0]:
         print "\nfile: " + file
         tree = ET.parse(file)
         notes = [Note(note, division, step_time) for note in tree.findall('.//note')]
         for note in notes:
-            print note
+            codecs.append(note.encode())
 
     # creating the recurrent neural network
     network = rnn.MetaRNN()
+    network.output_type = "binary"
+    network.fit(bin(codecs[0]), bin(codecs[1]))
+
 
 
 if __name__ == "__main__":
