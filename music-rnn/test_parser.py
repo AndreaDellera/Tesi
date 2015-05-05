@@ -1,6 +1,10 @@
 import xml.etree.ElementTree as ET
 import glob
-import rnn
+from pybrain.structure import RecurrentNetwork
+from pybrain.structure import LinearLayer, SigmoidLayer
+from pybrain.structure import FullConnection
+from pybrain.supervised.trainers import BackpropTrainer
+from pybrain.datasets import SupervisedDataSet
 
 get_bin = lambda x: x >= 0 and str(bin(x))[2:] or "-" + str(bin(x))[3:]
 
@@ -29,16 +33,16 @@ class Pitch(object):
         if self.is_pause:
             return "1111"
         elif self.not_alter:
-            return ("%04d" % int(get_bin((ord(self.step.text) - 65))))
+            return "%04d" % int(get_bin((ord(self.step.text) - 65)))
         else:
-            return ("%04d" % int(get_bin((ord(self.step.text) - 65) + (ord(self.alter.text) - 48))))
+            return "%04d" % int(get_bin((ord(self.step.text) - 65) + (ord(self.alter.text) - 48)))
 
     # return 111 if is a pause, elsewhere the code of the step's octave
     def print_octave_code(self):
         if self.is_pause:
             return "111"
         else:
-            return ("%03d" % int(get_bin(ord(self.octave.text) - 48)))
+            return "%03d" % int(get_bin(ord(self.octave.text) - 48))
 
 
 class Note(object):
@@ -63,13 +67,15 @@ class Note(object):
         for cop in self.st:
             if cop[0] == self.duration.text:
                 return ("%04s" % cop[1])
-        return "111-1"
+        return "1111"
 
+    @property
     def __str__(self):
-        return self.pitch.print_octave_code() + self.pitch.print_step_code() +  self.print_duration_code()
+        return self.pitch.print_octave_code() + self.pitch.print_step_code() + self.print_duration_code()
 
     def encode(self):
-        return self.__str__()
+        return self.__str__
+
 
 def main():
     # number of pitches in every note normalized by max value
@@ -87,12 +93,38 @@ def main():
         tree = ET.parse(file)
         notes = [Note(note, division, step_time) for note in tree.findall('.//note')]
         for note in notes:
-            codecs.append(note.encode())
+            print int(note.encode(),2)
+            codecs.append(int(note.encode(),2))
+
+
+    dataset = SupervisedDataSet(2, 1)
+
+    #adding data to the dataset
+    for i in range(0, codecs.__len__()-3, 1):
+        dataset.addSample((codecs[i], codecs[i+1]), (codecs[i+2],))
+
 
     # creating the recurrent neural network
-    network = rnn.MetaRNN()
-    network.output_type = "binary"
-    network.fit(bin(codecs[0]), bin(codecs[1]))
+    net = RecurrentNetwork()
+    # setting the number of input layers
+    net.addInputModule(LinearLayer(2, name='in'))
+    # setting the number of hidden layers
+    net.addModule(SigmoidLayer(5, name='hidden'))
+    # setting the number of output layers
+    net.addOutputModule(LinearLayer(1, name='out'))
+
+    # creating the connections in the network
+    net.addConnection(FullConnection(net['in'], net['hidden'], name='c1'))
+    net.addConnection(FullConnection(net['hidden'], net['out'], name='c2'))
+    net.addRecurrentConnection(FullConnection(net['hidden'], net['hidden'], name='c3'))
+
+    trainer = BackpropTrainer(net)
+    trainer.trainOnDataset(dataset, len(dataset))
+
+    print net.activate((2, 2))
+    print net.activate((2034, 2036))
+
+    print('Final weights:', net.params)
 
 
 
