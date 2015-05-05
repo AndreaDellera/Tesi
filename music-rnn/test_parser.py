@@ -93,15 +93,14 @@ def main():
         tree = ET.parse(file)
         notes = [Note(note, division, step_time) for note in tree.findall('.//note')]
         for note in notes:
-            print int(note.encode(),2)
-            codecs.append(int(note.encode(),2))
+            print int(note.encode(), 2)
+            codecs.append(int(note.encode(), 2))
 
+    ds = SupervisedDataSet(2, 1)
 
-    dataset = SupervisedDataSet(2, 1)
-
-    #adding data to the dataset
-    for i in range(0, codecs.__len__()-3, 1):
-        dataset.addSample((codecs[i], codecs[i+1]), (codecs[i+2],))
+    # adding data to the ds
+    for i in range(0, codecs.__len__() - 3, 1):
+        ds.addSample((codecs[i], codecs[i + 1]), (codecs[i + 2],))
 
 
     # creating the recurrent neural network
@@ -118,14 +117,19 @@ def main():
     net.addConnection(FullConnection(net['hidden'], net['out'], name='c2'))
     net.addRecurrentConnection(FullConnection(net['hidden'], net['hidden'], name='c3'))
 
+    net.sortModules()
+
+    # creating the trainer
     trainer = BackpropTrainer(net)
-    trainer.trainOnDataset(dataset, len(dataset))
+    trainer.setData(ds)
 
-    print net.activate((2, 2))
-    print net.activate((2034, 2036))
+    # training the network
+    print "start training"
+    trainer.train()
+    print "finish training"
+    print net.activate((822, 802))
 
-    print('Final weights:', net.params)
-
+    #print('Final weights:', net.params)
 
 
 if __name__ == "__main__":
