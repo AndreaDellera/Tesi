@@ -1,11 +1,13 @@
 import xml.etree.ElementTree as ET
 import glob
+from pybrain.structure import RecurrentNetwork
+from pybrain.structure import LinearLayer, SigmoidLayer
+from pybrain.structure import FullConnection
 from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.datasets import SupervisedDataSet
-from pybrain.tools.shortcuts import buildNetwork
-
 
 get_bin = lambda x: x >= 0 and str(bin(x))[2:] or "-" + str(bin(x))[3:]
+
 
 class Pitch(object):
     step = None
@@ -42,6 +44,7 @@ class Pitch(object):
         else:
             return "%03d" % int(get_bin(ord(self.octave.text) - 48))
 
+
 class Note(object):
     def __init__(self, note, division, step_time):
         self.pitch = Pitch(note.find('pitch'))
@@ -74,7 +77,6 @@ class Note(object):
         return self.__str__
 
 
-
 def main():
     # number of pitches in every note normalized by max value
     division = 4096.
@@ -83,7 +85,7 @@ def main():
                  ("768", "0111"), ("512", "0110"), ("384", "1001"), ("256", "1000"), ("192", "1011"), ("128", "1010"),
                  ("64", "1100")]
     # list of all test files
-    files = [glob.glob("../files/train/*.xml")]
+    files = [glob.glob("../test/*.xml")]
     codecs = []
     # extracting all the notes
     for file in files[0]:
@@ -91,45 +93,52 @@ def main():
         tree = ET.parse(file)
         notes = [Note(note, division, step_time) for note in tree.findall('.//note')]
         for note in notes:
-            print int(note.encode(), 2)
+            # print int(note.encode(), 2)
             codecs.append(int(note.encode(), 2))
 
+    ds = SupervisedDataSet(2, 1)
 
-    files = [glob.glob("../files/test/*.xml")]
-    tests = []
-    # extracting all the notes
-    for file in files[0]:
-        print "\nfile: " + file
-        tree = ET.parse(file)
-        notes = [Note(note, division, step_time) for note in tree.findall('.//note')]
-        for note in notes:
-            tests.append(int(note.encode(), 2))
+    # adding data to the ds
+    for i in range(0, codecs.__len__() - 3, 1):
+        ds.addSample((codecs[i], codecs[i + 1]), (codecs[i + 2],))
+
+    # for inpt, target in ds:
+    #     print inpt, target
+
+    # creating the recurrent neural network
+    net = RecurrentNetwork()
+    # setting the number of input layers
+    net.addInputModule(LinearLayer(2, name='in'))
+    # setting the number of hidden layers
+    net.addModule(SigmoidLayer(5, name='hidden'))
+    # setting the number of output layers
+    net.addOutputModule(LinearLayer(1, name='out'))
+
+    # creating the connections in the network
+    net.addConnection(FullConnection(net['in'], net['hidden'], name='c1'))
+    net.addConnection(FullConnection(net['hidden'], net['out'], name='c2'))
+    net.addRecurrentConnection(FullConnection(net['hidden'], net['hidden'], name='c3'))
+
+    # starting the network; set randomly the weights
+    net.sortModules()
 
     # creating the trainer
+    trainer = BackpropTrainer(net)
+    trainer.setData(ds)
+    print "before: "
+    print int(net.activate((codecs[0], codecs[1]))[0])
 
 
-
-    ds = SupervisedDataSet(1, 1)
-    dstest = SupervisedDataSet(1, 1)
-
-    net = buildNetwork(ds.indim, 6, ds.outdim, recurrent=True)
-    trainer = BackpropTrainer(net, learningrate = 0.01, momentum = 0.99, verbose = True)
-
-
-    # adding data to the ds
-    for i in range(0, codecs.__len__() - 2, 1):
-        ds.addSample((codecs[i]), (codecs[i + 1],))
-
-    # adding data to the ds
-    for i in range(0, codecs.__len__() - 2, 1):
-        dstest.addSample((tests[i]), (tests[i + 1],))
-
+    # training the network
     print "start training"
-    trainer.trainOnDataset(ds, 1000)
+    trainer.train()
     print "finish training"
-    print "start testing"
-    trainer.testOnData(dstest, verbose = True)
-    print "finish testing"
+    # print "%013s" % bin(int(net.activate((codecs[0], codecs[1]))[0]))
+    print "after: "
+    print int(net.activate((codecs[0], codecs[1]))[0])
+    print bin(int(net.activate((codecs[0], codecs[1]))[0]))
+    # print "%013s" % bin(codecs[3])
+    print('Final weights:', net.params)
 
 
 if __name__ == "__main__":
