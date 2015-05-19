@@ -6,6 +6,7 @@ from myBackProp import myBackpropTrainer
 from pybrain.datasets import SupervisedDataSet
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.structure import SigmoidLayer, LinearLayer
+import matplotlib.pyplot as mpl
 
 
 get_bin = lambda x: x >= 0 and str(bin(x))[2:] or "-" + str(bin(x))[3:]
@@ -96,7 +97,6 @@ def main():
         tree = ET.parse(file)
         notes = [Note(note, division, step_time) for note in tree.findall('.//note')]
         for note in notes:
-            # print int(note.encode(), 2)
             codecs.append(note.encode())
 
     # list of all test files
@@ -115,8 +115,8 @@ def main():
     dstest = SupervisedDataSet(11, 11)
 
     # creating the network
-    net = buildNetwork(ds.indim, 6, ds.outdim, recurrent=True, outclass=LinearLayer, hiddenclass=SigmoidLayer)
-    trainer = myBackpropTrainer(net, dataset=ds, learningrate=0.01, momentum=0.99, verbose=True)
+    net = buildNetwork(ds.indim, 6, 6, ds.outdim, recurrent=True, outclass=LinearLayer, hiddenclass=SigmoidLayer)
+    trainer = myBackpropTrainer(net, dataset=ds, learningrate = 0.01, momentum = 0.99) # if verbose == True then print "Total error:", errors / ponderation
 
     # adding data to the ds
     for i in range(0, len(codecs) - 2, 1):
@@ -143,21 +143,14 @@ def main():
     x = trainer.trainOnDataset(ds, 100)
     print "finish training"
 
-    # # carry out the training
-    # for i in range(1000):
-    # trainer.trainEpochs(2)
-    #     trnresult = 100. * (1.0-trainer.testOnData(ds))
-    #     tstresult = 100. * (1.0-trainer.testOnData(dstest))
-    #     print("train error: %5.2f%%" % trnresult, ",  test error: %5.2f%%" % tstresult)
-
     print "start testing"
-    trainer.testOnData(dstest, verbose=True)
+    y = trainer.testOnData(dstest, verbose=False)
     print "finish testing"
 
-    print x
-    # for i in range(2):
-    #     print net.activate((codecs[i][0], codecs[i][1], codecs[i][2], codecs[i][3], codecs[i][4], codecs[i][5],
-    #                        codecs[i][6], codecs[i][7], codecs[i][8], codecs[i][9], codecs[i][10]))
+    mpl.plot(range(len(x)), x)
+    mpl.show()
+
+    print y
 
 
 if __name__ == "__main__":
