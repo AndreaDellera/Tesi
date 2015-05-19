@@ -1,7 +1,8 @@
 import xml.etree.ElementTree as ET
 import glob
+from myBackProp import myBackpropTrainer
 
-from pybrain.supervised.trainers import BackpropTrainer
+# from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.datasets import SupervisedDataSet
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.structure import SigmoidLayer, LinearLayer
@@ -115,10 +116,10 @@ def main():
 
     # creating the network
     net = buildNetwork(ds.indim, 6, ds.outdim, recurrent=True, outclass=LinearLayer, hiddenclass=SigmoidLayer)
-    trainer = BackpropTrainer(net, dataset=ds, learningrate=0.01, momentum=0.99, verbose=True)
+    trainer = myBackpropTrainer(net, dataset=ds, learningrate=0.01, momentum=0.99, verbose=True)
 
     # adding data to the ds
-    for i in range(0, codecs.__len__() - 2, 1):
+    for i in range(0, len(codecs) - 2, 1):
         ds.addSample((codecs[i][0], codecs[i][1], codecs[i][2], codecs[i][3], codecs[i][4], codecs[i][5], codecs[i][6],
                       codecs[i][7], codecs[i][8], codecs[i][9], codecs[i][10])
                      ,
@@ -126,20 +127,20 @@ def main():
                       codecs[i + 1][5], codecs[i + 1][6], codecs[i + 1][7], codecs[i + 1][8], codecs[i + 1][9],
                       codecs[i + 1][10])
                      )
-    print ds
+    # print ds
 
     # adding data to the dstest
-    for i in range(0, tests.__len__() - 2, 1):
+    for i in range(0, len(tests) - 2, 1):
         dstest.addSample((tests[i][0], tests[i][1], tests[i][2], tests[i][3], tests[i][4], tests[i][5], tests[i][6],
                           tests[i][7], tests[i][8], tests[i][9], tests[i][10]),
                          (tests[i + 1][0], tests[i + 1][1], tests[i + 1][2], tests[i + 1][3], tests[i + 1][4],
                           tests[i + 1][5], tests[i + 1][6], tests[i + 1][7], tests[i + 1][8], tests[i + 1][9],
                           tests[i + 1][10], )
                          )
-    print dstest
+    # print dstest
 
     print "start training"
-    trainer.trainOnDataset(ds, 1000)
+    x = trainer.trainOnDataset(ds, 100)
     print "finish training"
 
     # # carry out the training
@@ -153,9 +154,10 @@ def main():
     trainer.testOnData(dstest, verbose=True)
     print "finish testing"
 
-    for i in range(2):
-        print net.activate((codecs[i][0], codecs[i][1], codecs[i][2], codecs[i][3], codecs[i][4], codecs[i][5],
-                           codecs[i][6], codecs[i][7], codecs[i][8], codecs[i][9], codecs[i][10]))
+    print x
+    # for i in range(2):
+    #     print net.activate((codecs[i][0], codecs[i][1], codecs[i][2], codecs[i][3], codecs[i][4], codecs[i][5],
+    #                        codecs[i][6], codecs[i][7], codecs[i][8], codecs[i][9], codecs[i][10]))
 
 
 if __name__ == "__main__":
