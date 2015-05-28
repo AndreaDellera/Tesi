@@ -13,6 +13,11 @@ from pybrain.tools.validation import Validator
 get_bin = lambda x: x >= 0 and str(bin(x))[2:] or "-" + str(bin(x))[3:]
 
 
+def ret_Character(string):
+    return (string[0], string[1], string[2], string[3], string[4], string[5], string[6], string[7], string[8], string[9], \
+           string[10])
+
+
 class Pitch(object):
     step = None
     alter = None
@@ -38,18 +43,18 @@ class Pitch(object):
             return "1111"
         elif self.not_alter:
             if self.step.text == "A" or self.step.text == "B":
-                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65)%7)))
+                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65) % 7)))
             elif self.step.text == "C" or self.step.text == "D" or self.step.text == "E":
-                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65)%7 - 1)))
+                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65) % 7 - 1)))
             else:
-                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65)%7 - 2)))
+                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65) % 7 - 2)))
         else:
             if self.step.text == "A" or self.step.text == "B":
-                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65)%7)))
+                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65) % 7)))
             elif self.step.text == "C" or self.step.text == "D" or self.step.text == "E":
-                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65)%7 - 1)))
+                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65) % 7 - 1)))
             else:
-                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65)%7 - 2)))
+                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65) % 7 - 2)))
 
     # return 111 if is a pause, elsewhere the code of the step's octave
     def print_octave_code(self):
@@ -138,31 +143,20 @@ def main():
     # adding data to the ds
     for j in range(len(codecs)):
         ds.append(SupervisedDataSet(n_input, n_output))
-        for i in range(0, len(codecs[j]) - 2, 2):
-            ds[j].appendLinked((codecs[j][i][0], codecs[j][i][1], codecs[j][i][2], codecs[j][i][3], codecs[j][i][4],
-                                codecs[j][i][5], codecs[j][i][6], codecs[j][i][7], codecs[j][i][8], codecs[j][i][9],
-                                codecs[j][i][10], codecs[j][i + 1][0], codecs[j][i + 1][1], codecs[j][i + 1][2],
-                                codecs[j][i + 1][3], codecs[j][i + 1][4], codecs[j][i + 1][5], codecs[j][i + 1][6], codecs[j][i + 1][7],
-                                codecs[j][i + 1][8], codecs[j][i + 1][9], codecs[j][i + 1][10])
+        for i in range(0, len(codecs[j]) - 2, 1):
+            ds[j].appendLinked(ret_Character(codecs[j][i]) + ret_Character(codecs[j][i + 1])
                                ,
-                               (codecs[j][i + 2][0], codecs[j][i + 2][1], codecs[j][i + 2][2], codecs[j][i + 2][3],
-                                codecs[j][i + 2][4], codecs[j][i + 2][5], codecs[j][i + 2][6], codecs[j][i + 2][7],
-                                codecs[j][i + 2][8], codecs[j][i + 2][9], codecs[j][i + 2][10])
+                               ret_Character(codecs[j][i + 2])
                                )
 
 
     # adding data to the dstest
     for j in range(len(tests)):
         dstest.append(SupervisedDataSet(n_input, n_output))
-        for i in range(0, len(tests[j]) - 2, 2):
-            dstest[j].appendLinked((tests[j][i][0], tests[j][i][1], tests[j][i][2], tests[j][i][3], tests[j][i][4],
-                                    tests[j][i][5], tests[j][i][6], tests[j][i][7], tests[j][i][8], tests[j][i][9],
-                                    tests[j][i][10], tests[j][i + 1][0], tests[j][i + 1][1], tests[j][i + 1][2], tests[j][i + 1][3],
-                                    tests[j][i + 1][4], tests[j][i + 2][5], tests[j][i + 2][6], tests[j][i + 1][7],
-                                    tests[j][i + 1][8], tests[j][i + 2][9], tests[j][i + 1][10]),
-                                   (tests[j][i + 2][0], tests[j][i + 2][1], tests[j][i + 2][2], tests[j][i + 2][3],
-                                    tests[j][i + 2][4], tests[j][i + 2][5], tests[j][i + 2][6], tests[j][i + 2][7],
-                                    tests[j][i + 2][8], tests[j][i + 2][9], tests[j][i + 2][10])
+        for i in range(0, len(tests[j]) - 2, 1):
+            dstest[j].appendLinked(ret_Character(tests[j][i]) + ret_Character(tests[j][i + 1])
+                                   ,
+                                   ret_Character(tests[j][i + 2])
                                    )
     # import pdb; pdb.set_trace()
 
@@ -175,14 +169,14 @@ def main():
     x = []
     print "start training"
     for i in range(len(ds)):
-        x += trainer.trainOnDataset(ds[i], 10)
+        x += trainer.trainOnDataset(ds[i], 200)
     print "finish training"
 
     # mse = Validator()
     # print len(dstest)
     # for i in range(len(dstest)):
     # activations = []
-    #     targets = []
+    # targets = []
     #     for inp, out in dstest[i]:
     #         activations.append(net.activate(inp))
     #         targets.append(out)
@@ -203,14 +197,14 @@ def main():
         print "testing on ", i, "\n"
     print "finish testing"
 
-    print dstest[0].getSample(0)[0]
-    print rnn.activate(dstest[0].getSample(0)[0]) - rnn.activate(dstest[0].getSample(0)[0])
+    # print dstest[0].getSample(0)[0]
+    # print rnn.activate(dstest[0].getSample(0)[0]) - rnn.activate(dstest[0].getSample(0)[0])
 
-    # mpl.plot(range(len(x)), x)
-    # mpl.show()
-    #
-    # mpl.plot(range(len(y)), y)
-    # mpl.show()
+    mpl.plot(range(len(x)), x)
+    mpl.show()
+
+    mpl.plot(range(len(y)), y)
+    mpl.show()
 
     rnn.reset()
 
