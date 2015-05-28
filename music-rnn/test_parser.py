@@ -37,9 +37,19 @@ class Pitch(object):
         if self.is_pause:
             return "1111"
         elif self.not_alter:
-            return "%04d" % int(get_bin((ord(self.step.text) - 65)))
+            if self.step.text == "A" or self.step.text == "B":
+                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65)%7)))
+            elif self.step.text == "C" or self.step.text == "D" or self.step.text == "E":
+                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65)%7 - 1)))
+            else:
+                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65)%7 - 2)))
         else:
-            return "%04d" % int(get_bin((ord(self.step.text) - 65) + (ord(self.alter.text) - 48)))
+            if self.step.text == "A" or self.step.text == "B":
+                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65)%7)))
+            elif self.step.text == "C" or self.step.text == "D" or self.step.text == "E":
+                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65)%7 - 1)))
+            else:
+                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65)%7 - 2)))
 
     # return 111 if is a pause, elsewhere the code of the step's octave
     def print_octave_code(self):
@@ -122,45 +132,50 @@ def main():
     # creating the datasets
     ds = []
     dstest = []
-
+    n_input = 22
+    n_output = 11
 
     # adding data to the ds
     for j in range(len(codecs)):
-        ds.append(SupervisedDataSet(11, 11))
-        for i in range(0, len(codecs[j]) - 1, 1):
+        ds.append(SupervisedDataSet(n_input, n_output))
+        for i in range(0, len(codecs[j]) - 2, 2):
             ds[j].appendLinked((codecs[j][i][0], codecs[j][i][1], codecs[j][i][2], codecs[j][i][3], codecs[j][i][4],
                                 codecs[j][i][5], codecs[j][i][6], codecs[j][i][7], codecs[j][i][8], codecs[j][i][9],
-                                codecs[j][i][10])
-                               ,
-                               (codecs[j][i + 1][0], codecs[j][i + 1][1], codecs[j][i + 1][2], codecs[j][i + 1][3],
-                                codecs[j][i + 1][4], codecs[j][i + 1][5], codecs[j][i + 1][6], codecs[j][i + 1][7],
+                                codecs[j][i][10], codecs[j][i + 1][0], codecs[j][i + 1][1], codecs[j][i + 1][2],
+                                codecs[j][i + 1][3], codecs[j][i + 1][4], codecs[j][i + 1][5], codecs[j][i + 1][6], codecs[j][i + 1][7],
                                 codecs[j][i + 1][8], codecs[j][i + 1][9], codecs[j][i + 1][10])
+                               ,
+                               (codecs[j][i + 2][0], codecs[j][i + 2][1], codecs[j][i + 2][2], codecs[j][i + 2][3],
+                                codecs[j][i + 2][4], codecs[j][i + 2][5], codecs[j][i + 2][6], codecs[j][i + 2][7],
+                                codecs[j][i + 2][8], codecs[j][i + 2][9], codecs[j][i + 2][10])
                                )
 
 
     # adding data to the dstest
     for j in range(len(tests)):
-        dstest.append(SupervisedDataSet(11, 11))
-        for i in range(0, len(tests[j]) - 1, 1):
+        dstest.append(SupervisedDataSet(n_input, n_output))
+        for i in range(0, len(tests[j]) - 2, 2):
             dstest[j].appendLinked((tests[j][i][0], tests[j][i][1], tests[j][i][2], tests[j][i][3], tests[j][i][4],
                                     tests[j][i][5], tests[j][i][6], tests[j][i][7], tests[j][i][8], tests[j][i][9],
-                                    tests[j][i][10]),
-                                   (tests[j][i + 1][0], tests[j][i + 1][1], tests[j][i + 1][2], tests[j][i + 1][3],
-                                    tests[j][i + 1][4], tests[j][i + 1][5], tests[j][i + 1][6], tests[j][i + 1][7],
-                                    tests[j][i + 1][8], tests[j][i + 1][9], tests[j][i + 1][10])
+                                    tests[j][i][10], tests[j][i + 1][0], tests[j][i + 1][1], tests[j][i + 1][2], tests[j][i + 1][3],
+                                    tests[j][i + 1][4], tests[j][i + 2][5], tests[j][i + 2][6], tests[j][i + 1][7],
+                                    tests[j][i + 1][8], tests[j][i + 2][9], tests[j][i + 1][10]),
+                                   (tests[j][i + 2][0], tests[j][i + 2][1], tests[j][i + 2][2], tests[j][i + 2][3],
+                                    tests[j][i + 2][4], tests[j][i + 2][5], tests[j][i + 2][6], tests[j][i + 2][7],
+                                    tests[j][i + 2][8], tests[j][i + 2][9], tests[j][i + 2][10])
                                    )
     # import pdb; pdb.set_trace()
 
     # creating the network
     # without hidden layers the network works properly
-    rnn = buildNetwork(ds[0].indim, 6, ds[0].outdim, recurrent=False, outclass=SigmoidLayer, hiddenclass=LSTMLayer)
+    rnn = buildNetwork(ds[0].indim, 6, ds[0].outdim, recurrent=True, outclass=SigmoidLayer, hiddenclass=LSTMLayer)
     # if verbose == True then print "Total error:", MSE / ponderation
     trainer = myBackpropTrainer(rnn, learningrate=0.01, momentum=0.99, verbose=True)
 
     x = []
     print "start training"
     for i in range(len(ds)):
-        x += trainer.trainOnDataset(ds[i], 200)
+        x += trainer.trainOnDataset(ds[i], 10)
     print "finish training"
 
     # mse = Validator()
@@ -188,13 +203,14 @@ def main():
         print "testing on ", i, "\n"
     print "finish testing"
 
-    print rnn.activate(dstest[0].getSample(0)[1]) - rnn.activate(dstest[0].getSample(0)[1])
+    print dstest[0].getSample(0)[0]
+    print rnn.activate(dstest[0].getSample(0)[0]) - rnn.activate(dstest[0].getSample(0)[0])
 
-    mpl.plot(range(len(x)), x)
-    mpl.show()
-
-    mpl.plot(range(len(y)), y)
-    mpl.show()
+    # mpl.plot(range(len(x)), x)
+    # mpl.show()
+    #
+    # mpl.plot(range(len(y)), y)
+    # mpl.show()
 
     rnn.reset()
 
