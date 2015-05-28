@@ -143,6 +143,7 @@ class myBackpropTrainer(myTrainer):
         ponderatedErrors = []
         for seq in dataset._provideSequences():
             self.module.reset()
+            # evaluateSequence changed in the source code
             e, i = dataset._evaluateSequence(self.module.activate, seq, verbose)
             importances.append(i)
             errors.append(e)
@@ -155,7 +156,7 @@ class myBackpropTrainer(myTrainer):
             print 'Average error:', avgErr
             print ('Max error:', max(ponderatedErrors), 'Median error:',
                    sorted(ponderatedErrors)[len(errors) / 2])
-        return avgErr
+        return errors
                 
     def testOnClassData(self, dataset=None, verbose=False,
                         return_targets=False):
