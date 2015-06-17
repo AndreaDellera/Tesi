@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import glob
 from pybrain.tools.xml.networkreader import NetworkReader
-# from pybrain.datasets import SupervisedDataSet
+from pybrain.datasets import SupervisedDataSet
 
 get_bin = lambda x: x >= 0 and str(bin(x))[2:] or "-" + str(bin(x))[3:]
 
@@ -11,7 +11,6 @@ def create_hash():
           '768': '0111', '512': '0110', '384': '1001', '256': '1000', '192': '1011', '128': '1010',
           '64':  '1100'}
 
-def create_input():
 
 def ret_Characters(string):
     return (
@@ -101,21 +100,37 @@ class Note(object):
 
 def main():
     division = 4096.
+    # load the network
     rnn = NetworkReader.readFrom('weights.xml')
     files = glob.glob("../files/toGenerate/*.xml")
-    codecs = []
+    input_notes = ()
+    create_hash()
 
+    # creating the input for the net
+    i = 0
     for file in files:
         print "\nfile: " + file
         tree = ET.parse(file)
         # notes = [Note(note, division, step_time) for note in tree.findall('.//note')]
         notes = [Note(note, division) for note in tree.findall('.//note')]
         for note in notes:
-            codecs.append(ret_Characters(note.encode()))
+            if i < rnn.indim / 11: i += 1
+            else: break
+            tmp = note.encode()
+            for x in range(11):
+                input_notes += (tmp[x],)
 
-    for i in range(100):
-        codecs.append(rnn.activate(codecs[0], codecs[1], ..., codecs[11 * n_input]))
+    # generating new notes! ( :D)
+    notes = []
+    for i in range(10):
+        otp =rnn.activate(input_notes[(i*11):(rnn.indim + 11*i):1])
+        notes.append(otp)
+        for i in range (len(otp)):
+            otp[i] = abs(round(otp[i]))
+        # print otp
+        input_notes += tuple(otp)
 
+    print notes
 
 
 if __name__ == "__main__":
