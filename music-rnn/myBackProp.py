@@ -10,7 +10,7 @@ class myBackpropTrainer(myTrainer):
     """Trainer that trains the parameters of a module according to a 
     supervised dataset (potentially sequential) by backpropagating the errors
     (through time)."""
-        
+
     def __init__(self, module, dataset=None, learningrate=0.01, lrdecay=1.0,
                  momentum=0., verbose=False, batchlearning=False,
                  weightdecay=0.):
@@ -42,12 +42,12 @@ class myBackpropTrainer(myTrainer):
         self.descent.momentum = momentum
         self.descent.alphadecay = lrdecay
         self.descent.init(module.params)
-        
+
     def train(self):
         """Train the associated module for one epoch."""
         assert len(self.ds) > 0, "Dataset cannot be empty."
         self.module.resetDerivatives()
-        errors = 0        
+        errors = 0
         ponderation = 0.
         shuffledSequences = []
         for seq in self.ds._provideSequences():
@@ -71,12 +71,11 @@ class myBackpropTrainer(myTrainer):
         self.epoch += 1
         self.totalepochs += 1
         return errors / ponderation
-        
-    
+
     def _calcDerivs(self, seq):
         """Calculate error function and backpropagate output errors to yield 
         the gradient."""
-        self.module.reset()        
+        self.module.reset()
         for sample in seq:
             self.module.activate(sample[0])
         error = 0
@@ -90,7 +89,7 @@ class myBackpropTrainer(myTrainer):
                 importance = sample[2]
                 error += 0.5 * dot(importance, outerr ** 2)
                 ponderation += sum(importance)
-                self.module.backActivate(outerr * importance)                
+                self.module.backActivate(outerr * importance)
             else:
                 error += 0.5 * sum(outerr ** 2)
                 ponderation += len(target)
@@ -99,9 +98,9 @@ class myBackpropTrainer(myTrainer):
                 # ndarray class fixes something,
                 str(outerr)
                 self.module.backActivate(outerr)
-            
+
         return error, ponderation
-            
+
     def _checkGradient(self, dataset=None, silent=False):
         """Numeric check of the computed gradient for debugging purposes."""
         if dataset:
@@ -110,7 +109,7 @@ class myBackpropTrainer(myTrainer):
         for seq in self.ds._provideSequences():
             self.module.resetDerivatives()
             self._calcDerivs(seq)
-            e = 1e-6    
+            e = 1e-6
             analyticalDerivs = self.module.derivs.copy()
             numericalDerivs = []
             for p in range(self.module.paramdim):
@@ -127,7 +126,7 @@ class myBackpropTrainer(myTrainer):
             if not silent:
                 print r
         return res
-    
+
     def testOnData(self, dataset=None, verbose=False):
         """Compute the MSE of the module performance on the given dataset.
 
@@ -157,7 +156,7 @@ class myBackpropTrainer(myTrainer):
             print ('Max error:', max(ponderatedErrors), 'Median error:',
                    sorted(ponderatedErrors)[len(errors) / 2])
         return errors
-                
+
     def testOnClassData(self, dataset=None, verbose=False,
                         return_targets=False):
         """Return winner-takes-all classification output on a given dataset. 
@@ -181,7 +180,7 @@ class myBackpropTrainer(myTrainer):
             return out, targ
         else:
             return out
-        
+
     def trainUntilConvergence(self, dataset=None, maxEpochs=None, verbose=None,
                               continueEpochs=10, validationProportion=0.25):
         """Train the module on the dataset until it converges.
@@ -206,7 +205,7 @@ class myBackpropTrainer(myTrainer):
         trainingData, validationData = (
             dataset.splitWithProportion(1 - validationProportion))
         if not (len(trainingData) > 0 and len(validationData)):
-            raise ValueError("Provided dataset too small to be split into training " + 
+            raise ValueError("Provided dataset too small to be split into training " +
                              "and validation sets with proportion " + str(validationProportion))
         self.ds = trainingData
         bestweights = self.module.params.copy()
@@ -220,12 +219,12 @@ class myBackpropTrainer(myTrainer):
                 # one update is always done
                 bestverr = validationErrors[-1]
                 bestweights = self.module.params.copy()
-            
+
             if maxEpochs != None and epochs >= maxEpochs:
                 self.module.params[:] = bestweights
                 break
             epochs += 1
-            
+
             if len(validationErrors) >= continueEpochs * 2:
                 # have the validation errors started going up again?
                 # compare the average of the last few to the previous few
