@@ -1,24 +1,23 @@
 import xml.etree.ElementTree as ET
 import glob
-from pybrain.tools.xml.networkreader import NetworkReader
+from myBackProp import myBackpropTrainer
+
 from pybrain.datasets import SupervisedDataSet
+from pybrain.tools.shortcuts import buildNetwork
+from pybrain.structure import SigmoidLayer, LSTMLayer
+from pybrain.tools.xml.networkwriter import NetworkWriter
+from pybrain.tools.validation import Validator
+
+import matplotlib.pyplot as mpl
 
 get_bin = lambda x: x >= 0 and str(bin(x))[2:] or "-" + str(bin(x))[3:]
 
-
-def create_hashes():
-    global kv, step_kv, dur_kv
+# hash for the duration's codification
+def create_hash():
+    global kv
     kv = {'4096': '0000', '3072': '0011', '2048': '0010', '1536': '0101', '1024': '0100',
           '768': '0111', '512': '0110', '384': '1001', '256': '1000', '192': '1011', '128': '1010',
           '64': '1100'}
-    step_kv = {'0000': 'A', '0001': 'A#', '0010': 'B', '0011': 'C', '0100': 'C#', '0101': 'D', '0111': 'D#', '1000': 'E',
-               '1001': 'F', '1010': 'F#', '1010': 'G', '1011': 'G#'}
-
-def ret_Characters(string):
-    return (
-        string[0], string[1], string[2], string[3], string[4], string[5], string[6], string[7], string[8], string[9],
-        string[10])
-
 
 class Pitch(object):
     step = None
@@ -81,14 +80,12 @@ class Pitch(object):
     def octave_decode(self, text):
         self.octave = int(bin(text))
 
-
 class Note(object):
     def __init__(self, note, division):
         self.pitch = Pitch(note.find('pitch'))
         self.duration = note.find('duration')
         self.type_ = note.find('type')
         self.division = division
-        # self.st = step_time
 
     # return true if is a pause, false elsewhere
     @property
@@ -101,13 +98,11 @@ class Note(object):
 
     # return the duration's code. If there's an error return 111-1 (not a note)
     def print_duration_code(self):
-        # for i in self.st:
-        #     if i[0] == self.duration.text:
-        #         return ("%04s" % i[1])
         if self.duration.text in kv:
             return kv[self.duration.text]
         else:
             return "1111"
+
 
     def encode(self):
         return self.pitch.print_octave_code() + self.pitch.print_step_code() + self.print_duration_code()
@@ -116,43 +111,3 @@ class Note(object):
         self.pitch.octave_decode(str[0:2:1])
         self.pitch.step_decode(str[3:6:1])
         self.duration_decode(str[7:10:1])
-
-
-def main():
-    division = 4096.
-    # load the network, trained before
-    rnn = NetworkReader.readFrom('weights.xml')
-    files = glob.glob("../files/toGenerate/*.xml")
-    input_notes = ()
-    create_hashes()
-
-    # creating the input for the net
-    i = 0
-    for file in files:
-        print "\nfile: " + file
-        tree = ET.parse(file)
-        # notes = [Note(note, division, step_time) for note in tree.findall('.//note')]
-        notes = [Note(note, division) for note in tree.findall('.//note')]
-        for note in notes:
-            if i < rnn.indim / 11:
-                i += 1
-            else:
-                break
-            tmp = note.encode()
-            for x in range(11):
-                input_notes += (tmp[x],)
-
-    # generating new notes! ( :D)
-    for i in range(10):
-        otp = rnn.activate(
-            input_notes[(i * 11):(rnn.indim + 11 * i):1])  # takes the last rnn.indim notes to activate the netwotk
-        for i in range(len(otp)):
-            otp[i] = abs(round(otp[i]))
-        # print otp
-        input_notes += tuple(otp)
-
-    # decodification of all the notes in input_notes
-
-
-if __name__ == "__main__":
-    main()

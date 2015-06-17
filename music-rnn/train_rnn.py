@@ -307,7 +307,7 @@ def main():
     # creating the datasets
     ds = []
     dstest = []
-    n_input = 99
+    n_input = 88
     n_output = 11
 
     create_db(ds, dstest, n_input, n_output, codecs, tests)
@@ -323,7 +323,7 @@ def main():
     x = []
     print "start training"
     for i in range(len(ds)):
-        x += trainer.trainOnDataset(ds[i], 50)
+        x += trainer.trainOnDataset(ds[i], 70)
     print "finish training"
 
     NetworkWriter.writeToFile(rnn, 'weights.xml')
@@ -334,7 +334,9 @@ def main():
         activations = []
         targets = []
         for inp, out in dstest[i]:
-            activations.append(rnn.activate(inp))
+            t = rnn.activate(inp)
+            print t
+            activations.append(t)
             targets.append(out)
             # print rnn.activate(inp), '\n', out
         targets = [out for inp, out in dstest[i]]
