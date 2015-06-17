@@ -1,122 +1,16 @@
 import xml.etree.ElementTree as ET
 import glob
 from pybrain.tools.xml.networkreader import NetworkReader
-from pybrain.datasets import SupervisedDataSet
+from classes import Note
+# from pybrain.datasets import SupervisedDataSet
 
 get_bin = lambda x: x >= 0 and str(bin(x))[2:] or "-" + str(bin(x))[3:]
 
-
-def create_hashes():
-    global kv, step_kv, dur_kv
-    kv = {'4096': '0000', '3072': '0011', '2048': '0010', '1536': '0101', '1024': '0100',
-          '768': '0111', '512': '0110', '384': '1001', '256': '1000', '192': '1011', '128': '1010',
-          '64': '1100'}
-    step_kv = {'0000': 'A', '0001': 'A#', '0010': 'B', '0011': 'C', '0100': 'C#', '0101': 'D', '0111': 'D#', '1000': 'E',
-               '1001': 'F', '1010': 'F#', '1010': 'G', '1011': 'G#'}
 
 def ret_Characters(string):
     return (
         string[0], string[1], string[2], string[3], string[4], string[5], string[6], string[7], string[8], string[9],
         string[10])
-
-
-class Pitch(object):
-    step = None
-    alter = None
-
-    def __init__(self, pitch):  # pitch contructor
-        if pitch is not None:
-            self.step = pitch.find('step')
-            self.octave = pitch.find('octave')
-            self.alter = pitch.find('alter')
-
-    @property  # return true if is a pause, false elsewhere
-    def is_pause(self):
-        return self.step is None
-
-    @property  # return true if the pitch is not altered, false elsewhere
-    def not_alter(self):
-        return self.alter is None
-
-    # return 1111 if is a pause, in the other cases return the code of the step
-    def print_step_code(self):
-        if self.is_pause:
-            return "1111"
-        elif self.not_alter:
-            if self.step.text == "A" or self.step.text == "B":
-                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65) % 7)))
-            elif self.step.text == "C" or self.step.text == "D" or self.step.text == "E":
-                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65) % 7 - 1)))
-            else:
-                return "%04d" % int(get_bin((ord(self.step.text) - 65 + (ord(self.step.text) - 65) % 7 - 2)))
-        else:
-            if self.step.text == "A" or self.step.text == "B":
-                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65) % 7)))
-            elif self.step.text == "C" or self.step.text == "D" or self.step.text == "E":
-                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65) % 7 - 1)))
-            else:
-                return "%04d" % int(get_bin((ord(self.step.text) - 64 + (ord(self.step.text) - 65) % 7 - 2)))
-
-    # decode of the note
-    def step_decode(self, text):
-        if text == "1111":
-            self.is_pause = None
-        else:
-            tmp = step_kv[text]
-            if len(tmp) > 1:
-                self.alter = True
-                self.step = tmp[0:1:1]
-            else:
-                self.alter = None
-                self.step = tmp
-
-    # return 111 if is a pause, elsewhere the code of the step's octave
-    def print_octave_code(self):
-        if self.is_pause:
-            return "111"
-        else:
-            return "%03d" % int(get_bin(ord(self.octave.text) - 48))
-
-    # decode of the octave
-    def octave_decode(self, text):
-        self.octave = int(bin(text))
-
-
-class Note(object):
-    def __init__(self, note, division):
-        self.pitch = Pitch(note.find('pitch'))
-        self.duration = note.find('duration')
-        self.type_ = note.find('type')
-        self.division = division
-        # self.st = step_time
-
-    # return true if is a pause, false elsewhere
-    @property
-    def is_pause(self):
-        return self.pitch.is_pause
-
-    # allows to change the division value
-    def set_division(self, div):
-        self.division = div
-
-    # return the duration's code. If there's an error return 111-1 (not a note)
-    def print_duration_code(self):
-        # for i in self.st:
-        #     if i[0] == self.duration.text:
-        #         return ("%04s" % i[1])
-        if self.duration.text in kv:
-            return kv[self.duration.text]
-        else:
-            return "1111"
-
-    def encode(self):
-        return self.pitch.print_octave_code() + self.pitch.print_step_code() + self.print_duration_code()
-    # TODO: implementig decodification
-    def decode(self, str):
-        self.pitch.octave_decode(str[0:2:1])
-        self.pitch.step_decode(str[3:6:1])
-        self.duration_decode(str[7:10:1])
-
 
 def main():
     division = 4096.
@@ -124,7 +18,15 @@ def main():
     rnn = NetworkReader.readFrom('weights.xml')
     files = glob.glob("../files/toGenerate/*.xml")
     input_notes = ()
-    create_hashes()
+    dur_en_kv = {'4096': '0000', '3072': '0011', '2048': '0010', '1536': '0101', '1024': '0100',
+          '768': '0111', '512': '0110', '384': '1001', '256': '1000', '192': '1011', '128': '1010',
+          '64': '1100'}
+    step_kv = {'0000': 'A', '0001': 'A#', '0010': 'B', '0011': 'C', '0100': 'C#', '0101': 'D', '0110': 'D#', '0111': 'E',
+               '1000': 'F', '1001': 'F#', '1010': 'G', '1011': 'G#'}
+
+    dur_dec_kv = {'0000': '4096', '0011': '3072', '0010': '2048', '0101': '1536', '0100': '1024',
+          '0111': '768', '0110': '512', '1001': '384', '1000': '256', '1011': '192', '1010': '128',
+          '1100': '64'}
 
     # creating the input for the net
     i = 0
@@ -138,20 +40,19 @@ def main():
                 i += 1
             else:
                 break
-            tmp = note.encode()
+            tmp = note.encode(dur_en_kv)
             for x in range(11):
                 input_notes += (tmp[x],)
 
-    # generating new notes! ( :D)
+    # generating new notes! (yeah :D)
     for i in range(10):
         otp = rnn.activate(
             input_notes[(i * 11):(rnn.indim + 11 * i):1])  # takes the last rnn.indim notes to activate the netwotk
         for i in range(len(otp)):
             otp[i] = abs(round(otp[i]))
-        # print otp
         input_notes += tuple(otp)
 
-    # decodification of all the notes in input_notes
+    # decodification of all the notes in input_notes and musicXML creation
 
 
 if __name__ == "__main__":
