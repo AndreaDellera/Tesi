@@ -1,9 +1,9 @@
+__author__ = 'Andrea'
+
 import xml.etree.ElementTree as ET
 import glob
 from myBackProp import myBackpropTrainer
 from classes import Note
-
-
 from pybrain.datasets import SupervisedDataSet
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.structure import SigmoidLayer, LSTMLayer
@@ -189,6 +189,7 @@ def ret_Characters(string):
 def main():
     # number of pitches in every note normalized by max value
     division = 4096.
+    # hash table for encoding the duration
     kv = {'4096': '0000', '3072': '0011', '2048': '0010', '1536': '0101', '1024': '0100',
           '768': '0111', '512': '0110', '384': '1001', '256': '1000', '192': '1011', '128': '1010',
           '64': '1100'}
@@ -224,14 +225,15 @@ def main():
         i += 1
 
     # creating the datasets
-    ds = []
-    dstest = []
+    ds_train = [] # array of train datasets
+    ds_test = [] # array of test datasets
     n_input = 88
     n_output = 11
 
-    create_db(ds, dstest, n_input, n_output, codecs, tests)
+    # creation of the datasets based on the number of input
+    create_db(ds_train, ds_test, n_input, n_output, codecs, tests)
 
-    # import pdb; pdb.set_trace()
+    del files, codecs, tests
 
     # creating the network
     # without hidden layers the network does not works properly
@@ -239,47 +241,39 @@ def main():
     # if verbose == True then print "Total error:", MSE / ponderation
     trainer = myBackpropTrainer(rnn, learningrate=0.01, momentum=0.99, verbose=False, weightdecay=False)
 
+
     x = []
     print "start training"
-    for i in range(len(ds)):
-        x += trainer.trainOnDataset(ds[i], 70)
+    for i in range(len(ds_train)):
+        x += trainer.trainOnDataset(ds_train[i], 70)
     print "finish training"
 
     NetworkWriter.writeToFile(rnn, 'weights.xml')
 
     mse = Validator()
-    print len(dstest)
-    for i in range(len(dstest)):
+    print len(ds_test)
+    for i in range(len(ds_test)):
         activations = []
         targets = []
-        for inp, out in dstest[i]:
+        for inp, out in ds_test[i]:
             activations.append(rnn.activate(inp))
             targets.append(out)
             # print rnn.activate(inp), '\n', out
-        targets = [out for inp, out in dstest[i]]
+        targets = [out for inp, out in ds_test[i]]
         print i, "                  ", mse.MSE(activations, targets)
-
-    # output's decode
-
-    # creation of the new music xml
-    # noteValue = durationValue = stepValue = alterValue = octaveValue = 0
-    # print noteValue, durationValue, stepValue, alterValue, octaveValue
 
     y = []
     print "start testing"
-    for i in range(len(dstest)):
-        y += trainer.testOnData(dstest[i], verbose=False)
+    for i in range(len(ds_test)):
+        y += trainer.testOnData(ds_test[i], verbose=False)
         # print "testing on ", i, "\n"
     print "finish testing"
 
-    # print dstest[0].getSample(0)[0]
-    # print rnn.activate(dstest[0].getSample(0)[0]) - rnn.activate(dstest[0].getSample(0)[0])
-
-    mpl.plot(range(len(x)), x)
-    mpl.show()
-
-    mpl.plot(range(len(y)), y)
-    mpl.show()
+    # mpl.plot(range(len(x)), x)
+    # mpl.show()
+    #
+    # mpl.plot(range(len(y)), y)
+    # mpl.show()
 
     rnn.reset()
 
