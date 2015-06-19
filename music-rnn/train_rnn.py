@@ -75,18 +75,6 @@ def main():
         x += trainer.trainOnDataset(ds_train[i], 50)
     print "finish training"
 
-    # mse = Validator()
-    # print len(ds_test)
-    # for i in range(len(ds_test)):
-    #     activations = []
-    #     targets = []
-    #     for inp, out in ds_test[i]:
-    #         activations.append(rnn.activate(inp))
-    #         targets.append(out)
-    #         # print rnn.activate(inp), '\n', out
-    #     targets = [out for inp, out in ds_test[i]]
-    #     # print i, "                  ", mse.MSE(activations, targets)
-
     y = []
     print "start testing"
     for i in range(len(ds_test)):
@@ -95,6 +83,7 @@ def main():
     print "finish testing"
     # cval = CrossValidator(trainer, ds_train[0], 10).validate()
     # print cval
+
 
     NetworkWriter.writeToFile(rnn, 'weights.xml')
 

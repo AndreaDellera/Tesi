@@ -2,20 +2,22 @@ __author__ = 'Andrea'
 
 import xml.etree.ElementTree as ET
 
+
 def indent(elem, level=0):
-  i = "\n" + level*"  "
-  if len(elem):
-    if not elem.text or not elem.text.strip():
-      elem.text = i + "  "
-    if not elem.tail or not elem.tail.strip():
-      elem.tail = i
-    for elem in elem:
-      indent(elem, level+1)
-    if not elem.tail or not elem.tail.strip():
-      elem.tail = i
-  else:
-    if level and (not elem.tail or not elem.tail.strip()):
-      elem.tail = i
+    i = "\n" + level * "  "
+    if len(elem):
+        if not elem.text or not elem.text.strip():
+            elem.text = i + "  "
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+        for elem in elem:
+            indent(elem, level + 1)
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+    else:
+        if level and (not elem.tail or not elem.tail.strip()):
+            elem.tail = i
+
 
 def create_music_xml(dec_notes, division=1024, name='output.xml'):
     tree = ET.parse('../files/toGenerate/EmptyXML.xml')
@@ -24,7 +26,8 @@ def create_music_xml(dec_notes, division=1024, name='output.xml'):
     n_measure = 1
     strings = {1: 'E', 2: 'A', 3: 'D', 4: 'G', 5: 'B', 6: 'E'}
     oct = {1: '2', 2: '2', 3: '3', 4: '3', 5: '3', 6: '4'}
-    type = {4096: 'whole', 3072: 'half', 2048: 'half', 1536: 'quarter', 1024: 'quarter', 768: 'eighth', 512: 'eighth', 256: '16th', 192: '32th', 128: '32th', 96: '64th'}
+    type = {4096: 'whole', 3072: 'half', 2048: 'half', 1536: 'quarter', 1024: 'quarter', 768: 'eighth', 512: 'eighth',
+            256: '16th', 192: '32th', 128: '32th', 96: '64th'}
     while i < len(dec_notes):
         # structure of the measure
         measure = ET.SubElement(part, 'measure', {'number': str(n_measure)})
@@ -35,7 +38,7 @@ def create_music_xml(dec_notes, division=1024, name='output.xml'):
         if n_measure == 1:
             tmp = ET.SubElement(att, 'division')
             tmp.text = str(division)
-        #     <key>
+        # <key>
         #       <fifths>0</fifths>
         #       <mode>major</mode>
         #     </key>
@@ -80,28 +83,27 @@ def create_music_xml(dec_notes, division=1024, name='output.xml'):
             #     </pitch>
             pitch = ET.SubElement(note, 'pitch')
 
-            if dec_notes[i][1] != 'pause': # nota
+            if dec_notes[i][1] != 'pause':  # nota
                 tmp = ET.SubElement(pitch, 'step')
                 tmp.text = dec_notes[i][1][1]
-                # ET.SubElement(pitch, 'xs:element name="alter" type="xs:decimal"')
                 tmp = ET.SubElement(pitch, 'alter')
                 if dec_notes[i][1][0]:
                     tmp.text = "1"
                 tmp = ET.SubElement(pitch, 'octave')
                 tmp.text = str(dec_notes[i][0])
-            else: # pausa
+            else:  # pausa
                 ET.SubElement(note, 'rest')
 
-            #     <duration>512</duration>
+            # <duration>512</duration>
             tmp = ET.SubElement(note, 'duration')
             tmp.text = str(dec_notes[i][2])
+
             #     <voice>0</voice>
             tmp = ET.SubElement(note, 'voice')
             tmp.text = '1'
+
             #     <type>eighth</type>
-            # #       <dynamics>
-            # #         <f/>
-            # #       </dynamics>
+            #       <sharp>1<\sharp>
             tmp = ET.SubElement(note, 'type')
             tmp.text = type[dec_notes[i][2]]
             if dec_notes[i][1][0]:
@@ -109,21 +111,15 @@ def create_music_xml(dec_notes, division=1024, name='output.xml'):
                 tmp.text = "sharp"
             if dec_notes[i][2] in (3072, 1536, 768, 384, 192):
                 ET.SubElement(note, 'dot')
-            # dyn = ET.SubElement(note, 'dynamics')
-            # ET.SubElement(dyn, 'f')
             # </note>
 
             totDuration += dec_notes[i][2]
-            if i >= len(dec_notes):
-                complete_measure = True
             i += 1
-        # complete the last measure if it is not full
-        # if complete_measure
+            
     indent(tree.getroot())
     del strings, oct, i
 
     with open(name, 'w') as f:
-        f.write('<?xml version="1.0" encoding="UTF-8" ?>\n<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 2.0 Partwise//EN" "musicxml20/partwise.dtd">\n')
+        f.write('<?xml version="1.0" encoding="UTF-8" ?>\n'
+                '<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 2.0 Partwise//EN" "musicxml20/partwise.dtd">\n')
         tree.write(f, encoding='utf-8', method="xml")
-
-    # tree.write(name, xml_declaration=True, encoding='utf-8', method="xml")
