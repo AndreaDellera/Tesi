@@ -49,9 +49,6 @@ class Pitch(object):
         else:
             return "%03d" % int(get_bin(ord(self.octave.text) - 48))
 
-
-
-
 class Note(object):
     def __init__(self, note=None, division=4096):
         self.pitch = Pitch(note.find('pitch'))

@@ -1,4 +1,5 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 2.0 Partwise//EN" "musicxml20/partwise.dtd">
 <score-partwise>
   <movement-title />
   <identification>
@@ -33,7 +34,6 @@
   <part id="p0">
     <measure number="1">
       <attributes>
-        <division>1024</division>
         <key>
           <fifths>0</fifths>
           <mode>major</mode>
@@ -47,56 +47,62 @@
           <sign>G</sign>
           <line>2</line>
         </clef>
-        <staff-details>
-          <staff-lines>6</staff-lines>
-          <staff-tuning line="1">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="2">
-            <tuning-step>A</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="3">
-            <tuning-step>D</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="4">
-            <tuning-step>G</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="5">
-            <tuning-step>B</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="6">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>4</tuning-octave>
-          </staff-tuning>
-        </staff-details>
       </attributes>
       <note>
         <pitch>
-          <step>G</step>
+          <step>C</step>
+          <alter />
           <octave>5</octave>
         </pitch>
-        <alter>1</alter>
+        <duration>768</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+        <dot />
+      </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter />
+          <octave>4</octave>
+        </pitch>
         <duration>512</duration>
-        <voice>0</voice>
+        <voice>1</voice>
+        <type>eighth</type>
       </note>
       <note>
         <pitch>
           <step>A</step>
+          <alter />
           <octave>4</octave>
         </pitch>
-        <alter />
-        <duration>512</duration>
-        <voice>0</voice>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <alter />
+          <octave>4</octave>
+        </pitch>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+      </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <alter />
+          <octave>4</octave>
+        </pitch>
+        <duration>768</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+        <dot />
       </note>
     </measure>
     <measure number="2">
       <attributes>
-        <division>1024</division>
         <key>
           <fifths>0</fifths>
           <mode>major</mode>
@@ -110,56 +116,62 @@
           <sign>G</sign>
           <line>2</line>
         </clef>
-        <staff-details>
-          <staff-lines>6</staff-lines>
-          <staff-tuning line="1">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="2">
-            <tuning-step>A</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="3">
-            <tuning-step>D</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="4">
-            <tuning-step>G</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="5">
-            <tuning-step>B</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="6">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>4</tuning-octave>
-          </staff-tuning>
-        </staff-details>
       </attributes>
       <note>
         <pitch>
-          <step>C</step>
-          <octave>5</octave>
+          <step>G</step>
+          <alter />
+          <octave>4</octave>
         </pitch>
-        <alter>1</alter>
         <duration>512</duration>
-        <voice>0</voice>
+        <voice>1</voice>
+        <type>eighth</type>
       </note>
       <note>
         <pitch>
-          <step>D</step>
-          <octave>5</octave>
+          <step>A</step>
+          <alter />
+          <octave>4</octave>
         </pitch>
-        <alter>1</alter>
-        <duration>512</duration>
-        <voice>0</voice>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter />
+          <octave>4</octave>
+        </pitch>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
       </note>
     </measure>
     <measure number="3">
       <attributes>
-        <division>1024</division>
         <key>
           <fifths>0</fifths>
           <mode>major</mode>
@@ -173,56 +185,52 @@
           <sign>G</sign>
           <line>2</line>
         </clef>
-        <staff-details>
-          <staff-lines>6</staff-lines>
-          <staff-tuning line="1">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="2">
-            <tuning-step>A</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="3">
-            <tuning-step>D</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="4">
-            <tuning-step>G</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="5">
-            <tuning-step>B</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="6">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>4</tuning-octave>
-          </staff-tuning>
-        </staff-details>
       </attributes>
       <note>
         <pitch>
           <step>F</step>
-          <octave>5</octave>
+          <alter />
+          <octave>3</octave>
         </pitch>
-        <alter>1</alter>
-        <duration>512</duration>
-        <voice>0</voice>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
       </note>
       <note>
         <pitch>
-          <step>A</step>
+          <step>C</step>
+          <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <alter />
-        <duration>512</duration>
-        <voice>0</voice>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter />
+          <octave>4</octave>
+        </pitch>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
       </note>
     </measure>
     <measure number="4">
       <attributes>
-        <division>1024</division>
         <key>
           <fifths>0</fifths>
           <mode>major</mode>
@@ -236,56 +244,50 @@
           <sign>G</sign>
           <line>2</line>
         </clef>
-        <staff-details>
-          <staff-lines>6</staff-lines>
-          <staff-tuning line="1">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="2">
-            <tuning-step>A</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="3">
-            <tuning-step>D</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="4">
-            <tuning-step>G</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="5">
-            <tuning-step>B</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="6">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>4</tuning-octave>
-          </staff-tuning>
-        </staff-details>
       </attributes>
       <note>
         <pitch>
           <step>C</step>
-          <octave>5</octave>
+          <alter />
+          <octave>4</octave>
         </pitch>
-        <alter>1</alter>
-        <duration>512</duration>
-        <voice>0</voice>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
       </note>
       <note>
         <pitch>
           <step>D</step>
-          <octave>5</octave>
+          <alter />
+          <octave>4</octave>
         </pitch>
-        <alter>1</alter>
+        <duration>1024</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+      </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <alter />
+          <octave>4</octave>
+        </pitch>
         <duration>512</duration>
-        <voice>0</voice>
+        <voice>1</voice>
+        <type>eighth</type>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter />
+          <octave>4</octave>
+        </pitch>
+        <duration>2048</duration>
+        <voice>1</voice>
+        <type>half</type>
       </note>
     </measure>
     <measure number="5">
       <attributes>
-        <division>1024</division>
         <key>
           <fifths>0</fifths>
           <mode>major</mode>
@@ -299,56 +301,60 @@
           <sign>G</sign>
           <line>2</line>
         </clef>
-        <staff-details>
-          <staff-lines>6</staff-lines>
-          <staff-tuning line="1">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="2">
-            <tuning-step>A</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="3">
-            <tuning-step>D</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="4">
-            <tuning-step>G</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="5">
-            <tuning-step>B</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="6">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>4</tuning-octave>
-          </staff-tuning>
-        </staff-details>
       </attributes>
       <note>
         <pitch>
-          <step>G</step>
-          <octave>5</octave>
+          <step>A</step>
+          <alter />
+          <octave>4</octave>
         </pitch>
-        <alter>1</alter>
         <duration>512</duration>
-        <voice>0</voice>
+        <voice>1</voice>
+        <type>eighth</type>
       </note>
       <note>
         <pitch>
-          <step>A</step>
+          <step>E</step>
+          <alter />
           <octave>4</octave>
         </pitch>
-        <alter />
         <duration>512</duration>
-        <voice>0</voice>
+        <voice>1</voice>
+        <type>eighth</type>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter />
+          <octave>4</octave>
+        </pitch>
+        <duration>512</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter />
+          <octave>4</octave>
+        </pitch>
+        <duration>2048</duration>
+        <voice>1</voice>
+        <type>half</type>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter />
+          <octave>3</octave>
+        </pitch>
+        <duration>2048</duration>
+        <voice>1</voice>
+        <type>half</type>
       </note>
     </measure>
     <measure number="6">
       <attributes>
-        <division>1024</division>
         <key>
           <fifths>0</fifths>
           <mode>major</mode>
@@ -362,177 +368,40 @@
           <sign>G</sign>
           <line>2</line>
         </clef>
-        <staff-details>
-          <staff-lines>6</staff-lines>
-          <staff-tuning line="1">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="2">
-            <tuning-step>A</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="3">
-            <tuning-step>D</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="4">
-            <tuning-step>G</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="5">
-            <tuning-step>B</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="6">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>4</tuning-octave>
-          </staff-tuning>
-        </staff-details>
       </attributes>
       <note>
         <pitch>
           <step>C</step>
-          <octave>5</octave>
+          <alter />
+          <octave>3</octave>
         </pitch>
-        <alter>1</alter>
-        <duration>512</duration>
-        <voice>0</voice>
+        <duration>1536</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot />
       </note>
       <note>
         <pitch>
-          <step>C</step>
+          <step>E</step>
+          <alter />
           <octave>5</octave>
         </pitch>
-        <alter>1</alter>
-        <duration>512</duration>
-        <voice>0</voice>
+        <duration>1536</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot />
       </note>
-    </measure>
-    <measure number="7">
-      <attributes>
-        <division>1024</division>
-        <key>
-          <fifths>0</fifths>
-          <mode>major</mode>
-        </key>
-        <time>
-          <beats>4</beats>
-          <beat-type>4</beat-type>
-        </time>
-        <staves>1</staves>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
-        <staff-details>
-          <staff-lines>6</staff-lines>
-          <staff-tuning line="1">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="2">
-            <tuning-step>A</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="3">
-            <tuning-step>D</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="4">
-            <tuning-step>G</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="5">
-            <tuning-step>B</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="6">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>4</tuning-octave>
-          </staff-tuning>
-        </staff-details>
-      </attributes>
       <note>
         <pitch>
           <step>G</step>
+          <alter>1</alter>
           <octave>5</octave>
         </pitch>
-        <alter>1</alter>
-        <duration>512</duration>
-        <voice>0</voice>
-      </note>
-      <note>
-        <pitch>
-          <step>A</step>
-          <octave>4</octave>
-        </pitch>
-        <alter />
-        <duration>512</duration>
-        <voice>0</voice>
-      </note>
-    </measure>
-    <measure number="8">
-      <attributes>
-        <division>1024</division>
-        <key>
-          <fifths>0</fifths>
-          <mode>major</mode>
-        </key>
-        <time>
-          <beats>4</beats>
-          <beat-type>4</beat-type>
-        </time>
-        <staves>1</staves>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
-        <staff-details>
-          <staff-lines>6</staff-lines>
-          <staff-tuning line="1">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="2">
-            <tuning-step>A</tuning-step>
-            <tuning-octave>2</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="3">
-            <tuning-step>D</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="4">
-            <tuning-step>G</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="5">
-            <tuning-step>B</tuning-step>
-            <tuning-octave>3</tuning-octave>
-          </staff-tuning>
-          <staff-tuning line="6">
-            <tuning-step>E</tuning-step>
-            <tuning-octave>4</tuning-octave>
-          </staff-tuning>
-        </staff-details>
-      </attributes>
-      <note>
-        <pitch>
-          <step>C</step>
-          <octave>5</octave>
-        </pitch>
-        <alter>1</alter>
-        <duration>512</duration>
-        <voice>0</voice>
-      </note>
-      <note>
-        <pitch>
-          <step>A</step>
-          <octave>5</octave>
-        </pitch>
-        <alter />
-        <duration>512</duration>
-        <voice>0</voice>
+        <duration>1536</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
+        <dot />
       </note>
     </measure>
   </part>

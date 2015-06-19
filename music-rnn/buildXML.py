@@ -17,14 +17,14 @@ def indent(elem, level=0):
     if level and (not elem.tail or not elem.tail.strip()):
       elem.tail = i
 
-def create_music_xml(dec_notes, division, name):
+def create_music_xml(dec_notes, division=1024, name='output.xml'):
     tree = ET.parse('../files/toGenerate/EmptyXML.xml')
     part = tree.find('.//part')
     i = 0
     n_measure = 1
     strings = {1: 'E', 2: 'A', 3: 'D', 4: 'G', 5: 'B', 6: 'E'}
     oct = {1: '2', 2: '2', 3: '3', 4: '3', 5: '3', 6: '4'}
-    type = {4096: 'whole', 3072: 'half', 2048: 'half', 1536: 'quarter', 1024: 'quarter', 768: 'eight', 512: 'eight', 256: '16th'}
+    type = {4096: 'whole', 3072: 'half', 2048: 'half', 1536: 'quarter', 1024: 'quarter', 768: 'eighth', 512: 'eighth', 256: '16th', 192: '32th', 128: '32th', 96: '64th'}
     while i < len(dec_notes):
         # structure of the measure
         measure = ET.SubElement(part, 'measure', {'number': str(n_measure)})
@@ -32,8 +32,9 @@ def create_music_xml(dec_notes, division, name):
         # <attributes>
         #     <divisions>1024</divisions>
         att = ET.SubElement(measure, 'attributes')
-        tmp = ET.SubElement(att, 'division')
-        tmp.text = str(1024)
+        if n_measure == 1:
+            tmp = ET.SubElement(att, 'division')
+            tmp.text = str(division)
         #     <key>
         #       <fifths>0</fifths>
         #       <mode>major</mode>
@@ -64,32 +65,11 @@ def create_music_xml(dec_notes, division, name):
         tmp.text = "G"
         tmp = ET.SubElement(clef, 'line')
         tmp.text = str(2)
-        #     <staff-details>
-        #       <staff-lines>6</staff-lines>
-        #       <staff-tuning line="1">
-        #         <tuning-step>E</tuning-step>
-        #         <tuning-octave>2</tuning-octave>
-        #       </staff-tuning>
-        # ....
-        #       <staff-tuning line="6">
-        #         <tuning-step>E</tuning-step>
-        #         <tuning-octave>4</tuning-octave>
-        #       </staff-tuning>
-        #     </staff-details>
-        staffD = ET.SubElement(att, 'staff-details')
-        tmp = ET.SubElement(staffD, 'staff-lines')
-        tmp.text = str(6)
-        for j in range(6):
-            staffT = ET.SubElement(staffD, 'staff-tuning', {'line': str(j + 1)})
-            tmp = ET.SubElement(staffT, 'tuning-step')
-            tmp.text = strings[j + 1]
-            tmp = ET.SubElement(staffT, 'tuning-octave')
-            tmp. text = oct[j + 1]
         # </attributes>
         totDuration = 0
         complete_measure = False
         # putting the notes in the measure
-        while totDuration < division and i < len(dec_notes):
+        while totDuration < division * 4 and i < len(dec_notes):
             # <note>
 
             note = ET.SubElement(measure, 'note')
@@ -99,27 +79,36 @@ def create_music_xml(dec_notes, division, name):
             #       <octave>5</octave>
             #     </pitch>
             pitch = ET.SubElement(note, 'pitch')
-            tmp = ET.SubElement(pitch, 'step')
-            tmp.text = dec_notes[i][1][1]
-            tmp = ET.SubElement(pitch, 'octave')
-            tmp.text = str(dec_notes[i][0])
-            tmp = ET.SubElement(note, 'alter')
-            if dec_notes[i][1][0]:
-                tmp.text = '1'
+
+            if dec_notes[i][1] != 'pause': # nota
+                tmp = ET.SubElement(pitch, 'step')
+                tmp.text = dec_notes[i][1][1]
+                # ET.SubElement(pitch, 'xs:element name="alter" type="xs:decimal"')
+                tmp = ET.SubElement(pitch, 'alter')
+                if dec_notes[i][1][0]:
+                    tmp.text = "1"
+                tmp = ET.SubElement(pitch, 'octave')
+                tmp.text = str(dec_notes[i][0])
+            else: # pausa
+                ET.SubElement(note, 'rest')
+
             #     <duration>512</duration>
             tmp = ET.SubElement(note, 'duration')
             tmp.text = str(dec_notes[i][2])
             #     <voice>0</voice>
             tmp = ET.SubElement(note, 'voice')
-            tmp.text = '0'
-            # #     <type>eighth</type>
+            tmp.text = '1'
+            #     <type>eighth</type>
             # #       <dynamics>
             # #         <f/>
             # #       </dynamics>
-            # tmp = ET.SubElement(note, 'type')
-            # tmp.text = type[dec_notes[i][2]]
-            # if dec_notes[i][2] in (3072, 1536, 768, 384, 192):
-            #     ET.SubElement(note, 'dot')
+            tmp = ET.SubElement(note, 'type')
+            tmp.text = type[dec_notes[i][2]]
+            if dec_notes[i][1][0]:
+                tmp = ET.SubElement(note, 'accidental')
+                tmp.text = "sharp"
+            if dec_notes[i][2] in (3072, 1536, 768, 384, 192):
+                ET.SubElement(note, 'dot')
             # dyn = ET.SubElement(note, 'dynamics')
             # ET.SubElement(dyn, 'f')
             # </note>
@@ -132,4 +121,9 @@ def create_music_xml(dec_notes, division, name):
         # if complete_measure
     indent(tree.getroot())
     del strings, oct, i
-    tree.write(name, xml_declaration=True, encoding='utf-8', method="xml")
+
+    with open(name, 'w') as f:
+        f.write('<?xml version="1.0" encoding="UTF-8" ?>\n<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 2.0 Partwise//EN" "musicxml20/partwise.dtd">\n')
+        tree.write(f, encoding='utf-8', method="xml")
+
+    # tree.write(name, xml_declaration=True, encoding='utf-8', method="xml")
