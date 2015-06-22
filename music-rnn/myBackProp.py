@@ -155,7 +155,7 @@ class myBackpropTrainer(myTrainer):
             print 'Average error:', avgErr
             print ('Max error:', max(ponderatedErrors), 'Median error:',
                    sorted(ponderatedErrors)[len(errors) / 2])
-        return errors
+        return ponderatedErrors
 
     def testOnClassData(self, dataset=None, verbose=False,
                         return_targets=False):

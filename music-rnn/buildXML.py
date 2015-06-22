@@ -27,7 +27,7 @@ def create_music_xml(dec_notes, division=1024, name='output.xml'):
     strings = {1: 'E', 2: 'A', 3: 'D', 4: 'G', 5: 'B', 6: 'E'}
     oct = {1: '2', 2: '2', 3: '3', 4: '3', 5: '3', 6: '4'}
     type = {4096: 'whole', 3072: 'half', 2048: 'half', 1536: 'quarter', 1024: 'quarter', 768: 'eighth', 512: 'eighth',
-            256: '16th', 192: '32th', 128: '32th', 96: '64th'}
+            384: '16th', 256: '16th', 192: '32th', 128: '32th', 96: '64th'}
     while i < len(dec_notes):
         # structure of the measure
         measure = ET.SubElement(part, 'measure', {'number': str(n_measure)})
@@ -70,8 +70,8 @@ def create_music_xml(dec_notes, division=1024, name='output.xml'):
         tmp.text = str(2)
         # </attributes>
         totDuration = 0
-        complete_measure = False
         # putting the notes in the measure
+        # whole_bar = True
         while totDuration < division * 4 and i < len(dec_notes):
             # <note>
 
@@ -96,14 +96,20 @@ def create_music_xml(dec_notes, division=1024, name='output.xml'):
 
             # <duration>512</duration>
             tmp = ET.SubElement(note, 'duration')
+            # if (totDuration + dec_notes[i][2]) <= division:
+            #     print 'nota ok'
             tmp.text = str(dec_notes[i][2])
+            # else:
+            #     tmp.text = str(division * 4 - totDuration)
+            #     # print dec_notes[i][2], ' ', tmp.text
+            #     whole_bar = False
 
-            #     <voice>0</voice>
+            # <voice>0</voice>
             tmp = ET.SubElement(note, 'voice')
             tmp.text = '1'
 
             #     <type>eighth</type>
-            #       <sharp>1<\sharp>
+            #     <sharp>1<\sharp>
             tmp = ET.SubElement(note, 'type')
             tmp.text = type[dec_notes[i][2]]
             if dec_notes[i][1][0]:
@@ -111,11 +117,24 @@ def create_music_xml(dec_notes, division=1024, name='output.xml'):
                 tmp.text = "sharp"
             if dec_notes[i][2] in (3072, 1536, 768, 384, 192):
                 ET.SubElement(note, 'dot')
-            # </note>
+
+            # if not whole_bar:
+            #     tmp = ET.SubElement(note, 'notation')
+            #     ET.SubElement((ET.SubElement(tmp, 'accidental')), 'detached-legato',
+            #                   {'default-x': "0", 'default-y': "6", 'placement': "above"})
+            # # </note>
+            #
+            # totDuration += dec_notes[i][2]
+            # if whole_bar:
+            #     i += 1
+            # else:
+            #     dec_notes[i] = list(dec_notes[i])
+            #     dec_notes[i][2] -= division - totDuration
+            #     dec_notes[i] = tuple(dec_notes[i])
+            #     whole_bar = False
 
             totDuration += dec_notes[i][2]
             i += 1
-            
     indent(tree.getroot())
     del strings, oct, i
 

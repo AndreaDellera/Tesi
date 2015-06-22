@@ -26,9 +26,8 @@ def main():
                  '64': '1100'}
 
     # hash table for decoding the step value
-    step_kv = {'0000': 'A', '0001': 'A#', '0010': 'B', '0011': 'C', '0100': 'C#', '0101': 'D', '0110': 'D#',
-               '0111': 'E',
-               '1000': 'F', '1001': 'F#', '1010': 'G', '1011': 'G#', '1111': None}
+    step_kv = {'0000': 'A', '0001': 'A#', '0010': 'B', '0011': 'C', '0100': 'C#', '0101': 'D', '0110': 'D#', '0111': 'E',
+               '1000': 'F', '1001': 'F#', '1010': 'G', '1011': 'G#', '1100': None, '1101': None, '1110': None, '1111': None}
 
     # hash table for decoding the duration
     dur_dec_kv = {'0000': '4096', '0001': '3072', '0010': '2048', '0011': '1536', '0100': '1024',
@@ -51,7 +50,7 @@ def main():
                 input_notes += (tmp[x],)
 
     # generating new notes! (yeah :D)
-    for i in range(20):
+    for i in range(1000):
         otp = rnn.activate(
             input_notes[(i * 11):(rnn.indim + 11 * i):1])  # takes the last rnn.indim notes to activate the netwotk
         for x in range(len(otp)):

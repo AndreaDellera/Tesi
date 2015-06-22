@@ -8,8 +8,8 @@ from classes import Note
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.structure import SigmoidLayer, LSTMLayer
 from pybrain.tools.xml.networkwriter import NetworkWriter
-from pybrain.tools.validation import Validator, CrossValidator
-
+from random import shuffle
+from pybrain.datasets import SupervisedDataSet
 import matplotlib.pyplot as mpl
 
 # database for different inputs
@@ -55,7 +55,7 @@ def main():
     # creating the datasets
     ds_train = []  # array of train datasets
     ds_test = []  # array of test datasets
-    n_input = 6 * 11
+    n_input = 5 * 11
     n_output = 11
 
     # creation of the datasets based on the number of input
@@ -70,28 +70,39 @@ def main():
     trainer = myBackpropTrainer(rnn, learningrate=0.01, momentum=0.99, verbose=False, weightdecay=False)
 
     x = []
-    print "start training"
-    for i in range(len(ds_train)):
-        x += trainer.trainOnDataset(ds_train[i], 50)
-    print "finish training"
-
     y = []
-    print "start testing"
-    for i in range(len(ds_test)):
-        y += trainer.testOnData(ds_test[i], verbose=False)
-        # print "testing on ", i, "\n"
-    print "finish testing"
-    # cval = CrossValidator(trainer, ds_train[0], 10).validate()
-    # print cval
+
+    print "start training"
+
+    shuffle_ds = SupervisedDataSet(rnn.indim, rnn.outdim)
+    shuffledSequences = []
+    for i in range(len(ds_train)):
+        for seq in ds_train[i]:
+            shuffledSequences.append(seq)
+        shuffle(shuffledSequences)
+        for j in range(len(shuffledSequences)):
+            shuffle_ds.appendLinked(shuffledSequences[j][0], shuffledSequences[j][1])
+
+    ds1, ds2 = shuffle_ds.splitWithProportion(0.9)
+    for i in range(6):
+        x += trainer.trainOnDataset(ds1, 30)
+        # y += trainer.testOnData(ds2, verbose=False)
+
+    print "end training"
+
+    # y = []
+    # print "start testing"
+    # for i in range(len(ds_test)):
+    #     y += trainer.testOnData(ds_test[i], verbose=False)
+    #     # print "testing on ", i, "\n"
+    # print "finish testing"
 
 
     NetworkWriter.writeToFile(rnn, 'weights.xml')
 
-
+    # plot train and test errors
     mpl.plot(range(len(x)), x)
-    # mpl.show()
-    #
-    # mpl.plot(range(len(y)), y)
+    mpl.plot(range(len(y)), y)
     mpl.show()
 
     rnn.reset()

@@ -1,6 +1,6 @@
 __author__ = 'Andrea'
 from pybrain.datasets import SupervisedDataSet
-import classes
+# import classes
 get_bin = lambda x: x >= 0 and str(bin(x))[2:] or "-" + str(bin(x))[3:]
 
 
@@ -10,7 +10,7 @@ def duration_decode(text, dict1):
 
 # returns the duration's code. If there's an error return 111-1 (not a note)
 def code_duration(node, dict1):
-    assert isinstance(node, classes.Note)
+    # assert isinstance(node, classes.Note)
     if node.duration.text in dict1:
         return dict1[node.duration.text]
     else:
@@ -22,7 +22,7 @@ def octave_decode(text):
 
 # returns 111 if is a pause, elsewhere the code of the step's octave
 def code_octave(node):
-    assert isinstance(node, classes.Pitch)
+    # assert isinstance(node, classes.Pitch)
     if node.is_pause:
         return "111"
     else:
@@ -42,7 +42,7 @@ def step_decode(text, dict2):
 
 # returns 1111 if is a pause, in the other cases return the code of the step
 def code_step(node):
-    assert isinstance(node, classes.Pitch)
+    # assert isinstance(node, classes.Pitch)
     if node.is_pause:
         return "1111"
     elif node.not_alter:
@@ -59,9 +59,6 @@ def code_step(node):
             return "%04d" % int(get_bin((ord(node.step.text) - 64 + (ord(node.step.text) - 65) % 7 - 1)))
         else:
             return "%04d" % int(get_bin((ord(node.step.text) - 64 + (ord(node.step.text) - 65) % 7 - 2)))
-
-
-
 
 # decode the network's output
 def decode(note_tuple, dict2, dict1):
