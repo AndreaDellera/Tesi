@@ -27,7 +27,7 @@ def create_music_xml(dec_notes, division=1024, name='output.xml'):
     strings = {1: 'E', 2: 'A', 3: 'D', 4: 'G', 5: 'B', 6: 'E'}
     oct = {1: '2', 2: '2', 3: '3', 4: '3', 5: '3', 6: '4'}
     type = {4096: 'whole', 3072: 'half', 2048: 'half', 1536: 'quarter', 1024: 'quarter', 768: 'eighth', 512: 'eighth',
-            384: '16th', 256: '16th', 192: '32th', 128: '32th', 96: '64th'}
+            384: '16th', 256: '16th', 192: '32th', 128: '32th', 96: '64th', 32: '64th', 48: '64th'}
     while i < len(dec_notes):
         # structure of the measure
         measure = ET.SubElement(part, 'measure', {'number': str(n_measure)})

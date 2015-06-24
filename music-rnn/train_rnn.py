@@ -8,6 +8,7 @@ from classes import Note
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.structure import SigmoidLayer, LSTMLayer
 from pybrain.tools.xml.networkwriter import NetworkWriter
+from pybrain.tools.validation import Validator
 from random import shuffle
 from pybrain.datasets import SupervisedDataSet
 import matplotlib.pyplot as mpl
@@ -40,17 +41,17 @@ def main():
     # list of all test files
     files = glob.glob("../files/test/*.xml")
     tests = []
-    i = 0
-    # extracting all the notes
-    for file in files:
-        tests.append([])
-        print "\nfile: " + file
-        tree = ET.parse(file)
-        notes = [Note(note, division) for note in tree.findall('.//note')]
-        for note in notes:
-            tests[i].append(note.encode(kv))
-            # print note.encode()
-        i += 1
+    # i = 0
+    # # extracting all the notes
+    # for file in files:
+    #     tests.append([])
+    #     print "\nfile: " + file
+    #     tree = ET.parse(file)
+    #     notes = [Note(note, division) for note in tree.findall('.//note')]
+    #     for note in notes:
+    #         tests[i].append(note.encode(kv))
+    #         # print note.encode()
+    #     i += 1
 
     # creating the datasets
     ds_train = []  # array of train datasets
@@ -82,20 +83,22 @@ def main():
         shuffle(shuffledSequences)
         for j in range(len(shuffledSequences)):
             shuffle_ds.appendLinked(shuffledSequences[j][0], shuffledSequences[j][1])
+    print("db shuffled")
 
-    ds1, ds2 = shuffle_ds.splitWithProportion(0.9)
-    for i in range(6):
-        x += trainer.trainOnDataset(ds1, 30)
-        # y += trainer.testOnData(ds2, verbose=False)
-
+    for i in range(1):
+        print "train ", i
+        ds1, ds2 = shuffle_ds.splitWithProportion(0.9)
+        tmp_x = trainer.trainOnDataset(ds1, 50)
+        mse = Validator()
+        activations = []
+        targets = []
+        for inp, out in ds2:
+            activations.append(rnn.activate(inp))
+            targets.append(out)
+        tmp_y = mse.MSE(activations, targets)
+        x.append(sum(tmp_x))
+        y.append(tmp_y)
     print "end training"
-
-    # y = []
-    # print "start testing"
-    # for i in range(len(ds_test)):
-    #     y += trainer.testOnData(ds_test[i], verbose=False)
-    #     # print "testing on ", i, "\n"
-    # print "finish testing"
 
 
     NetworkWriter.writeToFile(rnn, 'weights.xml')
