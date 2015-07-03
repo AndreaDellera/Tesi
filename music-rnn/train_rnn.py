@@ -63,9 +63,10 @@ def main():
     out_test = open("./errors/test_MSE.txt", "w")
     out_valid = open("./errors/valid_MSE.txt", "w")
 
-    rip = 500
-    trainer.descent.momentum -= 0.5
-    trainer.descent.alpha += 0.5
+    rip = 50
+    # trainer.descent.momentum -= 0.5
+    # trainer.descent.alpha += 0.5
+    prev_err = 1000
     for i in range(rip):
         shuffle_ds = SupervisedDataSet(rnn.indim, rnn.outdim)
         shuffle(shuffledSequences)
@@ -85,12 +86,20 @@ def main():
             activations.append(rnn.activate(inp))
             targets.append(out)
         val = validator.MSE(activations, targets)
+        if val < prev_err:
+            prev_err = val
+            trainer.descent.alpha -= trainer.descent.alpha / 100
+        # elif val > prev_err:
+        #     prev_err = val
+        #     trainer.descent.alpha -= trainer.descent.alpha / 2
         out_train.write(str(sum(tmp_train) / len(tmp_train)) + '\n')
         out_valid.write(str(val) + '\n')
-        out_test.write(str(sum(tmp_test) / len(tmp_test)) + '\n')
+        # out_test.write(str(sum(tmp_test) / len(tmp_test)) + '\n')
+        out_test.write(str(tmp_test) + '\n')
 
-        trainer.descent.momentum += 0.5 / rip
-        trainer.descent.alpha -= 0.5 / rip
+
+        # trainer.descent.momentum += 0.5 / rip
+
     out_train.close()
     out_test.close()
     out_valid.close()
