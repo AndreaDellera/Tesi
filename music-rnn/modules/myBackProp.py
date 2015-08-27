@@ -1,3 +1,4 @@
+from numpy.core.umath import isnan
 from scipy import dot, argmax
 from random import shuffle
 
@@ -13,7 +14,7 @@ class myBackpropTrainer(myTrainer):
 
     def __init__(self, module, dataset=None, learningrate=0.01, lrdecay=1.0,
                  momentum=0., verbose=False, batchlearning=False,
-                 weightdecay=0.):
+                 weightdecay=0., recurrent=False):
         """Create a BackpropTrainer to train the specified `module` on the 
         specified `dataset`.
         
@@ -42,6 +43,7 @@ class myBackpropTrainer(myTrainer):
         self.descent.momentum = momentum
         self.descent.alphadecay = lrdecay
         self.descent.init(module.params)
+        self.recurrent = recurrent
 
     def train(self):
         """Train the associated module for one epoch."""
@@ -52,7 +54,8 @@ class myBackpropTrainer(myTrainer):
         shuffledSequences = []
         for seq in self.ds._provideSequences():
             shuffledSequences.append(seq)
-        shuffle(shuffledSequences)
+        # if not self.recurrent:
+        #     shuffle(shuffledSequences)
         for seq in shuffledSequences:
             e, p = self._calcDerivs(seq)
             errors += e
@@ -65,15 +68,16 @@ class myBackpropTrainer(myTrainer):
                 self.module.resetDerivatives()
 
         if self.verbose:
-            print "Total error:", errors / ponderation
+            print("Total error: {z: .12g}".format(z=errors / ponderation))
         if self.batchlearning:
             self.module._setParameters(self.descent(self.module.derivs))
         self.epoch += 1
         self.totalepochs += 1
-        return errors / ponderation
+        # return errors / ponderation
+        return errors / len(shuffledSequences)
 
     def _calcDerivs(self, seq):
-        """Calculate error function and backpropagate output errors to yield 
+        """Calculate error function and backpropagate output errors to yield
         the gradient."""
         self.module.reset()
         for sample in seq:
@@ -94,7 +98,7 @@ class myBackpropTrainer(myTrainer):
                 error += 0.5 * sum(outerr ** 2)
                 ponderation += len(target)
                 # FIXME: the next line keeps arac from producing NaNs. I don't
-                # know why that is, but somehow the __str__ method of the 
+                # know why that is, but somehow the __str__ method of the
                 # ndarray class fixes something,
                 str(outerr)
                 self.module.backActivate(outerr)
@@ -129,33 +133,31 @@ class myBackpropTrainer(myTrainer):
 
     def testOnData(self, dataset=None, verbose=False):
         """Compute the MSE of the module performance on the given dataset.
-
         If no dataset is supplied, the one passed upon Trainer initialization is
         used."""
         if dataset == None:
             dataset = self.ds
         dataset.reset()
         if verbose:
-            print '\nTesting on data:'
+            print('\nTesting on data:')
         errors = []
         importances = []
         ponderatedErrors = []
         for seq in dataset._provideSequences():
             self.module.reset()
-            # evaluateSequence changed in the source code
             e, i = dataset._evaluateSequence(self.module.activate, seq, verbose)
             importances.append(i)
             errors.append(e)
             ponderatedErrors.append(e / i)
         if verbose:
-            print 'All errors:', ponderatedErrors
+            print('All errors:', ponderatedErrors)
         assert sum(importances) > 0
-        avgErr = sum(errors) / sum(importances)
+        # avgErr = sum(errors) / sum(importances)
+        avgErr = sum(errors) / len(dataset)
         if verbose:
-            print 'Average error:', avgErr
-            print ('Max error:', max(ponderatedErrors), 'Median error:',
-                   sorted(ponderatedErrors)[len(errors) / 2])
-        return ponderatedErrors
+            print('Average error:', avgErr)
+            print('Max error:', max(ponderatedErrors), 'Median error:', sorted(ponderatedErrors)[len(errors) / 2])
+        return avgErr
 
     def testOnClassData(self, dataset=None, verbose=False,
                         return_targets=False):
@@ -181,32 +183,34 @@ class myBackpropTrainer(myTrainer):
         else:
             return out
 
-    def trainUntilConvergence(self, dataset=None, maxEpochs=None, verbose=None,
+    def trainUntilConvergence(self, datasetTrain=None, datasetTest=None, maxEpochs=None, verbose=None,
                               continueEpochs=10, validationProportion=0.25):
         """Train the module on the dataset until it converges.
-        
-        Return the module with the parameters that gave the minimal validation 
-        error. 
-        
-        If no dataset is given, the dataset passed during Trainer 
+
+        Return the module with the parameters that gave the minimal validation
+        error.
+
+        If no dataset is given, the dataset passed during Trainer
         initialization is used. validationProportion is the ratio of the dataset
         that is used for the validation dataset.
-        
+
         If maxEpochs is given, at most that many epochs
-        are trained. Each time validation error hits a minimum, try for 
+        are trained. Each time validation error hits a minimum, try for
         continueEpochs epochs to find a better one."""
         epochs = 0
-        if dataset == None:
-            dataset = self.ds
+        if datasetTrain is None or datasetTest is None:
+            return
         if verbose == None:
             verbose = self.verbose
-        # Split the dataset randomly: validationProportion of the samples for 
+        # Split the dataset randomly: validationProportion of the samples for
         # validation.
-        trainingData, validationData = (
-            dataset.splitWithProportion(1 - validationProportion))
-        if not (len(trainingData) > 0 and len(validationData)):
-            raise ValueError("Provided dataset too small to be split into training " +
-                             "and validation sets with proportion " + str(validationProportion))
+        trainingData = datasetTrain
+        validationData = datasetTest
+        # trainingData, validationData = (
+        #     dataset.splitWithProportion(1 - validationProportion))
+        # if not (len(trainingData) > 0 and len(validationData)):
+        #     raise ValueError("Provided dataset too small to be split into training " +
+        #                      "and validation sets with proportion " + str(validationProportion))
         self.ds = trainingData
         bestweights = self.module.params.copy()
         bestverr = self.testOnData(validationData)
@@ -215,12 +219,12 @@ class myBackpropTrainer(myTrainer):
         while True:
             trainingErrors.append(self.train())
             validationErrors.append(self.testOnData(validationData))
-            if epochs == 0 or validationErrors[-1] < bestverr:
+            if validationErrors[-1] < bestverr:
                 # one update is always done
                 bestverr = validationErrors[-1]
                 bestweights = self.module.params.copy()
 
-            if maxEpochs != None and epochs >= maxEpochs:
+            if maxEpochs is not None and epochs >= maxEpochs:
                 self.module.params[:] = bestweights
                 break
             epochs += 1
@@ -234,7 +238,7 @@ class myBackpropTrainer(myTrainer):
                     self.module.params[:] = bestweights
                     break
         trainingErrors.append(self.testOnData(trainingData))
-        self.ds = dataset
+        self.ds = datasetTrain
         if verbose:
             print 'train-errors:', fListToString(trainingErrors, 6)
             print 'valid-errors:', fListToString(validationErrors, 6)

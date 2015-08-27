@@ -5,7 +5,8 @@ import glob
 from pybrain.tools.xml.networkreader import NetworkReader
 from modules.classes import Note
 from modules.buildXML import create_music_xml
-from modules.functions import decode
+from modules.functions import decode, binary_to_int_note, int_to_binary_note
+import random
 
 
 def main():
@@ -31,34 +32,92 @@ def main():
                   '1011': '64',
                   '1100': '64', '1101': '64', '1110': '64', '1111': '64'}
 
+    binary = True
+    if binary:
+        n = rnn.indim / 11
+    else:
+        n = rnn.indim / 3
+
     # creating the input for the net
     i = 0
-    for file in files:
-        print "\nfile: " + file
-        tree = ET.parse(file)
-        notes = [Note(note, division) for note in tree.findall('.//note')]
-        for note in notes:
-            if i < rnn.indim / 11:
-                i += 1
-            else:
-                break
-            tmp = note.encode(dur_en_kv)
-            for x in range(11):
-                input_notes += (tmp[x],)
+    input_notes = []
+    # extracting all the notes
 
     # generating new notes
-    for i in range(150):
-        otp = rnn.activate(
-            input_notes[(i * 11):(rnn.indim + 11 * i):1])  # takes the last rnn.indim notes to activate the netwotk
-        for x in range(len(otp)):
-            otp[x] = abs(round(otp[x]))
-        for x in range(11):
-            input_notes += (str(otp[x])[0],)
+    if binary:
+        i = 0
+        for file in files:
+            print "\nfile: " + file
+            tree = ET.parse(file)
+            notes = [Note(note, division) for note in tree.findall('.//note')]
+            for note in notes:
+                if i < rnn.indim / 11:
+                    i += 1
+                else:
+                    break
+                tmp = note.encode(dur_en_kv)
+                for x in range(11):
+                    input_notes += (tmp[x],)
+
+        for i in range(150):
+            otp = rnn.activate(input_notes[(i * 11):(rnn.indim + 11 * i):1])
+            # takes the last rnn.indim notes to activate the netwotk
+            for x in range(len(otp)):
+                otp[x] = abs(round(otp[x]))
+                if otp[x] > 1:
+                    otp[x] = 1
+                if otp[x] < 0:
+                    otp[x] = 0
+            for x in range(len(otp)):
+                input_notes += (str(otp[x])[0],)
+
+
+
+    else:
+        for file in files:
+            print "\nfile: " + file
+            tree = ET.parse(file)
+            # notes = [Note(note, division, step_time) for note in tree.findall('.//note')]
+            notes = [Note(note, division) for note in tree.findall('.//note')]
+            for note in notes:
+                if i < n:
+                    i += 1
+                else:
+                    break
+                input_notes.append(note.encode(dur_en_kv))
+        input_notes = binary_to_int_note(input_notes)
+        allf = []
+        for i in input_notes:
+            allf.append(i[0])
+            allf.append(i[1])
+            allf.append(i[2])
+        input_notes = allf
+        print 'inizio'
+        for i in range(100):
+            output = rnn.activate(input_notes[(i * 3):(rnn.indim + 3 * i):1])
+            print output
+            # takes the last rnn.indim notes to activate the network
+            for x in range(len(output)):
+                input_notes.append(output[x])
+        print 'fine'
+        input_notes = int_to_binary_note(input_notes)
+
+
 
     dec_notes = []
+
     # decoding of all the notes in input_notes
+    # for i in range(len(input_notes)):
+    #     print input_notes[(i * 11):(rnn.indim + 11 * i):1]
+    #     note = decode(input_notes[(i * 11):(rnn.indim + 11 * i):1], step_kv, dur_dec_kv)
+    #     # note = decode(input_notes[i], step_kv, dur_dec_kv)
+    #
+    #     dec_notes.append(note)
+
     for i in range(0, len(input_notes), 11):
-        dec_notes.append(decode(input_notes[i:((i + 1) * 11):1], step_kv, dur_dec_kv))
+        note = decode(input_notes[i:((i + 1) * 11):1], step_kv, dur_dec_kv)
+        dec_notes.append(note)
+
 
     # XML
     create_music_xml(dec_notes, division, 'output.xml')

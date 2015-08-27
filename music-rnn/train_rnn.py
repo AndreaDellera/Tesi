@@ -2,15 +2,13 @@ __author__ = 'Andrea'
 
 import xml.etree.ElementTree as ET
 import glob
-from modules.functions import create_db
+from modules.functions import create_binary_dataset, create_int_dataset
 from modules.myBackProp import myBackpropTrainer
 from modules.classes import Note
-from pybrain.tools.shortcuts import buildNetwork
-from pybrain.structure import SigmoidLayer, LSTMLayer
+from modules.functions import create_network, train_network, binary_to_int_note
+from pybrain.structure import SigmoidLayer, LSTMLayer, LinearLayer, GaussianLayer, SoftmaxLayer, TanhLayer
 from pybrain.tools.xml.networkwriter import NetworkWriter
-from pybrain.tools.validation import Validator, CrossValidator, ModuleValidator
-from random import shuffle
-from pybrain.datasets import SupervisedDataSet
+
 
 # database for different inputs
 
@@ -25,7 +23,6 @@ def main():
     # list of all train files
     files = glob.glob("../files/train/*.xml")
     coded_notes = []
-    i = 0
     # extracting all the notes
     for file in files:
         print "\nfile: " + file
@@ -34,78 +31,55 @@ def main():
         notes = [Note(note, division) for note in tree.findall('.//note')]
         for note in notes:
             coded_notes.append(note.encode(kv))
-        i += 1
 
-    # elimination of duplicates sequences
-    coded_set = set(tuple(x) for x in coded_notes)
-    coded_notes = [list(x) for x in coded_set]
-    # creating the datasets
-    n_input = 5 * 11
-    n_output = 11
+    binary = True
+    input_notes = 5
+    if binary:
+        # creating the datasets
+        n_input = input_notes * 11
+        n_output = 11
+        dataset_notes = create_binary_dataset(n_input, n_output, coded_notes)
+    else:
+        n_input = input_notes * 3
+        n_output = 3
+        coded_notes = binary_to_int_note(coded_notes)
+        dataset_notes = create_int_dataset(n_input, n_output, coded_notes)
+
+    rec = True
 
     # creation of the datasets based on the number of input
-    dataset_notes = create_db(n_input, n_output, coded_notes)
+    # if not rec:
+    #     from modules.functions import unique_dataset
+    #     dataset_notes = unique_dataset(dataset_notes)
+
     del files, coded_notes
 
     # creating the network
     # without hidden layers the network does not works properly
-    rnn = buildNetwork(n_input, 8, n_output, recurrent=True, outclass=SigmoidLayer, hiddenclass=LSTMLayer)
+    # rnn = buildNetwork(n_input, 5, n_output, recurrent=rec, outclass=SigmoidLayer, hiddenclass=LSTMLayer, bias=False)
+
+    if rec:
+        hc = LSTMLayer
+        oc = SigmoidLayer
+    else:
+        hc = SigmoidLayer
+        oc = LinearLayer
+
+    rnn = create_network(n_input, 20, n_output, recurrent=rec, outclass=oc, hiddenclass=hc, bias=False)
+
     # if verbose == True then print "Total error:", MSE / ponderation
-    trainer = myBackpropTrainer(rnn, learningrate=0.01, momentum=0.9, verbose=False, weightdecay=False, batchlearning=True)
+    trainer = myBackpropTrainer(rnn, learningrate=0.0001, momentum=0.0, verbose=False,
+                                batchlearning=False, recurrent=rec)
 
     print "start training"
-    # to obtain different dataset for each iteration
-    shuffledSequences = []
-    for seq in dataset_notes:
-        shuffledSequences.append(seq)
-
-    out_train = open("./errors/train_MSE.txt", "w")
-    out_test = open("./errors/test_MSE.txt", "w")
-    out_valid = open("./errors/valid_MSE.txt", "w")
-
-    rip = 50
-    # trainer.descent.momentum -= 0.5
-    # trainer.descent.alpha += 0.5
-    prev_err = 1000
-    for i in range(rip):
-        shuffle_ds = SupervisedDataSet(rnn.indim, rnn.outdim)
-        shuffle(shuffledSequences)
-        for j in range(len(shuffledSequences)):
-            shuffle_ds.appendLinked(shuffledSequences[j][0], shuffledSequences[j][1])
-
-        print "train ", i + 1, " su ", rip
-        # 0.75 del dataset per il train, il resto per il test
-        ds_train, ds_test = shuffle_ds.splitWithProportion(0.75)
-        tmp_train = trainer.trainOnDataset(ds_train, 10)
-        tmp_test = trainer.testOnData(ds_test)
-
-        validator = Validator()
-        activations = []
-        targets = []
-        for inp, out in ds_test:
-            activations.append(rnn.activate(inp))
-            targets.append(out)
-        val = validator.MSE(activations, targets)
-        if val < prev_err:
-            prev_err = val
-            trainer.descent.alpha -= trainer.descent.alpha / 100
-        # elif val > prev_err:
-        #     prev_err = val
-        #     trainer.descent.alpha -= trainer.descent.alpha / 2
-        out_train.write(str(sum(tmp_train) / len(tmp_train)) + '\n')
-        out_valid.write(str(val) + '\n')
-        # out_test.write(str(sum(tmp_test) / len(tmp_test)) + '\n')
-        out_test.write(str(tmp_test) + '\n')
-
-
-        # trainer.descent.momentum += 0.5 / rip
-
-    out_train.close()
-    out_test.close()
-    out_valid.close()
+    n = 30
+    if n > dataset_notes.getLength():
+        n = dataset_notes.getLength()
+    train_network(trainer, dataset_notes, k_fold=n, bold_driver=True, maxEpochs=10000)
 
     print "end training"
 
+    # salva lo stato della rete
     NetworkWriter.writeToFile(rnn, 'weights.xml')
     rnn.reset()
 
