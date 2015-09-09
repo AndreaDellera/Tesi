@@ -1,8 +1,30 @@
 \begin{thebibliography}{1}
 
+\bibitem{battiti1989accelerated}
+Roberto Battiti.
+\newblock Accelerated backpropagation learning: Two optimization methods.
+\newblock {\em Complex systems}, 3(4):331--342, 1989.
+
+\bibitem{kohavi1995study}
+Ron Kohavi et~al.
+\newblock A study of cross-validation and bootstrap for accuracy estimation and
+  model selection.
+\newblock In {\em Ijcai}, volume~14, pages 1137--1145, 1995.
+
+\bibitem{schaul2010pybrain}
+Tom Schaul, Justin Bayer, Daan Wierstra, Yi~Sun, Martin Felder, Frank Sehnke,
+  Thomas R{\"u}ckstie{\ss}, and J{\"u}rgen Schmidhuber.
+\newblock Pybrain.
+\newblock {\em The Journal of Machine Learning Research}, 11:743--746, 2010.
+
 \bibitem{todd1989}
 Peter~M Todd.
 \newblock A connectionist approach to algorithmic composition.
 \newblock {\em Computer Music Journal}, pages 27--43, 1989.
+
+\bibitem{werbos1990backpropagation}
+Paul~J Werbos.
+\newblock Backpropagation through time: what it does and how to do it.
+\newblock {\em Proceedings of the IEEE}, 78(10):1550--1560, 1990.
 
 \end{thebibliography}

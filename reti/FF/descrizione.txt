@@ -1,0 +1,4 @@
+LR = 0.3
+momentum = 0.9
+FeedForward
+k-fold 10

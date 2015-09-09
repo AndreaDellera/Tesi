@@ -1,29 +1,3 @@
-\documentclass[a4paper]{article}
-
-\usepackage[T1]{fontenc} % codifica dei font in uscita
-\usepackage[utf8]{inputenc} % lettere accentate da tastiera 
-\usepackage{mathptmx} % font in times new roman
-\usepackage{cite} % pacchetto per le citazioni
-\usepackage{harmony} % pacchetto per scrivere le note
-\usepackage{amsmath} % pacchetto per scrivere le note
-\newcommand{\setmetera}[2]{\ensuremath{\genfrac{}{}{0pt}{}{#1}{#2}}} % \setmetera{4}{4} per scrivere il tempo 4/4
-
-%grafici e plots
-\usepackage{tikz}
-\usepackage{pgfplots}
-\pgfplotsset{compat=newest}
-\usepgfplotslibrary{units}
-\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
-
-% impaginazione
-\usepackage{geometry}
-\geometry{margin=2cm}
-
-%importazione di codice
-\usepackage{listings}
-
-%bibliografia
-\begin{filecontents*}{biblio.bib}
 @article{todd1989,
   title={A connectionist approach to algorithmic composition},
   author={Todd, Peter M},
@@ -73,33 +47,3 @@
   publisher={IEEE}
 }
 
-\end{filecontents*}
-
-% inizio del documento
-\begin{document}
-
-\input{copertina}
-\newpage
-
-\input{introduzione}
-\newpage
-
-\input{codifica}
-\newpage
-
-\input{rnn}
-\newpage
-
-
-\input{train}
-\newpage
-
-\input{esperimenti}
-\newpage
-
-\input{conclusioni}
-\newpage
-
-\bibliographystyle{plain}
-\bibliography{biblio}
-\end{document}
