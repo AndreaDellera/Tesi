@@ -22,6 +22,10 @@
 %importazione di codice
 \usepackage{listings}
 
+%sottotabelle
+\usepackage{subcaption}
+%scrittura di url
+\usepackage{url}
 %bibliografia
 \begin{filecontents*}{biblio.bib}
 @article{todd1989,
@@ -81,17 +85,19 @@
 \input{copertina}
 \newpage
 
-\input{introduzione}
+\input{dedica}
 \newpage
 
-\input{codifica}
+\input{introduzione}
 \newpage
 
 \input{rnn}
 \newpage
 
+\input{allenamento}
+\newpage
 
-\input{train}
+\input{codifica}
 \newpage
 
 \input{esperimenti}
@@ -99,6 +105,8 @@
 
 \input{conclusioni}
 \newpage
+
+\tableofcontents{Indice}
 
 \bibliographystyle{plain}
 \bibliography{biblio}

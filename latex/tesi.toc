@@ -1,0 +1,24 @@
+\contentsline {section}{\numberline {1}Introduzione}{2}
+\contentsline {section}{\numberline {2}Modelli utilizzati}{3}
+\contentsline {subsection}{\numberline {2.1}RNN}{3}
+\contentsline {subsection}{\numberline {2.2}FFN}{3}
+\contentsline {subsection}{\numberline {2.3}Numero di input}{3}
+\contentsline {subsection}{\numberline {2.4}Tipo di rete utilizzata}{4}
+\contentsline {section}{\numberline {3}Allenamento della rete}{5}
+\contentsline {subsection}{\numberline {3.1}Back Propagation}{5}
+\contentsline {subsection}{\numberline {3.2}Bold Driver}{5}
+\contentsline {subsection}{\numberline {3.3}Momentum}{6}
+\contentsline {subsection}{\numberline {3.4}Funzione utilizzata per l'allenamento}{6}
+\contentsline {section}{\numberline {4}Codifica}{8}
+\contentsline {subsection}{\numberline {4.1}Codifica delle note}{8}
+\contentsline {subsection}{\numberline {4.2}Codifica della durata}{8}
+\contentsline {subsection}{\numberline {4.3}Codifica dell'ottava}{9}
+\contentsline {subsection}{\numberline {4.4}Codifca delle pause}{9}
+\contentsline {subsection}{\numberline {4.5}Esempi di codifica}{9}
+\contentsline {subsection}{\numberline {4.6}Creazione degli esempi}{9}
+\contentsline {section}{\numberline {5}Esperimenti}{10}
+\contentsline {subsection}{\numberline {5.1}Esperimento 1 - Imparare sequenze di note semplici}{10}
+\contentsline {subsection}{\numberline {5.2}Esperimento 2 - Imparare una canzone}{11}
+\contentsline {subsection}{\numberline {5.3}Esperimento 3 - Imparare pi\`u di una canzone}{11}
+\contentsline {section}{\numberline {6}Conclusioni}{12}
+\contentsline {section}{\numberline {7}Lavori futuri}{12}
