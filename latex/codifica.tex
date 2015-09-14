@@ -7,7 +7,7 @@ Le note, estratte da partiture scritte in formato MusicXML, devono avere una cod
 \item[-]punto di valore;
 \item[-]ottava.
 \end{itemize}
-Di queste cinque il nome e l'alterazione sono unite in un'unica codifica visto che sono strettamente correlate tra loro cos\`i come la durata e punto di valore.
+Di queste cinque il nome e l'alterazione sono unite in un'unica codifica visto che sono strettamente correlate tra loro, cos\`i come la durata e punto di valore.
 
 \subsection{Codifica delle note}
 Le note nel sistema europeo sono chiamate \emph{la, si, do, re, mi, fa, sol} che nel sistema americano corrispondono a \emph{A, B, C, D, E, F, G}; in questo scritto verr\`a utilizzato il secondo, perch\`e pi\`u compatto e sintetico.
@@ -33,10 +33,8 @@ G$\sharp$& 1011\\\hline
 \end{tabular}
 \end{table}
 
-
-
 \subsection{Codifica della durata}
-Per la durata della nota il ragionamento \`e analogo. 	La durata massima di una nota \`e \setmetera{4}{4} (\Ganz). Si trovano tutte nella forma $\frac{1}{2^n}$ dove $0\leq n \leq +\infty$. Convenzionalmente per\`o le prime tre della sequenza sono descritte come \setmetera{4}{4} (\Ganz), \setmetera{2}{4} (\Halb), \setmetera{1}{4} (\Vier). Le durate che verranno codificate arriveranno fino ad \setmetera{1}{64}.
+Per la durata della nota il ragionamento \`e analogo. 	La durata massima di una nota \`e \setmetera{4}{4} (\Ganz). Si trovano tutte nella forma $\frac{1}{2^n}$ dove $0\leq n \leq +\infty$. Convenzionalmente per\`o le prime tre della sequenza sono descritte come \setmetera{4}{4} (\Ganz), \setmetera{2}{4} (\Halb), \setmetera{1}{4} (\Vier). Le durate che verranno codificate arriveranno fino ad \setmetera{1}{64} visto che velocit\`a pi\`u piccole di questa non vengono mai utilizzate.
 Come fatto precedentemente verr\`a assegnata una sequenza di bit ad ogni durata.\\
 \begin{table}[ht]
 \renewcommand\arraystretch{1.4}
@@ -54,8 +52,6 @@ Come fatto precedentemente verr\`a assegnata una sequenza di bit ad ogni durata.
 \end{tabular}
 \end{table}\\
 Un'altra variabile che entra quando si parla di durata \`e il \emph{punto di valore} (\Pu). Questo strumento aumenta la durata della nota della sua met\`a e per codificarlo useremo un bit che sar\`a 0 se non c'\`e e 1 in caso contrario.
-
-
 
 \subsection {Codifica dell'ottava}
 In ci\`o che va a costituire una nota una parte importante \`e l'\emph{ottava}. L'ottava costituisce l'altezza della nota, un'offset rispetto a quella pi\`u bassa. Si pu\`o pensarla come una somma di $n * 12semitoni$ rispetto alla nota pi\`u bassa.
@@ -77,7 +73,7 @@ $C_8$& 111\\\hline
 \end{tabular}
 \end{table}
 
-\subsection {Codifca delle pause}
+\subsection {Codifica delle pause}
 Le pause sono uno strumento musicale molto comune, vengono utilizzate per dire ad uno strumento di non suonare. L'unico dato che portano \`e quello della durata, visto che non hanno una ottava di riferimento.
 Verranno codificate con \emph{1111} nel campo di codifica della nota, in quanto denotano una nota inesistente.
 
@@ -93,22 +89,17 @@ Do di \setmetera{1}{4}, della terza ottava:& 01100100100\\\hline
 \end{table}
 
 \subsection{Creazione degli esempi}
-Per creare un esempio bisogna decidere quante note in input avr\`a la rete ed, in base a quello, verr\`a costruito. Un esempio per una rete con cinque note in input \`e:\\
+Per creare un esempio bisogna decidere quante note in input avr\`a la rete e, in base a quello, verr\`a costruito. Un esempio per una rete con cinque note in input \`e:\\
 \begin{table}[ht]
 \centering
 \begin{tabular}{| c c c c c | c |}
 \multicolumn {6}{c}{\textbf{Esempio}}\\
 \hline
-
-
 \begin{tabular}{c|c|c}
 \multicolumn {3}{c}{$Nota1$}\\
 \hline
 ottava&nota&durata\\
 \end{tabular}
-
-
-
 &$Nota2$& $Nota3$& $Nota4$&$Nota5$&$Target$\\\hline
 \end{tabular}
 \end{table}

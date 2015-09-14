@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.10)  9 SEP 2015 20:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.10)  14 SEP 2015 11:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1088,31 +1088,49 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
  [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/l
-ogo_unitn.png>]) (./dedica.tex) [1] (./introduzione.tex
+ogo_unitn.png>]) (./dedica.tex) [1] (./tesi.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+)
+\tf@toc=\write4
+\openout4 = `tesi.toc'.
+
+ [2] (./introduzione.tex
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 13.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
-
 Overfull \hbox (8.35538pt too wide) in paragraph at lines 13--14
 \T1/cmtt/m/n/10 http : / / www . hexahedria . com / 2015 / 08 / 03 / composing-
 []music-[]with-[]recurrent-[]neural-[]networks/$ \T1/ptm/m/n/10 per una ver-
  []
 
-) [2] (./rnn.tex (./graph_rnn.tex) (./graph_ffn.tex)
+) [3] (./rnn.tex (./graph_rnn.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+(./graph_ffn.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
- [3]) [4]
-(./allenamento.tex
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
+[4] <img/n_input.png, id=27, 578.16pt x 433.62pt>
+File: img/n_input.png Graphic file (type png)
+ <use img/n_input.png>
+Package pdftex.def Info: img/n_input.png used on input line 21.
+(pdftex.def)             Requested size: 386.95897pt x 290.21953pt.
+
+[5 <./img/n_input.png>]) [6] (./allenamento.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--15
 
  []
@@ -1122,8 +1140,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
-[5]
-Overfull \hbox (10.46527pt too wide) in paragraph at lines 51--52
+[7]
+Overfull \hbox (10.46527pt too wide) in paragraph at lines 49--50
 \T1/ptm/m/n/10 Il \T1/ptm/m/it/10 mo-men-tum \T1/ptm/m/n/10 è un'estensione del
 l'algoritmo di Back-Prop-a-ga-tion che, ag-giun-gendo una costante $\OT1/ztmcm/
 m/n/10 0 \OMS/ztmcm/m/n/10 ^^T \OML/ztmcm/m/it/10 m \OMS/ztmcm/m/n/10 ^^T \OT1/
@@ -1131,84 +1149,143 @@ ztmcm/m/n/10 1$ \T1/ptm/m/n/10 all'aggiornamento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 78.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 76.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
-) [6] [7]
-(./codifica.tex [8]) [9] (./esperimenti.tex
-<img/ciclo.png, id=49, 556.0775pt x 75.28125pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
+) [8] [9]
+(./codifica.tex [10]) [11] (./esperimenti.tex
+<img/ciclo.png, id=58, 556.0775pt x 75.28125pt>
 File: img/ciclo.png Graphic file (type png)
  <use img/ciclo.png>
 Package pdftex.def Info: img/ciclo.png used on input line 14.
 (pdftex.def)             Requested size: 338.58632pt x 45.83763pt.
 
-<img/errors_ffn_circle.png, id=51, 578.16pt x 433.62pt>
-File: img/errors_ffn_circle.png Graphic file (type png)
+<img/ffn_circle_errors.png, id=59, 578.16pt x 433.62pt>
+File: img/ffn_circle_errors.png Graphic file (type png)
 
-<use img/errors_ffn_circle.png>
-Package pdftex.def Info: img/errors_ffn_circle.png used on input line 35.
+<use img/ffn_circle_errors.png>
+Package pdftex.def Info: img/ffn_circle_errors.png used on input line 34.
 (pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
 
-<img/errors_rnn_circle.png, id=52, 578.16pt x 433.62pt>
-File: img/errors_rnn_circle.png Graphic file (type png)
+<img/rnn_circle_errors.png, id=60, 578.16pt x 433.62pt>
+File: img/rnn_circle_errors.png Graphic file (type png)
 
-<use img/errors_rnn_circle.png>
-Package pdftex.def Info: img/errors_rnn_circle.png used on input line 37.
+<use img/rnn_circle_errors.png>
+Package pdftex.def Info: img/rnn_circle_errors.png used on input line 36.
 (pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--43
+Underfull \hbox (badness 10000) in paragraph at lines 16--42
 
  []
 
-<img/eight.png, id=53, 426.59375pt x 72.27pt>
+<img/eight.png, id=61, 426.59375pt x 72.27pt>
 File: img/eight.png Graphic file (type png)
  <use img/eight.png>
-Package pdftex.def Info: img/eight.png used on input line 44.
+Package pdftex.def Info: img/eight.png used on input line 43.
 (pdftex.def)             Requested size: 338.58632pt x 57.36394pt.
 
-<img/ffn_eight.png, id=54, 578.16pt x 433.62pt>
+<img/ffn_eight.png, id=62, 578.16pt x 433.62pt>
 File: img/ffn_eight.png Graphic file (type png)
  <use img/ffn_eight.png>
-Package pdftex.def Info: img/ffn_eight.png used on input line 64.
+Package pdftex.def Info: img/ffn_eight.png used on input line 63.
 (pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
 
-<img/rnn_eight.png, id=55, 578.16pt x 433.62pt>
+<img/rnn_eight.png, id=63, 578.16pt x 433.62pt>
 File: img/rnn_eight.png Graphic file (type png)
  <use img/rnn_eight.png>
-Package pdftex.def Info: img/rnn_eight.png used on input line 66.
+Package pdftex.def Info: img/rnn_eight.png used on input line 65.
 (pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
 
-[10 <./img/ciclo.png> <./img/errors_ffn_circle.png> <./img/errors_rnn_circle.pn
-g> <./img/eight.png>])
-Underfull \hbox (badness 10000) in paragraph at lines 102--104
+[12 <./img/ciclo.png> <./img/ffn_circle_errors.png> <./img/rnn_circle_errors.pn
+g> <./img/eight.png>] <img/ffn_fly_errors.png, id=72, 578.16pt x 433.62pt>
+File: img/ffn_fly_errors.png Graphic file (type png)
+
+<use img/ffn_fly_errors.png>
+Package pdftex.def Info: img/ffn_fly_errors.png used on input line 107.
+(pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
+
+<img/rnn_fly_errors.png, id=73, 578.16pt x 433.62pt>
+File: img/rnn_fly_errors.png Graphic file (type png)
+
+<use img/rnn_fly_errors.png>
+Package pdftex.def Info: img/rnn_fly_errors.png used on input line 109.
+(pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
+
+<img/ffn_kathy_errors.png, id=74, 578.16pt x 433.62pt>
+File: img/ffn_kathy_errors.png Graphic file (type png)
+
+<use img/ffn_kathy_errors.png>
+Package pdftex.def Info: img/ffn_kathy_errors.png used on input line 120.
+(pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
+
+<img/rnn_kathy_errors.png, id=75, 578.16pt x 433.62pt>
+File: img/rnn_kathy_errors.png Graphic file (type png)
+
+<use img/rnn_kathy_errors.png>
+Package pdftex.def Info: img/rnn_kathy_errors.png used on input line 122.
+(pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
+ [13 <./img/ffn_eight.png> <./img/rnn_eight.png>] <img/rnn_songs_all_errors.png
+, id=81, 578.16pt x 433.62pt>
+File: img/rnn_songs_all_errors.png Graphic file (type png)
+
+<use img/rnn_songs_all_errors.png>
+Package pdftex.def Info: img/rnn_songs_all_errors.png used on input line 135.
+(pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
+
+<img/rnn_songs_kfold_errors.png, id=82, 578.16pt x 433.62pt>
+File: img/rnn_songs_kfold_errors.png Graphic file (type png)
+
+<use img/rnn_songs_kfold_errors.png>
+Package pdftex.def Info: img/rnn_songs_kfold_errors.png used on input line 137.
+
+(pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
+ [14 <./img/ffn_fly_errors.png> <./img/rnn_fly_errors.png> <./img/ffn_kathy_err
+ors.png> <./img/rnn_kathy_errors.png> <./img/rnn_songs_all_errors.png> <./img/r
+nn_songs_kfold_errors.png>]
+<img/ffn_songs_all_errors.png, id=92, 578.16pt x 433.62pt>
+File: img/ffn_songs_all_errors.png Graphic file (type png)
+
+<use img/ffn_songs_all_errors.png>
+Package pdftex.def Info: img/ffn_songs_all_errors.png used on input line 148.
+(pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
+
+<img/ffn_songs_kfold_errors.png, id=93, 578.16pt x 433.62pt>
+File: img/ffn_songs_kfold_errors.png Graphic file (type png)
+
+<use img/ffn_songs_kfold_errors.png>
+Package pdftex.def Info: img/ffn_songs_kfold_errors.png used on input line 150.
+
+(pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
-[11 <./img/ffn_eight.png> <./img/rnn_eight.png>] (./conclusioni.tex) [12]
-(./tesi.toc)
-\tf@toc=\write4
-\openout4 = `tesi.toc'.
+[15 <./img/ffn_songs_all_errors.png> <./img/ffn_songs_kfold_errors.png>])
+(./conclusioni.tex) [16] (./tesi.toc)
+\tf@toc=\write5
+\openout5 = `tesi.toc'.
 
- (./tesi.bbl) [13] (./tesi.aux) ) 
+ (./tesi.bbl) [17] (./tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 26533 strings out of 493117
- 629592 string characters out of 6135433
- 906605 words of memory out of 5000000
- 29456 multiletter control sequences out of 15000+600000
+ 26580 strings out of 493117
+ 630861 string characters out of 6135433
+ 905316 words of memory out of 5000000
+ 29492 multiletter control sequences out of 15000+600000
  74080 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,16n,103p,762b,1877s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,16n,103p,747b,1881s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/
 dvips/base/8r.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/
 cm-super-t1.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
@@ -1221,10 +1298,10 @@ b></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/loc
 al/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on tesi.pdf (14 pages, 281041 bytes).
+Output written on tesi.pdf (18 pages, 529650 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 140 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

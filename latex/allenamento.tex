@@ -14,12 +14,12 @@ Momentum&0.9&0.3\\\hline
 \\
 
 \subsection{Back Propagation}
-L'algoritmo di Back Propagation \`e utilizzato con l'apprendimento supervisionato, ovvero dove insieme all'input \`e noto pure l'output, e permette di modificare i pesi delle connessioni all'interno della rete in modo che venga minimizzata una certa funzione  di errore $E$. L'aggiornamento dei pesi viene fatto una volta che \`e stato prodotto l'output e la quantit\`a \`e determinata dalla differenza tra lo stesso e il target (l'output reale della funzione). La funzione d'errore da minimizzare in questo esperimento \`e quella dei minimi quadrati (Mean Square Error, MSE): $E(w) = \frac{1}{2}(out - tar )^2$.\\
+L'algoritmo di Back Propagation \`e utilizzato con l'apprendimento supervisionato, ovvero dove insieme all'input \`e noto pure il target della funzione, e permette di modificare i pesi delle connessioni all'interno della rete in modo che venga minimizzata una certa funzione  di errore $E(w)$. L'aggiornamento dei pesi viene fatto una volta che \`e stato prodotto l'output e la quantit\`a \`e determinata dalla differenza tra lo stesso e il target (l'output reale della funzione). La funzione d'errore da minimizzare in questo esperimento \`e quella dei minimi quadrati (Mean Square Error, MSE): $E(w) = \frac{1}{2}(out - tar )^2$.\\
 $E(w)$ \`e una funzione nei pesi, che variano nel tempo a causa degli aggiornamenti, e per minimizzarla si utilizza l'algoritmo di discesa lungo il gradiente. Trovandosi in un punto $x_0$ viene calcolato il gradiente $\mathcal{r}f(x_0)$, cio\`e la derivata prima in $x_0$, che d\`a indicazioni sulla direzione in cui muoversi. Giunti nel nuovo punto $x_1$, dopo essersi mossi di una certa quantit\`a $\eta$, vengono rifatti gli stessi passaggi.\\
 L'algoritmo di BackPropagation pu\`o essenzialmente essere diviso in due parti:
 \begin{itemize}
-\item[-]Passo in avanti: l'input viene propagato nella rete, per tutti i suoi strati, fino giungere all'ultimo dove viene prodotto l'output;
-\item[-]Passo all'indietro: viene calcolato l'errore utilizzando $E(x)$ che viene propagato dall'output fino all'input e i pesi vengono aggiornati appropriatamente.
+\item[-]Passo in avanti: l'input viene propagato nella rete per tutti i suoi strati fino giungere all'ultimo, dove viene prodotto l'output;
+\item[-]Passo all'indietro: viene calcolato l'errore utilizzando $E(w)$ che viene propagato dall'output fino all'input e i pesi vengono aggiornati appropriatamente.
 \end{itemize}
 Quando si aggiornano i pesi si tiene conto anche del \emph{learning rate} $\mu$, un valore che influisce sulla velocit\`a e sulla qualit\`a dell'apprendimento: pi\`u basso \`e il valore pi\`u lento ma preciso sar\`a l'allenamento della rete, pi\`u altro \`e il valore pi\`u veloce ma impreciso sar\`a l'allenamento.
 
@@ -30,7 +30,7 @@ Per manipolare il valore del learning rate \`e stata adottata la tecnica Bold Dr
 \item[-]se l'errore \`e diminuito si aumenta $\mu$ di una quantit\`a pari all'uno per cento del suo valore;
 \item[-]se l'errore \`e aumentato si annulla l'ultimo cambiamento fatto e si diminuisce $\mu$ del suo 50\%.
 \end{itemize}
-L'andamento del learning rate in uno degli esperimenti eseguiti, specificamente il primo utilizzando una FFN, \`e il seguente: \\
+L'andamento del learning rate in uno degli esperimenti eseguiti, specificamente il primo utilizzando una RNN, \`e il seguente: \\
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
@@ -40,9 +40,7 @@ xtick={0,1,2,3,4,5,6,7,8,9,10},
 ytick={0,0.1,0.2,0.3}
 ]
 \addplot
-coordinates {
-    (0,0.3)(1,0.1485)(2,0.149985)(3,0.15148485)(4,0.1529996985)(5,0.154529695485)(6,0.15607499244)
-    (7,0.157635742364)(8,0.159212099788)(9,0.160804220786)(10,0.162412262994)};
+coordinates {(0,0.1)(1,0.101)(2,0.10201)(3,0.1030301)(4,0.0509998995)(5,0.051509898495)(6,0.025497399755)(7,0.0257523737526)(8,0.0260098974901)(9,0.026269996465)(10,0.0130036482502)};
 \end{axis}
 \end{tikzpicture}
 \end{center}
