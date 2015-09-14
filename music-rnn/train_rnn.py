@@ -33,7 +33,7 @@ def main():
             coded_notes.append(note.encode(kv))
 
     binary = True
-    input_notes = 5
+    input_notes = 8
     if binary:
         # creating the datasets
         n_input = input_notes * 11
@@ -63,21 +63,22 @@ def main():
         oc = SigmoidLayer
     else:
         hc = SigmoidLayer
-        oc = LinearLayer
+        oc = SigmoidLayer
 
     rnn = create_network(n_input, 20, n_output, recurrent=rec, outclass=oc, hiddenclass=hc, bias=False)
 
     # if verbose == True then print "Total error:", MSE / ponderation
-    trainer = myBackpropTrainer(rnn, learningrate=0.0001, momentum=0.0, verbose=False,
+    trainer = myBackpropTrainer(rnn, learningrate=0.3, momentum=0.9, verbose=False,
                                 batchlearning=False, recurrent=rec)
 
     print "start training"
-    n = 30
+    n = 2
     if n > dataset_notes.getLength():
         n = dataset_notes.getLength()
-    train_network(trainer, dataset_notes, k_fold=n, bold_driver=True, maxEpochs=10000)
+    train_network(trainer, dataset_notes, k_fold=n, bold_driver=True, maxEpochs=50)
 
     print "end training"
+
 
     # salva lo stato della rete
     NetworkWriter.writeToFile(rnn, 'weights.xml')

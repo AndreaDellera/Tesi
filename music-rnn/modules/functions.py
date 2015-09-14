@@ -385,28 +385,28 @@ def train_network(trainer, dataset=None, k_fold=1, bold_driver=False, maxEpochs=
     ds_dim = dataset.getLength()
 
     n = dataset.getLength() / k_fold
-
+    base = 0
     for i in range(0, ds_dim - (ds_dim % k_fold), n):
         # crea un dataset vuoto per calcolare l'errore di validazione
         ds_test = SupervisedDataSet(net.indim, net.outdim)
         ds_train = SupervisedDataSet(net.indim, net.outdim)
-        base = test_cont
+
         print 'train ', (base / n) + 1, ' on ', ((ds_dim - (ds_dim % k_fold)) / n)
 
         # costruzione dei datasets di train e test per la cross validation
-        train_cont = test_cont
         for b in range(ds_dim - ds_dim % k_fold):
-            if base <= test_cont < (base + n):
-                ds_test.appendLinked(*dataset.getLinked(test_cont))
-                test_cont += 1
-                train_cont = (train_cont + 1) % k_fold
+            if base <= b < (base + n):
+                ds_test.appendLinked(*dataset.getLinked(b))
             else:
-                ds_train.appendLinked(*dataset.getLinked(train_cont))
-                train_cont = (train_cont + 1) % k_fold
+                ds_train.appendLinked(*dataset.getLinked(b))
+        base += n
+
         ds_test = dataset
         ds_train = dataset
+
         tmp_train, tmp_test = trainer.trainUntilConvergence(datasetTrain=ds_train, datasetTest=ds_test, verbose=False,
                                                             maxEpochs=maxEpochs, continueEpochs=maxEpochs/2)
+
         # tmp_train, tmp_test = trainer.trainUntilConvergence(maxEpochs=1000, verbose=True,
         #                       continueEpochs=1000, validationProportion=0.30,
         #                       trainingData=ds_train, validationData=ds_test,
@@ -417,18 +417,19 @@ def train_network(trainer, dataset=None, k_fold=1, bold_driver=False, maxEpochs=
 
         # implementa il bold driver, aggiusta il learning rate in base all'evoluzione del train error
         if bold_driver:
-            if tmp_test < prev_err:
-                prev_err = tmp_test
+            if (sum(tmp_test) / len(tmp_test)) < prev_err:
+                prev_err = (sum(tmp_test) / len(tmp_test))
                 trainer.descent.alpha += trainer.descent.alpha * 0.01  # alpha = learning rate
             else:
-                prev_err = tmp_test
+                prev_err = (sum(tmp_test) / len(tmp_test))
                 trainer.descent.alpha -= trainer.descent.alpha * 0.01
                 trainer.descent.alpha -= trainer.descent.alpha * 0.5  # alpha = learning rate
+            print trainer.descent.alpha
 
         # testOnData e Validator calcolano lo stesso errore (MSE) in due modi differenti
         # implementato per vedere se le due funzioni si comportano in maniera coerente
         if net.indim % 11 == 0:
-            val = evaluate_binary_error(net, ds_test, verbose=True)
+            val = evaluate_binary_error(net, ds_test, verbose=False)
         else:
             val = evaluate_int_error(net, ds_test, verbose=True)
 

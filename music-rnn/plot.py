@@ -14,7 +14,7 @@ def main():
     # plot train and test errors
     mpl.plot(range(len(train_errors)), train_errors)
     mpl.plot(range(len(test_errors)), test_errors)
-    mpl.plot(range(len(test_valid)), test_valid)
+    # mpl.plot(range(len(test_valid)), test_valid)
     mpl.show()
 
     ptrain = open("./errors/train_progression.txt", "r")

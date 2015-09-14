@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 2.0 Partwise//EN" "musicxml20/partwise.dtd">
+<score-partwise>
+  <movement-title/>
+  <identification>
+    <creator type="composer"/>
+    <creator type="lyricist"/>
+    <creator type="artist"/>
+    <creator type="tabber"/>
+    <rights/>
+    <encoding>
+      <software>Guitar Pro</software>
+    </encoding>
+    <miscellaneous>
+      <miscellaneous-field name="subtitle"/>
+      <miscellaneous-field name="instructions"/>
+    </miscellaneous>
+  </identification>
+  <part-list>
+    <score-part id="p0">
+      <part-name>Steel Guitar</part-name>
+      <part-abbreviation>S-Gt</part-abbreviation>
+      <score-instrument id="i0">
+        <instrument-name>Steel Guitar</instrument-name>
+      </score-instrument>
+      <midi-instrument id="i0">
+        <midi-channel>1</midi-channel>
+        <midi-program>26</midi-program>
+        <volume>0</volume>
+        <pan>-90</pan>
+      </midi-instrument>
+    </score-part>
+  </part-list>
+  <part id="p0">
+  </part>
+</score-partwise>

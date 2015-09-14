@@ -1,0 +1,1403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f07ca9ed-af33-4064-b096-ec86f190bcfd" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/db.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/xor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/test/1train(1nota).xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/test/2train(2note).xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/test/3train(3note).xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/train/1train(1nota).xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/train/2train(2note).xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/train/3train(3note).xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/README.TXT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/acknowledgements.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/code2tut.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/documentation.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/.buildinfo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_images/dataprocessing_flowchart.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_images/math/0dda5d9cc1f37a095f591d50370589b47e20111c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_images/math/eb2acfb40e59ad63c373e5fb92d05072836ea7e6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_images/rl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/advanced/fast-pybrain.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/advanced/ode.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/datasets/classificationdataset.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/datasets/importancedatasets.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/datasets/sequentialdataset.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/datasets/superviseddataset.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/optimization/optimization.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/rl/actionvalues.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/rl/agents.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/rl/experiments.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/rl/explorers.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/rl/learners.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/rl/tasks.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/structure/connections.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/structure/evolvables.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/structure/modules.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/structure/networks.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/supervised/knn/lsh/nearoptimal.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/supervised/svm.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/supervised/trainers.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/tools.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/api/utilities.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/index.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/quickstart/dataset.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/quickstart/network.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/quickstart/training.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/tutorial/datasets.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/tutorial/extending-structure.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/tutorial/fnn.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/tutorial/intro.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/tutorial/netmodcon.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/tutorial/optimization.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_sources/tutorial/reinforcement-learning.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_static/basic.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_static/default.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_static/doctools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_static/file.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_static/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_static/minus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_static/plus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_static/pybrain_logo.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_static/pygments.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/_static/searchtools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/advanced/fast-pybrain.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/advanced/ode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/datasets/classificationdataset.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/datasets/importancedatasets.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/datasets/sequentialdataset.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/datasets/superviseddataset.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/optimization/optimization.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/rl/actionvalues.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/rl/agents.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/rl/experiments.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/rl/explorers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/rl/learners.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/rl/tasks.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/structure/connections.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/structure/evolvables.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/structure/modules.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/structure/networks.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/supervised/knn/lsh/nearoptimal.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/supervised/svm.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/supervised/trainers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/tools.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/api/utilities.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/genindex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/modindex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/objects.inv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/quickstart/dataset.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/quickstart/network.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/quickstart/training.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/search.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/searchindex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/tutorial/datasets.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/tutorial/extending-structure.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/tutorial/fnn.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/tutorial/intro.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/tutorial/netmodcon.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/tutorial/optimization.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/html/tutorial/reinforcement-learning.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/_static/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/advanced/fast-pybrain.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/advanced/ode.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/datasets/classificationdataset.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/datasets/importancedatasets.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/datasets/sequentialdataset.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/datasets/superviseddataset.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/optimization/optimization.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/rl/actionvalues.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/rl/agents.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/rl/experiments.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/rl/explorers.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/rl/learners.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/rl/tasks.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/structure/connections.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/structure/evolvables.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/structure/modules.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/structure/networks.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/supervised/knn/lsh/nearoptimal.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/supervised/svm.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/supervised/trainers.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/tools.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/api/utilities.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/autodoc_hack.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/build.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/conf.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/index.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/pics/buildNetwork.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/pics/dataprocessing_flowchart.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/pics/pybrain_logo.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/pics/rl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/quickstart/dataset.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/quickstart/network.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/quickstart/training.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/tutorial/datasets.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/tutorial/extending-structure.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/tutorial/fnn.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/tutorial/intro.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/tutorial/netmodcon.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/tutorial/optimization.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/sphinx/tutorial/reinforcement-learning.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/tutorials/blackboxoptimization.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/tutorials/fnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/tutorials/networks.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/docs/tutorials/rl.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/optimization/benchmarkplots.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/optimization/multiobjective/constnsga2jpq.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/optimization/multiobjective/nsga2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/optimization/multiobjective/nsga2jpq.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/optimization/multiobjective/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/optimization/optimizerinterface.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/optimization/optimizers_for_rl.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/capturegame/evolvingplayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/capturegame/minitournament.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/capturegame/pente.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/cartpole/cart_all.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/cartpole/cart_cma.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/cartpole/cart_enac.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/cartpole/cart_fem.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/cartpole/cart_nes.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/cartpole/cart_pgpe.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/cartpole/cart_reinf.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/cartpole/play_cartpole.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/flexcube/direction.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/flexcube/direction.wgt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/flexcube/flexcube_pgpe.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/flexcube/flexcube_spsa.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/flexcube/jump.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/flexcube/jump.wgt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/flexcube/walk.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/flexcube/walk.wgt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/linear_fa/bicycle.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/linear_fa/xor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/maze/td.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/ode/acrobot_fd.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/ode/acrobot_pgpe.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/ode/ccrl_glass_pgpe.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/ode/ccrl_plate_pgpe.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/ode/johnnie_pgpe.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/ode/johnnie_reinforce.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/shipsteer/shipbench_pgpe.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/environments/shipsteer/shipbench_sde.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/valuebased/nfq.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/rl/valuebased/td.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/backprop/backpropanbncn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/backprop/backpropxor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/backprop/datasets/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/backprop/datasets/anbncn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/backprop/datasets/parity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/backprop/datasets/xor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/backprop/parityrnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/evolino/lib/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/evolino/lib/data_generator.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/evolino/superimposed_sine.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/neuralnets+svm/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/neuralnets+svm/datasets/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/neuralnets+svm/datasets/datagenerator.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/neuralnets+svm/example_fnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/neuralnets+svm/example_mixturedensity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/neuralnets+svm/example_rnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/neuralnets+svm/example_svm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/test_network_read_write/jpq2layersReader.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/test_network_read_write/jpq2layersWriter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/test_network_read_write/myparam2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/test_network_read_write/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/supervised/test_network_read_write/trndata" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/unsupervised/gp.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/unsupervised/kohonen.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/unsupervised/lsh.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/examples/unsupervised/rbm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/auxiliary/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/auxiliary/gaussprocess.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/auxiliary/gradientdescent.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/auxiliary/importancemixing.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/auxiliary/kmeans.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/auxiliary/pca.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/datasets/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/datasets/classification.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/datasets/dataset.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/datasets/importance.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/datasets/reinforcement.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/datasets/sequential.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/datasets/supervised.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/datasets/unsupervised.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/distributionbased/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/distributionbased/cmaes.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/distributionbased/distributionbased.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/distributionbased/fem.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/distributionbased/nes.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/distributionbased/rank1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/distributionbased/snes.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/distributionbased/ves.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/distributionbased/xnes.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/finitedifference/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/finitedifference/fd.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/finitedifference/pgpe.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/finitedifference/spsa.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/hillclimber.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/memetic/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/memetic/innerinversememetic.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/memetic/innermemetic.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/memetic/inversememetic.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/memetic/memetic.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/neldermead.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/optimizer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/coevolution/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/coevolution/coevolution.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/coevolution/competitivecoevolution.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/coevolution/multipopulationcoevolution.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/es.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/evolution.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/ga.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/multiobjective/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/multiobjective/constnsga2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/multiobjective/nsga2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/populationbased/pso.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/optimization/randomsearch.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/agents/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/agents/agent.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/agents/learning.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/agents/linearfa.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/agents/logging.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/agents/optimization.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/balancetask.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/cartpole.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/doublepole.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/fast_version/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/fast_version/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/fast_version/cartpole.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/fast_version/cartpole.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/fast_version/cartpolecompile.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/fast_version/cartpoleenv.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/fast_version/cartpolewrap.pyx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/nonmarkovdoublepole.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/nonmarkovpole.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/cartpole/renderer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/classic/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/classic/acrobot.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/classic/mountaincar.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/classic/xor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/environment.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/episodic.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/fitnessevaluator.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/flexcube/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/flexcube/environment.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/flexcube/masspoint.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/flexcube/objects3d.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/flexcube/sensors.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/flexcube/tasks.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/flexcube/viewer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/functions/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/functions/bbob2010.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/functions/function.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/functions/lennardjones.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/functions/multimodal.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/functions/multiobjective.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/functions/transformations.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/functions/unbounded.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/functions/unimodal.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/graphical.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/maze.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/polarmaze.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/tasks/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/tasks/cheesemaze.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/tasks/maze.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/tasks/maze4x3.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/tasks/maze89state.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/tasks/mdp.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/tasks/pomdp.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/tasks/shuttle.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/tasks/tiger.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/mazes/tasks/tmaze.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/actuators.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/environment.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/instances/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/instances/acrobot.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/instances/ccrl.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/instances/johnnie.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/acrobot.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/acroside.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/acrotop.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/arm.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/box-sphere.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/ccrlGlas.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/ccrlPlate.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/ccrlTable.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/crawler.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/hand.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/johnnie-heavyarms.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/johnnie.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/octacrawl.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/models/sphere-walker.xode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/sensors.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/tasks/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/tasks/acrobot.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/tasks/ccrl.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/tasks/johnnie.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/tools/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/tools/configgrab.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/tools/makevideo.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/tools/mathhelpers.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/tools/xmltools.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/tools/xodetools.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/viewer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/xode_changes/body.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/ode/xode_changes/geom.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/renderer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/serverinterface.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/shipsteer/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/shipsteer/northwardtask.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/shipsteer/shipsteer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/shipsteer/viewer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/simple/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/simple/environment.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/simple/renderer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/simple/tasks.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/simplerace/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/simplerace/simplecontroller.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/simplerace/simpleracetask.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/simplerace/simpleracetcp.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/task.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/capturegame.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/capturegameplayers/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/capturegameplayers/captureplayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/capturegameplayers/clientwrapper.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/capturegameplayers/killing.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/capturegameplayers/moduledecision.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/capturegameplayers/nonsuicide.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/capturegameplayers/randomplayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/gomoku.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/gomokuplayers/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/gomokuplayers/gomokuplayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/gomokuplayers/killing.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/gomokuplayers/moduledecision.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/gomokuplayers/randomplayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/pente.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/tasks/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/tasks/capturetask.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/tasks/gomokutask.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/tasks/handicaptask.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/tasks/pentetask.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/tasks/relativegomokutask.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/tasks/relativetask.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/environments/twoplayergames/twoplayergame.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/experiments/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/experiments/continuous.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/experiments/episodic.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/experiments/experiment.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/experiments/queued.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/experiments/tournament.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/explorers/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/explorers/continuous/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/explorers/continuous/normal.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/explorers/continuous/sde.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/explorers/discrete/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/explorers/discrete/boltzmann.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/explorers/discrete/discrete.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/explorers/discrete/discretesde.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/explorers/discrete/egreedy.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/explorers/explorer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/directsearch/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/directsearch/directsearch.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/directsearch/enac.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/directsearch/gpomdp.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/directsearch/policygradient.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/directsearch/reinforce.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/directsearch/rwr.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/learner.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/meta/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/meta/levinsearch.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/meta/meta.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/modelbased/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/modelbased/leastsquares.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/modelbased/policyiteration.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/valuebased/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/valuebased/interface.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/valuebased/linearfa.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/valuebased/nfq.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/valuebased/q.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/valuebased/qlambda.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/valuebased/sarsa.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/rl/learners/valuebased/valuebased.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/connections/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/connections/connection.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/connections/full.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/connections/fullnotself.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/connections/identity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/connections/linear.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/connections/permutation.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/connections/shared.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/connections/subsampling.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/evolvables/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/evolvables/cheaplycopiable.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/evolvables/evolvable.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/evolvables/maskedmodule.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/evolvables/maskedparameters.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/evolvables/topology.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modulemesh.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/biasunit.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/evolinonetwork.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/gate.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/gaussianlayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/kohonen.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/linearlayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/lstm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/mdlstm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/mdrnnlayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/mixturedensity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/module.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/neuronlayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/relulayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/samplelayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/sigmoidlayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/softmax.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/softsign.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/statedependentlayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/svmunit.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/table.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/modules/tanhlayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/moduleslice.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/bidirectional.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/borderswiping.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/convolutional.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/custom/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/custom/capturegame.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/custom/convboard.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/feedforward.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/mdrnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/multidimensional.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/neurondecomposable.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/rbm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/recurrent.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/networks/swiping.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/structure/parametercontainer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/evolino/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/evolino/filter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/evolino/gfilter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/evolino/gindividual.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/evolino/gpopulation.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/evolino/individual.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/evolino/networkwrapper.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/evolino/population.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/evolino/variate.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/knn/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/knn/lsh/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/knn/lsh/minhash.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/knn/lsh/nearoptimal.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/trainers/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/trainers/backprop.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/trainers/evolino.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/trainers/mixturedensity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/trainers/rprop.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/trainers/svmtrainer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/supervised/trainers/trainer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/auxiliary.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/helpers.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/optimizationtest.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/runtests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/temp/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/testsuites.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/_test_equivalence_to_ctypes.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/auxiliary/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/auxiliary/test_pca.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/datasets/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/datasets/test_datasets_datasets.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/optimization/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/optimization/populationbased/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/optimization/populationbased/test_pso_ring.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/rl/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/rl/environments/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/rl/environments/twoplayergames/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/rl/environments/twoplayergames/test_capture_game.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/rl/environments/twoplayergames/test_pente.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/connections/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/connections/test_shared_connections.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/connections/test_sliced_connections.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/connections/test_subsampling_connection.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/modules/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/modules/test_peephole_lstm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/modules/test_peephole_mdlstm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/modules/test_samplelayer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/modules/test_simple_lstm_network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/modules/test_simple_mdlstm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/_test_mdrnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/_test_rbm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/custom/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/custom/test_capturegame_network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/custom/test_convolutional_nets.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_bidirectional_network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_borderswipingnetwork.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_cyclic_network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_nested_ffn_and_rnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_nested_network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_network_decomposition.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_network_forward_backward.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_network_sort.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_no_gravity_network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_recurrent_network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/structure/networks/test_swiping_network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/supervised/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/supervised/knn/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/supervised/knn/lsh/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/supervised/knn/lsh/test_minhash.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/supervised/knn/lsh/test_nearoptimal.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/supervised/trainers/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/supervised/trainers/test_backprop.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/supervised/trainers/test_evolino.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/supervised/trainers/test_rprop.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/test_utilities.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/test_utilities_dictionaries.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/test_utilities_flood.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/test_utilities_foundafter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/test_utilities_reachable.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/tools/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/tools/test_ibp_leftordered.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/tools/test_rlgluebridge.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tests/unittests/unsupervised/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/aptativeresampling.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/benchmark.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/customxml/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/customxml/handling.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/customxml/networkreader.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/customxml/networkwriter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/datasets/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/datasets/mnist.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/datasettools.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/example_tools.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/filehandling.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/fisher.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/functions.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/gridsearch.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/ibp.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/kwargsprocessor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/mixtures/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/mixtures/mixtureofgaussian.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/mixtures/mogpuremax.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/networking/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/networking/udpconnection.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/neuralnets.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/nondominated.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/plotting/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/plotting/ciaoplot.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/plotting/classification.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/plotting/colormaps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/plotting/fitnesslandscapes.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/plotting/fitnessprogression.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/plotting/multiline.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/plotting/quickvariations.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/rankingfunctions.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/rlgluebridge.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/shortcuts.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/svmdata.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/tools/validation.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/unsupervised/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/unsupervised/trainers/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/unsupervised/trainers/deepbelief.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/unsupervised/trainers/rbm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/pybrain/utilities.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pybrain-master/setup.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/tesi.pdf" afterPath="$PROJECT_DIR$/latex/tesi.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/tesi.synctex.gz" afterPath="$PROJECT_DIR$/latex/tesi.synctex.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/tesi.tex" afterPath="$PROJECT_DIR$/latex/tesi.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/modules/buildXML.py" afterPath="$PROJECT_DIR$/letter-music-rnn/modules/buildXML.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/example_neurolab.py" afterPath="$PROJECT_DIR$/letter-music-rnn/example_neurolab.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/modules/functions.py" afterPath="$PROJECT_DIR$/letter-music-rnn/modules/functions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music-rnn/modules/functions.py" afterPath="$PROJECT_DIR$/music-rnn/modules/functions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/modules/myBackProp.py" afterPath="$PROJECT_DIR$/letter-music-rnn/modules/myBackProp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music-rnn/modules/myBackProp.py" afterPath="$PROJECT_DIR$/music-rnn/modules/myBackProp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/output.xml" afterPath="$PROJECT_DIR$/letter-music-rnn/output.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music-rnn/output.xml" afterPath="$PROJECT_DIR$/music-rnn/output.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music-rnn/plot.py" afterPath="$PROJECT_DIR$/music-rnn/plot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/tesi.aux" afterPath="$PROJECT_DIR$/latex/tesi.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/tesi.log" afterPath="$PROJECT_DIR$/latex/tesi.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/errors/test_MSE.txt" afterPath="$PROJECT_DIR$/letter-music-rnn/errors/test_MSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music-rnn/errors/test_MSE.txt" afterPath="$PROJECT_DIR$/music-rnn/errors/test_MSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/errors/test_progression.txt" afterPath="$PROJECT_DIR$/letter-music-rnn/errors/test_progression.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/errors/train_MSE.txt" afterPath="$PROJECT_DIR$/letter-music-rnn/errors/train_MSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music-rnn/errors/train_MSE.txt" afterPath="$PROJECT_DIR$/music-rnn/errors/train_MSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/errors/train_progression.txt" afterPath="$PROJECT_DIR$/letter-music-rnn/errors/train_progression.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/train_rnn.py" afterPath="$PROJECT_DIR$/letter-music-rnn/train_rnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music-rnn/train_rnn.py" afterPath="$PROJECT_DIR$/music-rnn/train_rnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/use_rnn.py" afterPath="$PROJECT_DIR$/letter-music-rnn/use_rnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music-rnn/use_rnn.py" afterPath="$PROJECT_DIR$/music-rnn/use_rnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/errors/valid_MSE.txt" afterPath="$PROJECT_DIR$/letter-music-rnn/errors/valid_MSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music-rnn/errors/valid_MSE.txt" afterPath="$PROJECT_DIR$/music-rnn/errors/valid_MSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/letter-music-rnn/weights.xml" afterPath="$PROJECT_DIR$/letter-music-rnn/weights.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music-rnn/weights.xml" afterPath="$PROJECT_DIR$/music-rnn/weights.xml" />
+    </list>
+    <ignored path="Tesi.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Tesi" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="train_rnn.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/music-rnn/train_rnn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6689655">
+              <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+              <folding>
+                <element signature="e#23#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myBackProp.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/music-rnn/modules/myBackProp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/music-rnn/modules/functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="235" column="21" selection-start-line="235" selection-start-column="21" selection-end-line="235" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/files/toGenerate/output.xml" />
+        <option value="$PROJECT_DIR$/files/toGenerate/EmptyXML.xml" />
+        <option value="$PROJECT_DIR$/files/toGenerate/builtTree" />
+        <option value="$PROJECT_DIR$/music-rnn/output.xml" />
+        <option value="$PROJECT_DIR$/music-rnn/codingFunction.py" />
+        <option value="$PROJECT_DIR$/music-rnn/main" />
+        <option value="$PROJECT_DIR$/music-rnn/buildXML.py" />
+        <option value="$PROJECT_DIR$/music-rnn/functions.py" />
+        <option value="$PROJECT_DIR$/music-rnn/classes.py" />
+        <option value="$PROJECT_DIR$/music-rnn/myBackProp.py" />
+        <option value="$PROJECT_DIR$/music-rnn/modules/buildXML.py" />
+        <option value="$PROJECT_DIR$/music-rnn/use_rnn.py" />
+        <option value="$PROJECT_DIR$/rnn_examples/plot.py" />
+        <option value="$PROJECT_DIR$/music-rnn/modules/classes.py" />
+        <option value="$PROJECT_DIR$/rnn_examples/rnn_xor.py" />
+        <option value="$PROJECT_DIR$/music-rnn/plot.py" />
+        <option value="$PROJECT_DIR$/letter-music-rnn/modules/classes.py" />
+        <option value="$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/datasets/supervised.py" />
+        <option value="$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/neurolab/core.py" />
+        <option value="$PROJECT_DIR$/letter-music-rnn/plot.py" />
+        <option value="$PROJECT_DIR$/letter-music-rnn/modules/myBackProp.py" />
+        <option value="$PROJECT_DIR$/letter-music-rnn/use_rnn.py" />
+        <option value="$PROJECT_DIR$/letter-music-rnn/modules/functions.py" />
+        <option value="$PROJECT_DIR$/letter-music-rnn/modules/buildXML.py" />
+        <option value="$PROJECT_DIR$/letter-music-rnn/train_rnn.py" />
+        <option value="$PROJECT_DIR$/music-rnn/modules/functions.py" />
+        <option value="$PROJECT_DIR$/letter-music-rnn/example_neurolab.py" />
+        <option value="$PROJECT_DIR$/music-rnn/modules/myBackProp.py" />
+        <option value="$PROJECT_DIR$/music-rnn/train_rnn.py" />
+      </list>
+    </option>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tesi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Remote" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="FullScreen" value="true" />
+    <property name="recentsLimit" value="5" />
+    <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/letter-music-rnn" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/music-rnn" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.functions">
+    <configuration default="false" name="functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/music-rnn/modules" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Tesi" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/music-rnn/modules/functions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Tesi" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Tesi" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Tesi" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Tesi" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Tesi" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Tesi" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.functions" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.functions" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f07ca9ed-af33-4064-b096-ec86f190bcfd" name="Default" comment="" />
+      <created>1434037679740</created>
+      <option name="number" value="Default" />
+      <updated>1434037679740</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.4871287" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.51287127" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997344" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997344" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.51287127" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.4871287" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="7" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/structure/modules/biasunit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10344828">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/structure/modules/linearlayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10344828">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/structure/modules/lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0965518">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/structure/modules/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/structure/modules/mdlstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnn_examples/plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14482759">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnn_examples/modules/myBackProp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6634483">
+          <caret line="145" column="37" selection-start-line="145" selection-start-column="37" selection-end-line="145" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/numpy/lib/arraysetops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/numpy/core/numeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="366" column="0" selection-start-line="366" selection-start-column="0" selection-end-line="366" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnn_examples/rnn_xor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3324138">
+          <caret line="1801" column="8" selection-start-line="1801" selection-start-column="8" selection-end-line="1801" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music-rnn/modules/classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8344827">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/structure/networks/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41517243">
+          <caret line="277" column="61" selection-start-line="277" selection-start-column="61" selection-end-line="277" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music-rnn/modules/myTrainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24827586">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/neurolab/trans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm40/python_stubs/-1769905847/numpy/core/multiarray.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4919" column="9" selection-start-line="4919" selection-start-column="4" selection-end-line="4919" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/letter-music-rnn/.idea/.name">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/datasets/supervised.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="22" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/datasets/sequential.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3324138">
+          <caret line="169" column="8" selection-start-line="169" selection-start-column="8" selection-end-line="169" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm40/python_stubs/-1769905847/numpy/random/mtrand.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="34.25931">
+          <caret line="1658" column="4" selection-start-line="1658" selection-start-column="4" selection-end-line="1658" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/tools/validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1875862">
+          <caret line="297" column="34" selection-start-line="297" selection-start-column="34" selection-end-line="297" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/neurolab/tool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7434483">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/neurolab/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/numpy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="46.925926">
+          <caret line="89" column="50" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/numpy/lib/type_check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3324138">
+          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/neurolab/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.022069">
+          <caret line="294" column="12" selection-start-line="294" selection-start-column="12" selection-end-line="294" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/neurolab/net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76689655">
+          <caret line="227" column="12" selection-start-line="227" selection-start-column="12" selection-end-line="227" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/numpy/lib/function_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.22068965">
+          <caret line="3831" column="4" selection-start-line="3831" selection-start-column="4" selection-end-line="3831" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm40/python_stubs/-1769905847/numpy/core/_dotblas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm40/python_stubs/-1769905847/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3932" column="8" selection-start-line="3932" selection-start-column="8" selection-end-line="3932" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/structure/evolvables/cheaplycopiable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/rl/environments/mazes/tasks/maze.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/rl/environments/mazes/tasks/shuttle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/structure/modules/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.1931036">
+          <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/letter-music-rnn/modules/myTrainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/structure/networks/recurrent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.504298">
+          <caret line="126" column="6" selection-start-line="126" selection-start-column="6" selection-end-line="126" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/structure/networks/feedforward.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19770774">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/auxiliary/gradientdescent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/stuff/lib/python2.7/site-packages/pybrain/tools/shortcuts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1793103">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/letter-music-rnn/modules/classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/letter-music-rnn/use_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1793103">
+          <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/letter-music-rnn/modules/buildXML.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5241379">
+          <caret line="88" column="47" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/letter-music-rnn/plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10344828">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="32" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music-rnn/plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33103448">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/letter-music-rnn/modules/myBackProp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41977078">
+          <caret line="230" column="55" selection-start-line="230" selection-start-column="55" selection-end-line="230" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/letter-music-rnn/train_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33793104">
+          <caret line="124" column="93" selection-start-line="118" selection-start-column="8" selection-end-line="124" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/letter-music-rnn/modules/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.662069">
+          <caret line="216" column="109" selection-start-line="213" selection-start-column="8" selection-end-line="216" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/letter-music-rnn/example_neurolab.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music-rnn/modules/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="235" column="21" selection-start-line="235" selection-start-column="21" selection-end-line="235" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music-rnn/modules/myBackProp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music-rnn/train_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6689655">
+          <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+          <folding>
+            <element signature="e#23#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

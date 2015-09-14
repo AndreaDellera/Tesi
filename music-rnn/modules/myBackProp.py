@@ -217,16 +217,19 @@ class myBackpropTrainer(myTrainer):
         trainingErrors = []
         validationErrors = [bestverr]
         while True:
+
             trainingErrors.append(self.train())
             validationErrors.append(self.testOnData(validationData))
+
             if validationErrors[-1] < bestverr:
-                # one update is always done
                 bestverr = validationErrors[-1]
                 bestweights = self.module.params.copy()
+
 
             if maxEpochs is not None and epochs >= maxEpochs:
                 self.module.params[:] = bestweights
                 break
+
             epochs += 1
 
             if len(validationErrors) >= continueEpochs * 2:
@@ -234,11 +237,14 @@ class myBackpropTrainer(myTrainer):
                 # compare the average of the last few to the previous few
                 old = validationErrors[-continueEpochs * 2:-continueEpochs]
                 new = validationErrors[-continueEpochs:]
+
                 if min(new) > max(old):
                     self.module.params[:] = bestweights
                     break
-        trainingErrors.append(self.testOnData(trainingData))
-        self.ds = datasetTrain
+
+        # trainingErrors.append(self.testOnData(trainingData))
+        # self.ds = datasetTrain
+
         if verbose:
             print 'train-errors:', fListToString(trainingErrors, 6)
             print 'valid-errors:', fListToString(validationErrors, 6)
