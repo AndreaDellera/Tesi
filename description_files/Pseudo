@@ -1,0 +1,49 @@
+For each note in File:
+	note = read
+	note.code() // la nota viene codificata in una sequenza di 0 / 1
+	insert note in array //array nome indicativo per indicare una struttura che contenga le note
+
+For i in range array.length:
+
+	insert (array[i],array[i+1]...array[n], array[n+1]) into dataset
+	/*
+		Nel dataset gli input per la rete sono sequenze di note codificate.
+		La lunghezza di questa sequenza è variabile, in base all'accuratezza che si vuole ottenere.
+		L'ultimo elemento è il target della sequenza, che servirà quando andrò a fare training e test.
+		Le note sono inserite nel dataset una di fila all'altra, per mantenere la logica della musica che rappresentano.
+	*/
+
+	dataset = set(dataset)
+
+	/*
+		Faccio passare le sequenze dentro il dataset per un set, un modo veloce per eliminare quelle replicate.
+		In questo modo ogni sequenza di note, con relativo output, è presente una sola volta e quindi tutte le sequenze hanno la stessa importanza. Senza questo accorgimente leggendo le sequenze da partiture di vere canzoni è facile che la stessa sequenza sia ripetuta (basti pensare a quante volte una strofa sia suonata rispetto ad un assolo) più volte, aumentando l'importanza rispetto a quelle presenti meno volte
+	*/
+
+rnn = RecurrentNeuralNetwork
+rnn.hiddenLayers = LongShortTermMemory (LSTM)
+rnn.outputLayers = Sigmoidal
+
+/*
+	La rete è una rete neurale ricorrente. Gli hidden layer sono LSTM, utilizzati per la loro predisposizione ad impare sequenze, mentre gli output layer sono di tipo sigmoidale, visto che devono predirre 0 / 1 (il valore di uscita verrà arrontondato sulla soglia dello 0.5)
+*/
+
+trainer = BackPropagation
+trainer.learningRate = 0.00001
+trainer.momentum = 0.99
+trainer.batchLearning = True
+
+/*
+	L'algoritmo con cui alleno la rete è back propagation, abbinato alla discesa lungo il gradiente.
+	Il learning rate è basso (solitamente è 0.01 ma ci si piò spingere anche più sotto se si vuole maggior precisione; i tempi di computazione però aumentano) mentre il momentum è vicino al massimo, quindi 1.
+	Considero un aggiornamento dei pesi alla fine di ogni ciclo di train, il motivo per cui è batch learning, visto che ogni volta "mescolo" il dataset in modo casuale e quindi non do importanza all'ordine con cui la rete li riceve
+*/
+
+ripetizioni = x // numero di ripetizioni di train e test
+
+for i in range ripetizioni
+	random(dataset) // mescola le sequenze all'interno del dataset
+	split dataset in dsTrain, dsTest //divide in dataset mescolato in due parti
+	with trainer train rnn on dsTrain 20 times // fa 20 discese sul gradiente 
+	test rnn on dsTest // fa validazione
+	save on file train.error and test.error
