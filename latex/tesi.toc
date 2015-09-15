@@ -9,17 +9,17 @@
 \contentsline {section}{\numberline {3}Allenamento della rete}{7}
 \contentsline {subsection}{\numberline {3.1}Back Propagation}{7}
 \contentsline {subsection}{\numberline {3.2}Bold Driver}{7}
-\contentsline {subsection}{\numberline {3.3}Momentum}{8}
+\contentsline {subsection}{\numberline {3.3}Momentum}{7}
 \contentsline {subsection}{\numberline {3.4}Funzione utilizzata per l'allenamento}{8}
-\contentsline {section}{\numberline {4}Codifica}{9}
-\contentsline {subsection}{\numberline {4.1}Codifica delle note}{9}
-\contentsline {subsection}{\numberline {4.2}Codifica della durata}{9}
-\contentsline {subsection}{\numberline {4.3}Codifica dell'ottava}{10}
-\contentsline {subsection}{\numberline {4.4}Codifica delle pause}{10}
-\contentsline {subsection}{\numberline {4.5}Esempi di codifica}{10}
-\contentsline {subsection}{\numberline {4.6}Creazione degli esempi}{10}
-\contentsline {section}{\numberline {5}Esperimenti}{11}
-\contentsline {subsection}{\numberline {5.1}Esperimento 1 - Imparare sequenze di note semplici}{11}
-\contentsline {subsection}{\numberline {5.2}Esperimento 2 - Imparare una canzone}{12}
-\contentsline {subsection}{\numberline {5.3}Esperimento 3 - Imparare pi\`u di una canzone}{13}
-\contentsline {section}{\numberline {6}Conclusioni}{14}
+\contentsline {section}{\numberline {4}Codifica}{10}
+\contentsline {subsection}{\numberline {4.1}Codifica delle note}{10}
+\contentsline {subsection}{\numberline {4.2}Codifica della durata}{10}
+\contentsline {subsection}{\numberline {4.3}Codifica dell'ottava}{11}
+\contentsline {subsection}{\numberline {4.4}Codifica delle pause}{11}
+\contentsline {subsection}{\numberline {4.5}Esempi di codifica}{11}
+\contentsline {subsection}{\numberline {4.6}Creazione degli esempi}{11}
+\contentsline {section}{\numberline {5}Esperimenti}{12}
+\contentsline {subsection}{\numberline {5.1}Esperimento 1 - Imparare sequenze di note semplici}{12}
+\contentsline {subsection}{\numberline {5.2}Esperimento 2 - Imparare una canzone}{13}
+\contentsline {subsection}{\numberline {5.3}Esperimento 3 - Imparare pi\`u di una canzone}{14}
+\contentsline {section}{\numberline {6}Conclusioni}{16}

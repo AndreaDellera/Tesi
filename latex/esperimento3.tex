@@ -1,6 +1,6 @@
 Quando si \`e trattato di far imparare alle reti pi\`u di una canzone sono sorti alcuni problemi perch\`e queste in qualche modo dimenticavano le sequenze gi\`a imparate a favore delle ultime viste; inoltre si riscontravano problemi a livello del codice utilizzato per implementare le reti~\cite{schaul2010pybrain} che non si \`e riusciti ad identificare ma evidentemente presenti visto l'andamento degli errori di train e validazione.\\
 Come si pu\`o vedere dai primi grafici (figure~\ref{fig:rrn_errors_all} e~\ref{fig:ffn_errors_all}) l'andamento degli errori non ha il comportamento che ci si aspetta da una rete. Se si valutano gli errori medi si evince un andamento pi\`u classico ma guardando quelli per ogni sessione si vede che non \`e normale e non c\`e stato abbastanza tempo per trovare un motivo a questo comportamento.\\
-Una possibile spiegazione pu\`o essere che 
+Una possibile spiegazione pu\`o essere data dal fatto che quando viene fatto l'allenamento su un pezzo di database al successivo cambio, visto che alcune sequenza vengo inserite ed altre tolte, la rete trova sequenze gi\`a viste su cui fare validazione e questo potrebbe spiegare l'oscillazione dell'errore. 
 \begin{figure}[!htb]
 		\begin{minipage}[b]{8.5cm}
 		\centering

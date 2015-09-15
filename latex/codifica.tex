@@ -1,5 +1,5 @@
 \section{Codifica}
-Le note, estratte da partiture scritte in formato MusicXML, devono avere una codifica per essere interpretate dalla rete. Le features considerate sono cinque:
+Le note, estratte da partiture scritte in formato MusicXML, devono avere una codifica per essere interpretate dalla rete. Le caratteristiche considerate sono cinque:
 \begin{itemize}
 \item[-]nome della nota;
 \item[-]alterazione;
@@ -10,8 +10,8 @@ Le note, estratte da partiture scritte in formato MusicXML, devono avere una cod
 Di queste cinque il nome e l'alterazione sono unite in un'unica codifica visto che sono strettamente correlate tra loro, cos\`i come la durata e punto di valore.
 
 \subsection{Codifica delle note}
-Le note nel sistema europeo sono chiamate \emph{la, si, do, re, mi, fa, sol} che nel sistema americano corrispondono a \emph{A, B, C, D, E, F, G}; in questo scritto verr\`a utilizzato il secondo, perch\`e pi\`u compatto e sintetico.
-Per codificare tutte le note servono almeno quattro bit, questo perch\`e oltre alle sette naturali riportate sopra abbiamo anche quelle alterate dai $\sharp$ e dai $\flat$. Va ricordato per\`o che introducendo entrambe le alterazioni nella codifica si hanno note ridondati dal punto di vista sonoro. Infatti se G $\sharp$ e A $\flat$ indicano due note diverse, perch\`e cambia la tonalit\`a in cui vengono usate, il suono che viene prodotto quando sono suonate \`e per\`o lo stesso. Ecco perch\`e nella codifica utilizzeremo solo il diesis.
+Le note nel sistema europeo sono chiamate \emph{la, si, do, re, mi, fa, sol}, che nel sistema americano corrispondono a \emph{A, B, C, D, E, F, G}; in questo scritto verr\`a utilizzato il secondo formato, perch\`e pi\`u compatto e sintetico.
+Per codificare tutte le note servono almeno quattro bit, questo perch\`e oltre alle sette naturali riportate sopra abbiamo anche quelle alterate dai $\sharp$ (diesis) e dai $\flat$ (bemolle). Va ricordato per\`o che introducendo entrambe le alterazioni nella codifica si hanno note ridondati dal punto di vista sonoro. Infatti se G $\sharp$ e A $\flat$ indicano due note diverse, perch\`e cambia la tonalit\`a in cui vengono usate, il suono che viene prodotto quando sono suonate \`e per\`o lo stesso. Ecco perch\`e nella codifica utilizzeremo solo il diesis.
 
 \begin{table}[ht]
 \centering
@@ -51,11 +51,11 @@ Come fatto precedentemente verr\`a assegnata una sequenza di bit ad ogni durata.
 \setmetera{1}{64}& 110\\\hline
 \end{tabular}
 \end{table}\\
-Un'altra variabile che entra quando si parla di durata \`e il \emph{punto di valore} (\Pu). Questo strumento aumenta la durata della nota della sua met\`a e per codificarlo useremo un bit che sar\`a 0 se non c'\`e e 1 in caso contrario.
+Un'altra variabile che entra in gioco quando si parla di durata \`e il \emph{punto di valore} (\Pu). Questo strumento aumenta la durata della nota della sua met\`a e per codificarlo useremo un bit che sar\`a 0 se non c'\`e e 1 in caso contrario.
 
 \subsection {Codifica dell'ottava}
 In ci\`o che va a costituire una nota una parte importante \`e l'\emph{ottava}. L'ottava costituisce l'altezza della nota, un'offset rispetto a quella pi\`u bassa. Si pu\`o pensarla come una somma di $n * 12semitoni$ rispetto alla nota pi\`u bassa.
-Anche qui la codifica che verr\`a seguita \`e binaria. Essendoci undici ottave, $C_{-1};...; C_9$, dovrebbero essere usati 4 bit per la rappresentazione ma, visto che le ottave $C_{-1}, C_0$ e $C_9$ non vengono praticamente mai utilizzate verranno usati tre bit per rappresentare le otto rimanenti.
+Anche qui la codifica che verr\`a seguita \`e binaria. Essendoci undici ottave, $C_{-1};...; C_9$, dovrebbero essere usati 4 bit per la rappresentazione ma, visto che le ottave $C_{-1}, C_0$ e $C_9$ non vengono praticamente mai utilizzate verranno impiegati tre bit per rappresentare le otto rimanenti.
 
 \begin{table}[ht]
 \centering
@@ -75,7 +75,7 @@ $C_8$& 111\\\hline
 
 \subsection {Codifica delle pause}
 Le pause sono uno strumento musicale molto comune, vengono utilizzate per dire ad uno strumento di non suonare. L'unico dato che portano \`e quello della durata, visto che non hanno una ottava di riferimento.
-Verranno codificate con \emph{1111} nel campo di codifica della nota, in quanto denotano una nota inesistente.
+Verranno codificate con \emph{1111} nel campo del nome della nota e dell'ottava, in quanto rappresentano una nota inesistente.
 
 \subsection{Esempi di codifica}
 \begin{table}[ht]
