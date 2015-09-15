@@ -1,43 +1,42 @@
 \section{Modelli utilizzati}
-\subsection{RNN}
+In questo capitolo verranno analizzate le architetture utilizzate nello sviluppo della tesi.\\
+\subsection{Recurrent Neural Network}
 Una rete neurale ricorrente \`e una rete in cui esistono cammini trai nodi che formano dei cicli. Il tipo utilizzato in questa tesi \`e Long Short Term Memory (LSTM). Una rete LSTM, composta da neuroni LSTM, ha la capacit\`a di ricordare gli elementi passati per un determinato tempo, quindi per un certo numero di attivazioni, ed \`e quindi indicata in problemi dove ci sono da imparare sequenze e visto che nel problema affrontato devono essere imparate sequenze di note \`e sembrata la pi\`u appropriata. Il grafo che la rappresenta \`e il seguente:
-\input{graph_rnn}
+\begin{figure}[!htb]
+	\input{graph_rnn}
+	\caption{Grafo rete neurale ricorrente}
+	\label{fig:RNN}
+\end{figure}
 La parte pi\`u importante, quella che caratterizza la RNN \`e la connessione tra tutti i neuroni presenti nello strato nascosto.\\
-\subsection{FFN}
-Una rete neurale di questo tipo \`e la pi\`u classica, la prima e la pi\`u semplice ad essere implementata, con cammini che vanno da uno strato al successivo senza formare cicli; questa \`e la caratterisca pi\`u importante che la distingue da una RNN. Il grafo di questa rete \`e il seguente:
-\input{graph_ffn}
+\subsection{Feed Forward Network}
+\begin{figure}[!htb]
+	\input{graph_ffn}
+	\caption{Grafo rete neurale FeedForwards}
+	\label{fig:FFN}
+\end{figure}
+Una rete neurale di questo tipo \`e la pi\`u classica, la prima e la pi\`u semplice ad essere implementata, con cammini che vanno da uno strato al successivo senza formare cicli; questa \`e la caratterisca pi\`u importante che la distingue da una RNN. Il grafo di questa rete \`e quello rappresentato in figura~\ref{fig:FFN}.
 Da notare l'assenza di cicli nello strato nascosto.\\
 \subsection{Numero di input}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/n_input.png}
+	\caption{Andamento errori in fase di validazione su un brano con un numero diverso di note in input}
+	\label{fig:differentInput}
+\end{figure}
 Teoricamente ad una RNN basterebbe una sola nota in input per imparare una canzone intera, visto che ha memoria di quello che ha visto ed in che ordine lo ha visto ma si \`e reso necessario ampliare l'input ad $N$\footnote{Il numero di note in input viene definito appropriatamente in ogni esperimento;} note (come viene fatto in~\cite{todd1989}) perch\`e una sola non risultava sufficiente per limiti di hardware.
 Con pi\`u note si usano come input pi\`u la probabilit\`a che la rete indovini il target aumenta perch\`e rendiamo esplicita un pezzo di storia della canzone (le $N$ note precedenti al target).
 Durante la fase di scrittura del codice \`e stata riscontrata una relazione tra il numero di note in input e la correttezza dell'output che conferma quanto detto; ovvero se come input si dava una sequenza composta da una sola nota questa riusciva a predirne correttamente solo un'altra come successiva. Quindi quando ci si trovava nella situazione di una doppia scelta ecco che la rete non riusciva pi\`u a distinguere le due note.
 Sempre facendo riferimento allo scritto citato sopra~\cite{todd1989} si legge che la rete creata era caratterizzata dall'avere otto note come input.\\
-Il seguente grafico riporta gli errori in fase di validazione su un brano relativamente semplice; indipendentemente dal numero di input il numero di cicli di allenamento e quello di neuroni nello strato nascosto \`e stato mantenuto costante. Si possono evincere due fattori importanti:
+Il grafico in figura~\ref{fig:differentInput} riporta gli errori in fase di validazione su un brano relativamente semplice; indipendentemente dal numero di input il numero di cicli di allenamento e quello di neuroni nello strato nascosto \`e stato mantenuto costante. Si possono evincere due fattori importanti:
 \begin{itemize}
 \item[-]con pi\`u neuroni la rete possiede pi\`u cicli di allenamento sono necessari perch\`e produca buoni risultati. Questo spiega come mai quando si hanno cinque ed otto input gli errori sono pi\`u alti;
 \item[-]se il numero di input \`e proporzionale alla difficolt\`a del brano gli errori calano pi\`u velocemente;
 \end{itemize}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{img/n_input.png}
-\end{center}
 Non c'\`e un modo per decidere arbitrariamente il numero di note in input ma bisogna trovare un compromesso tra la quantit\`a di sequenze che si possono/vogliono riconoscere, la complessit\`a del sistema ed il tempo che si vuole dedicare all'allenamento della rete.
 
 \subsection{Tipo di rete utilizzata}
-Le reti neurali  sono cos\`i composte:
-\begin{itemize}
-\item[-]1 strato di input con $Nnote*11$ neuroni;
-\item[-]1 strato nascosto con $x$ neuroni\footnote{Il numero esatto di neuroni presenti nello strato nascosto viene definito appropriatamente in ogni esperimento;};
-\item[-]1 strato di output con 11 neuroni.
-\end{itemize}
-C'\`e una connessione piena tra lo strato di input e lo strato nascosto, tra lo strato nascosto e lo strato di output e tra lo strato nascosto e se stesso\footnote{I pesi che portano dal nodo $A$ al nodo $B$ possono essere diversi di quelli che portano dal nodo $B$ al nodo $A$;}.
-La differenza tra rete neurale ricorrente e non \`e che la seconda non presenta la connessione tra lo strato nascosto e se stesso come \`e gi\`a stato possibile vedere.\\
-Le funzioni di attivazione utilizzate all'interno dei neuroni sono di due tipi:
-\begin{itemize}
-\item[-] Sigmoidea;
-\item[-] LSTM.
-\end{itemize}
-La funzione sigmoidea \`e particolarmente adatta al problema perch\`e ha dominio in $[0;1]$ e visto che \`e stata usata una codifica binaria risulta la pi\`u congeniale. 
-\begin{center}
+\begin{figure}
+\centering
 \begin{tikzpicture}
     \begin{axis}[
     	legend pos=north west,
@@ -61,9 +60,23 @@ La funzione sigmoidea \`e particolarmente adatta al problema perch\`e ha dominio
       %\addlegendentry{$f(x)=\frac{1}{1+e^{-5*x}}$}
     \end{axis} 
 \end{tikzpicture}
-\end{center}
-
-
+\caption{Funzione sigmoidea}
+\label{fig:sigmoide}
+\end{figure}
+Le reti neurali  sono cos\`i composte:
+\begin{itemize}
+\item[-]1 strato di input con $Nnote*11$ neuroni;
+\item[-]1 strato nascosto con $x$ neuroni\footnote{Il numero esatto di neuroni presenti nello strato nascosto viene definito appropriatamente in ogni esperimento;};
+\item[-]1 strato di output con 11 neuroni.
+\end{itemize}
+C'\`e una connessione piena tra lo strato di input e lo strato nascosto, tra lo strato nascosto e lo strato di output e tra lo strato nascosto e se stesso\footnote{I pesi che portano dal nodo $A$ al nodo $B$ possono essere diversi di quelli che portano dal nodo $B$ al nodo $A$;}.
+La differenza tra rete neurale ricorrente e non \`e che la seconda non presenta la connessione tra lo strato nascosto e se stesso come \`e gi\`a stato possibile vedere.\\
+Le funzioni di attivazione utilizzate all'interno dei neuroni sono di due tipi:
+\begin{itemize}
+\item[-] Sigmoidea;
+\item[-] LSTM.
+\end{itemize}
+La funzione sigmoidea \`e particolarmente adatta al problema perch\`e ha dominio in $[0;1]$ e visto che \`e stata usata una codifica binaria risulta la pi\`u congeniale. La sua forma \`e descritta in dettaglio nella figura~\ref{fig:sigmoide}.\\
 A seconda del tipo di rete utilizzata cambiano i tipi di neuroni (per esempio quelli LSTM possono essere utilizzati solo con RNN). Quelli utilizzati nel programma sono:\\
 \begin{table}[ht]
 \centering

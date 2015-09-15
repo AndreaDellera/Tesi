@@ -1,5 +1,5 @@
 \documentclass[a4paper]{article}
-
+\usepackage[italian]{babel}
 \usepackage[T1]{fontenc} % codifica dei font in uscita
 \usepackage[utf8]{inputenc} % lettere accentate da tastiera 
 \usepackage{mathptmx} % font in times new roman
@@ -7,6 +7,7 @@
 \usepackage{harmony} % pacchetto per scrivere le note
 \usepackage{amsmath} % pacchetto per scrivere le note
 \newcommand{\setmetera}[2]{\ensuremath{\genfrac{}{}{0pt}{}{#1}{#2}}} % \setmetera{4}{4} per scrivere il tempo 4/4
+\usepackage{natbib}
 
 %grafici e plots
 \usepackage{tikz}
@@ -22,7 +23,7 @@
 %importazione di codice
 \usepackage{listings}
 
-%sottotabelle
+\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subcaption}
 %scrittura di url
 \usepackage{url}
@@ -77,6 +78,14 @@
   publisher={IEEE}
 }
 
+@booklet{JohnsonRNN,
+author = {Johnson, Daniel},
+title = {Composing Music With Recurrent Neural Networks {@online}},
+month = sep,
+year = {2015},
+url = {\url{http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/}}
+}
+
 \end{filecontents*}
 
 % inizio del documento
@@ -106,8 +115,6 @@
 
 \input{conclusioni}
 \newpage
-
-\tableofcontents{Indice}
 
 \bibliographystyle{plain}
 \bibliography{biblio}

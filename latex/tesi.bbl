@@ -5,6 +5,11 @@ Roberto Battiti.
 \newblock Accelerated backpropagation learning: Two optimization methods.
 \newblock {\em Complex systems}, 3(4):331--342, 1989.
 
+\bibitem{JohnsonRNN}
+Daniel Johnson.
+\newblock Composing music with recurrent neural networks {@online}, September
+  2015.
+
 \bibitem{kohavi1995study}
 Ron Kohavi et~al.
 \newblock A study of cross-validation and bootstrap for accuracy estimation and

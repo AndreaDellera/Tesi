@@ -1,0 +1,80 @@
+Prima di descrivere l'esperimento \`e necessario dare alcune informazioni sulla rete:
+\begin{itemize}
+\item[-]sono state utilizzate cinque note per comporre l'input;
+\item[-]il numero di neuroni nell'hidden layer \`e pari a venti.
+\end{itemize}
+La FNN impara sequenze pi\`u semplici di note pi\`u velocemente e pi\`u correttamente rispetto a quella ricorrente. Dalle prove fatte (arpeggi sulla tonalit\`a di do maggio re e scala su due ottave di do maggiore) la FFN \`e stata capace di ricondursi pi\`u velocemente alle sequenze imparate. La RNN invece impara con errori le sequenze, risultato che contribuisce a non saper ricreare correttamente gli esempi.
+\\
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{img/ciclo}
+	\caption{Le note sono disposte rispettando il ciclo delle quinte e hanno tutte uguale durate ed ottava}
+	\label{fig:ciclo}
+\end{figure}\\
+Nel primo file, rappresentato il figura~\ref{fig:ciclo}, le sequenze di note erano disposte in una forma a cerchio, rispetta il \emph{ciclo delle quinte}, una progressione di note in cui ad ognuna viene fatta seguire la sua quinta naturale. Gli errori medi ottenuti in fase di train e validazione sono:
+\begin{table}[ht]
+\centering
+\begin{tabular}{| c | c | c |}
+\multicolumn {3}{c}{\textbf{Errori esempio a cerchio}}\\
+\hline
+&\textbf{FFN}&\textbf{RNN}\\\hline
+Allenamento&0.153463&0.003124\\\hline
+Validazione&0.306923&0.027443\\\hline
+\end{tabular}
+\caption{Errori sequenza \emph{a cerchio}}
+\label{tab:cerchio}
+\end{table}\\
+L'andamento durante le tutte le sessioni di allenamento degli errori di addestramento e di validazione sono descritti in figura~\ref{fig:ffn_ciclo} e~\ref{fig:rnn_ciclo}.\\
+\begin{figure}[!htb]
+	\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=1\textwidth]{img/ffn_circle_errors.png}
+		\caption{Andamento degli errori dell'esempio in figura~\ref{fig:ciclo} utilizzando una FFN.}
+	        \label{fig:ffn_ciclo}
+	\end{minipage}
+ 	\hspace{2mm} \hspace{3mm} \
+	\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=1\textwidth]{img/rnn_circle_errors.png}
+		\caption{Andamento degli errori dell'esempio in figura~\ref{fig:ciclo} utilizzando una RNN.}
+		\label{fig:rnn_ciclo}
+	\end{minipage}
+\end{figure}
+Nonostante gli errori nella RNN fossero pi\`u bassi quando si trattava di generare delle note la FFN riusciva a ricreare le stesse esatte sequenze mentre la RNN dopo un certo numero di note generate cominciava a perdere coerenza con quanto gi\`a creato. Questo \`e dovuto al fatto che un errore in una RNN influenza per molto tempo l'output della rete mentre nella FFN l'errore sparisce una volta che la nota esce dall'input. Inoltre si vede chiaramente come la FFN si blocchi in un minimo locale senza riuscire ad uscirne.
+\\
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{img/eight.png}
+	\caption{Le note sono disposte in modo da formare un otto, se viste in ripetizione}
+	\label{fig:otto}
+\end{figure}
+Nel secondo file, rappresentato in figura~\ref{fig:otto}, invece le note erano disposte come a formare una figura ad otto. 
+Di seguito sono riportati gli errori medi ottenuti in fase di addestramento, in fase di validazione (tabella~\ref{tab:otto}) e l'andamento lungo tutte le sessioni di allenamento degli errori di addestramento e di validazione (figure~\ref{fig:ffn_otto} e~\ref{fig:rnn_otto}).
+\\I grafici presentati presentano in dettaglio l'inizio dell'addestramento visto che poi tendono a zero. L'andamento degli errori nell FFN indica che probabilmente i dati sono soggetti a rumore, una possibile spiegazione del comportamento oscillatorio.
+\begin{table}[h!t]
+\centering
+\begin{tabular}{| c | c | c |}
+\multicolumn {3}{c}{\textbf{Errori esempio a otto}}\\
+\hline
+&\textbf{FFN}&\textbf{RNN}\\\hline
+Allenamento&0.000759&0.002412\\\hline
+Validazione&0.001569&0.006690\\\hline
+\end{tabular}
+\caption{Errori sequenza \emph{a otto}}
+\label{tab:otto}
+\end{table}\\
+\begin{figure}[!htb]
+	\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=1\textwidth]{img/ffn_eight.png}
+		\caption{Andamento degli errori dell'esempio in figura~\ref{fig:otto} utilizzando una FFN.}
+	        \label{fig:ffn_otto}
+	\end{minipage}
+ 	\hspace{2mm} \hspace{3mm} \
+	\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=1\textwidth]{img/rnn_eight.png}
+		\caption{Andamento degli errori dell'esempio in figura~\ref{fig:otto} utilizzando una RNN.}
+		\label{fig:rnn_otto}
+	\end{minipage}
+\end{figure}

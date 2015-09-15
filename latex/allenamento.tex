@@ -14,8 +14,8 @@ Momentum&0.9&0.3\\\hline
 \\
 
 \subsection{Back Propagation}
-L'algoritmo di Back Propagation \`e utilizzato con l'apprendimento supervisionato, ovvero dove insieme all'input \`e noto pure il target della funzione, e permette di modificare i pesi delle connessioni all'interno della rete in modo che venga minimizzata una certa funzione  di errore $E(w)$. L'aggiornamento dei pesi viene fatto una volta che \`e stato prodotto l'output e la quantit\`a \`e determinata dalla differenza tra lo stesso e il target (l'output reale della funzione). La funzione d'errore da minimizzare in questo esperimento \`e quella dei minimi quadrati (Mean Square Error, MSE): $E(w) = \frac{1}{2}(out - tar )^2$.\\
-$E(w)$ \`e una funzione nei pesi, che variano nel tempo a causa degli aggiornamenti, e per minimizzarla si utilizza l'algoritmo di discesa lungo il gradiente. Trovandosi in un punto $x_0$ viene calcolato il gradiente $\mathcal{r}f(x_0)$, cio\`e la derivata prima in $x_0$, che d\`a indicazioni sulla direzione in cui muoversi. Giunti nel nuovo punto $x_1$, dopo essersi mossi di una certa quantit\`a $\eta$, vengono rifatti gli stessi passaggi.\\
+L'algoritmo di Back Propagation \`e utilizzato con l'apprendimento supervisionato, ovvero dove insieme all'input \`e noto pure il target della funzione, e permette di modificare i pesi delle connessioni all'interno della rete in modo che venga minimizzata una certa funzione  di errore $E(w)$. L'aggiornamento dei pesi viene fatto una volta che \`e stato prodotto l'output e la quantit\`a \`e determinata dalla differenza tra lo stesso e il target (l'output reale della funzione). La funzione d'errore da minimizzare in questo esperimento \`e quella dei minimi quadrati (Mean Square Error, MSE): $E(w) =\sum\frac{1}{2}(out - tar )^2$.\\
+$E(w)$ \`e una funzione nei pesi, che variano nel tempo a causa degli aggiornamenti, e per minimizzarla si utilizza l'algoritmo di discesa lungo il gradiente. Trovandosi in un punto $x_0$ viene calcolato il gradiente $\mathcal{r}f(x_0)$, cio\`e la somma delle derivate parziali in $x_0$, che d\`a indicazioni sulla direzione in cui muoversi. Giunti nel nuovo punto $x_1$, dopo essersi mossi di una certa quantit\`a $\eta$, vengono rifatti gli stessi passaggi.\\
 L'algoritmo di BackPropagation pu\`o essenzialmente essere diviso in due parti:
 \begin{itemize}
 \item[-]Passo in avanti: l'input viene propagato nella rete per tutti i suoi strati fino giungere all'ultimo, dove viene prodotto l'output;
@@ -25,13 +25,8 @@ Quando si aggiornano i pesi si tiene conto anche del \emph{learning rate} $\mu$,
 
 
 \subsection{Bold Driver}
-Per manipolare il valore del learning rate \`e stata adottata la tecnica Bold Driver~\cite{battiti1989accelerated} che ne cambia la quantit\`a a seconda di come procede l'apprendimento da parte della rete. Si confrontano gli errori al tempo $t$ e $t-1$ e in base ai loro valori viene fatto un cambiamento:
-\begin{itemize}
-\item[-]se l'errore \`e diminuito si aumenta $\mu$ di una quantit\`a pari all'uno per cento del suo valore;
-\item[-]se l'errore \`e aumentato si annulla l'ultimo cambiamento fatto e si diminuisce $\mu$ del suo 50\%.
-\end{itemize}
-L'andamento del learning rate in uno degli esperimenti eseguiti, specificamente il primo utilizzando una RNN, \`e il seguente: \\
-\begin{center}
+\begin{figure}[!htb]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
 xmin=0, xmax=10,
@@ -43,10 +38,18 @@ ytick={0,0.1,0.2,0.3}
 coordinates {(0,0.1)(1,0.101)(2,0.10201)(3,0.1030301)(4,0.0509998995)(5,0.051509898495)(6,0.025497399755)(7,0.0257523737526)(8,0.0260098974901)(9,0.026269996465)(10,0.0130036482502)};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Il grafico illustra la variazione del learning rate in una sessione di allenamento}
+\label{fig:lr}
+\end{figure}
+Per manipolare il valore del learning rate \`e stata adottata la tecnica Bold Driver~\cite{battiti1989accelerated} che ne cambia la quantit\`a a seconda di come procede l'apprendimento da parte della rete. Si confrontano gli errori al tempo $t$ e $t-1$ e in base ai loro valori viene fatto un cambiamento:
+\begin{itemize}
+\item[-]se l'errore \`e diminuito si aumenta $\mu$ di una quantit\`a pari all'uno per cento del suo valore;
+\item[-]se l'errore \`e aumentato si annulla l'ultimo cambiamento fatto e si diminuisce $\mu$ del suo 50\%.
+\end{itemize}
+L'andamento del learning rate in uno degli esperimenti eseguiti, specificamente il primo utilizzando una RNN, \`e illustrato nella figura~\ref{fig:lr}.\\
 
 \subsection{Momentum}
-Il \emph{momentum} \`e un'estensione dell'algoritmo di BackPropagation che, aggiungendo una costante $0 \le m \le 1$ all'aggiornamento dei pesi, permette di muoversi pi\`u velocemente verso il minimo. Quando il gradiente continua ad andare nella stessa direzione il \emph{momentum} aumenta la grandezza dei passi effettuati. \`E da notare che, in caso di valori molto alti, va usato un valore di $\mu$ molto piccolo, altrimenti si rischia di saltare il minimo perch\`e i passi effettuati nella discesa lungo il gradiente sono troppo grandi.
+Il \emph{momentum} \`e un'estensione dell'algoritmo di BackPropagation che, aggiungendo una costante $0 \le m \le 1$ all'aggiornamento dei pesi, in alcuni casi pu\`o permettere di muoversi pi\`u velocemente verso il minimo. Quando il gradiente mantiene approsimativamente la stessa direzione il \emph{momentum} aumenta la grandezza dei passi effettuati. \`E da notare che, in caso di valori molto alti, va usato un valore di $\mu$ molto piccolo, altrimenti si rischia di saltare il minimo perch\`e i passi effettuati nella discesa lungo il gradiente sono troppo grandi.
 
 
 \subsection{Funzione utilizzata per l'allenamento}

@@ -1,0 +1,63 @@
+Quando si \`e trattato di fare imparare sequenze di note derivate da una canzone il processo di apprendimento \`e risultato molto pi\`u complesso ed infatti sono stati fatti degli accorgimenti alla rete:
+\begin{itemize}
+\item[-]sono state aumentate le note in input, da cinque ad otto;
+\item[-]\`e stato aumentato il numero di neuroni nell'hidden layer, da venti a cinquanta.
+\end{itemize}
+Questo perch\`e le sequenze di note erano maggiori in numero rispetto all'esperimento precedente ma anche perch\`e erano molto pi\`u varie. La RNN si \`e dimostrata pi\`u difficile da allenare, ha richiesto un numero maggiore di epochs, ma le note prodotte erano pi\`u esatte, proprio per la capacit\`a di tenere in considerazione la storia delle note (cosa che la FFN non fa), pi\`u varie rispetto alla rete neurale non ricorrente che cercava di riprodurre il brano usato per il train ma nient'altro di pi\`u.\\
+Il primo brano preso in esame \`e \emph{Fly Me To The Moon}, il secondo invece \`e \emph{Kathy's Song}.
+\\Gli errori di train e validazione sono stati:
+\begin{table}[ht]
+\centering
+\begin{tabular}{ c  c }
+    \begin{tabular}{| c | c | c |}
+    \multicolumn {3}{c}{\textbf{Errori primo brano}}\\
+    \hline
+    &\textbf{FFN}&\textbf{RNN}\\\hline
+    Allenamento&0.580332&0.058844\\\hline
+    Validazione&1.387929&0.892960\\\hline
+    \end{tabular}
+    &
+    \begin{tabular}{| c | c | c |}
+    \multicolumn {3}{c}{\textbf{Errori secondo brano}}\\
+    \hline
+    &\textbf{FFN}&\textbf{RNN}\\\hline
+    Allenamento&1.745513&0.032295\\\hline
+    Validazione&1.740951&0.985849\\\hline
+    \end{tabular}\\
+\end{tabular}
+\end{table}
+\\Per questo esperimento sono riportati, per sinteticit\`a, gli errori medi in fase di allenamento e validazione. Si pu\`o vedere chiaramente che la FFN non riesce ad imparare bene le canzoni, infatti i suoi errori sono pi\`u alti se confrontati con quelli della RNN.
+
+\begin{figure}[!htb]
+		\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=1\textwidth]{img/ffn_fly_errors.png}
+		\caption{Errori medi di allenamento e validazione per il primo brano imparato dalla rete utilizzando una FNN}
+		\label{fig:ffn_fly}
+	\end{minipage}
+	\hspace{2mm} \hspace{3mm} \
+	\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=1\textwidth]{img/rnn_fly_errors.png}
+		\caption{Errori medi di allenamento e validazione per il primo brano imparato dalla rete utilizzando una RNN.}
+		\label{fig:rnn_fly}
+	\end{minipage}
+\end{figure}
+
+Si pu\`o vedere come l'errore di allenamento in figura~\ref{fig:ffn:fly} salga, comportamento anomalo vista l'applicazione dell'algoritmo di Back Propagation; questo pu\`o essere dovuto a dei problemi all'interno del codice che hanno influenzato anche l'esperimento successivo. L'errore di validazione cala perch\`e la rete, anche se male, viene allenata e in fase di validazione questo \`e importante perch\`e comporta un miglioramento della rete.\\
+
+\begin{figure}[!htb]
+		\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=1\textwidth]{img/ffn_kathy_errors.png}
+		\caption{Errori medi di allenamento e validazione per il secondo brano imparato dalla rete utilizzando una FNN}
+		\label{fig:ffn_kathy}
+	\end{minipage}
+	\hspace{2mm} \hspace{3mm} \
+	\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=1\textwidth]{img/rnn_kathy_errors.png}
+		\caption{Errori medi di allenamento e validazione per il secondo brano imparato dalla rete utilizzando una RNN.}
+		\label{fig:rnn_kathy}
+	\end{minipage}
+\end{figure}
