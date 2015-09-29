@@ -401,8 +401,8 @@ def train_network(trainer, dataset=None, k_fold=1, bold_driver=False, maxEpochs=
                 ds_train.appendLinked(*dataset.getLinked(b))
         base += n
 
-        ds_test = dataset
-        ds_train = dataset
+        # ds_test = dataset
+        # ds_train = dataset
 
         tmp_train, tmp_test = trainer.trainUntilConvergence(datasetTrain=ds_train, datasetTest=ds_test, verbose=False,
                                                             maxEpochs=maxEpochs, continueEpochs=maxEpochs/2)
@@ -417,14 +417,15 @@ def train_network(trainer, dataset=None, k_fold=1, bold_driver=False, maxEpochs=
 
         # implementa il bold driver, aggiusta il learning rate in base all'evoluzione del train error
         if bold_driver:
-            if (sum(tmp_test) / len(tmp_test)) < prev_err:
-                prev_err = (sum(tmp_test) / len(tmp_test))
+            if (sum(tmp_train) / len(tmp_train)) < prev_err:
+                prev_err = (sum(tmp_train) / len(tmp_train))
                 trainer.descent.alpha += trainer.descent.alpha * 0.01  # alpha = learning rate
             else:
-                prev_err = (sum(tmp_test) / len(tmp_test))
+                prev_err = (sum(tmp_train) / len(tmp_train))
                 trainer.descent.alpha -= trainer.descent.alpha * 0.01
                 trainer.descent.alpha -= trainer.descent.alpha * 0.5  # alpha = learning rate
             print trainer.descent.alpha
+            print sum(tmp_train)/len(tmp_train)
 
         # testOnData e Validator calcolano lo stesso errore (MSE) in due modi differenti
         # implementato per vedere se le due funzioni si comportano in maniera coerente

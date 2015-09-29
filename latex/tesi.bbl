@@ -7,8 +7,9 @@ Roberto Battiti.
 
 \bibitem{JohnsonRNN}
 Daniel Johnson.
-\newblock Composing music with recurrent neural networks {@online}, September
-  2015.
+\newblock Composing music with recurrent neural networks
+  {\url{http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/}},
+  September 2015.
 
 \bibitem{kohavi1995study}
 Ron Kohavi et~al.

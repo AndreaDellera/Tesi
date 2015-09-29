@@ -6,16 +6,20 @@ def main():
     fold = "./FF/train45"
     in_train = open(fold + "/errors/train_MSE.txt", "r")
     in_test = open(fold + "/errors/test_MSE.txt", "r")
-    in_valid = open(fold + "/errors/valid_MSE.txt", "r")
+    # in_valid = open(fold + "/errors/valid_MSE.txt", "r")
 
     test_errors = in_test.readlines()
-    test_valid = in_valid.readlines()
+    # test_valid = in_valid.readlines()
     train_errors = in_train.readlines()
 
     # plot train and test errors
-    mpl.plot(range(len(train_errors)), train_errors)
-    mpl.plot(range(len(test_errors)), test_errors)
-    # mpl.plot(range(len(test_valid)), test_valid)
+    one, = mpl.plot(range(len(train_errors)), train_errors, label = 'allineamento')
+    two, = mpl.plot(range(len(test_errors)), test_errors, label = 'validazione', linestyle='--')
+    # three, = mpl.plot(range(len(test_valid)), test_valid)
+    mpl.axis([0, 9, 0, 4])
+    mpl.legend(handles=[one, two])
+    mpl.ylabel('Errore')
+    mpl.xlabel('Tempo')
     mpl.show()
 
     ptrain = open(fold + "/errors/train_progression.txt", "r")
@@ -23,22 +27,17 @@ def main():
 
     train_errors = ptrain.readlines()
     test_errors = ptest.readlines()
-    summ = 0
-    for i in train_errors:
-        summ += float(i[0:len(i)-1:1])
-    print summ / len (train_errors)
-
-    summ = 0
-    for i in test_errors:
-        summ += float(i[0:len(i)-1:1])
-    print summ / len(test_errors)
 
     mpl.close()
-    mpl.plot(range(len(train_errors)), train_errors)
-    mpl.plot(range(len(test_errors)), test_errors)
+    one, = mpl.plot(range(len(train_errors)), train_errors, label = 'allineamento')
+    two, = mpl.plot(range(len(test_errors)), test_errors, label = 'validazione', linestyle='--')
+    mpl.axis([0, 10000, 0, 4])
+    mpl.legend(handles=[one, two])
+    mpl.ylabel('Errore')
+    mpl.xlabel('Tempo')
     mpl.show()
 
-    in_valid.close()
+    # in_valid.close()
     in_test.close()
     in_train.close()
     ptrain.close()
